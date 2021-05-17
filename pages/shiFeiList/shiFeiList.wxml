@@ -1,0 +1,34 @@
+<view style="width: 100%;box-sizing: border-box;padding: 32rpx;padding-top: 0;">
+    <view class="flex-view" style="width: 100%;padding: 35rpx 0;margin-bottom:20rpx;background: #FFFFFF;box-shadow: 0rpx 10rpx 22rpx 0rpx rgba(174, 182, 177, 0.18);border-radius: 30rpx;">
+        <view style="width: 49%;text-align: center">
+            <view class="font-46 font-bold color-FE963A">5000g</view>
+            <view class="font-24 color-898888">昨日总施肥</view>
+        </view>
+        <view style="width: 1rpx;height: 80rpx;background: #EBE7E7;"></view>
+        <view style="width: 49%;text-align: center">
+            <view class="font-46 font-bold color-302424">20.0000<text class="font-24 color-302424">个</text></view>
+            <view class="font-24 color-898888">昨日总分配橙子</view>
+        </view>
+    </view>
+    <view class="flex-view" style="width: 100%;padding: 35rpx 0;margin-bottom:20rpx;background: #FFFFFF;box-shadow: 0rpx 10rpx 22rpx 0rpx rgba(174, 182, 177, 0.18);border-radius: 30rpx;">
+        <view style="width: 49%;text-align: center">
+            <view class="font-46 font-bold color-302424">20000g</view>
+            <view class="font-24 color-898888">历史总施肥</view>
+        </view>
+        <view style="width: 1rpx;height: 80rpx;background: #EBE7E7;"></view>
+        <view style="width: 49%;text-align: center">
+            <view class="font-46 font-bold color-302424">2000.0000<text class="font-24 color-302424">个</text></view>
+            <view class="font-24 color-898888">历史总分配</view>
+        </view>
+    </view>
+    <view wx:for="{{list}}" wx:key="index" class="flex-view" style="width: 100%;padding: 25rpx 0;border-bottom: 1px solid #EBE7E7;justify-content: space-between;">
+        <view>
+            <view class="font-30 font-bold color-302424">观看视频</view>
+            <view class="font-26 color-C0C0C0">2020-10-25 12:25:11</view>
+        </view>
+        <view>
+            <view class="font-40 font-bold color-FE963A">+624g</view>
+            <view class="font-24 color-C0C0C0">剩余1232g</view>
+        </view>
+    </view>
+</view>

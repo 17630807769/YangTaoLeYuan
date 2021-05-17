@@ -1,0 +1,2 @@
+<!--pages/raiders/raiders.wxml-->
+<image src="{{imgUrl}}" style="width: 100%"></image>

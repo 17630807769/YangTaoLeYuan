@@ -1,0 +1,498 @@
+/* pages/chengzi/chengzi.wxss */
+.you-zi{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.bg-img{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.content{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+/*果树部分*/
+.muban-text{
+    -webkit-text-stroke: 2rpx #A98961;
+    text-stroke: 2rpx #A98961;
+}
+.kezhaiqu-qipao-text{
+    -webkit-text-stroke: 2rpx #C99B4D;
+    text-stroke: 2rpx #C99B4D;
+}
+/*进度条*/
+.progress{
+    /*background: linear-gradient(180deg, #FFBA6F, #FFE282);*/
+    background: #FDE6A2;
+    height: 30rpx;border-radius: 15rpx;
+    transition: all 1s;
+}
+/*橙子池子*/
+.leyuan-title{
+    -webkit-text-stroke: 2rpx #c7cff9;
+    text-stroke: 2rpx #c7cff9;
+}
+.leyuan-title1{
+    -webkit-text-stroke: 2rpx #B7812F;
+    text-stroke: 2rpx #B7812F;
+}
+/*屏幕右侧icon*/
+.right-list{
+    position: absolute;
+    right: 20rpx;
+    width: 90rpx;
+}
+.right-list view{
+    width: 90rpx;
+    height: 90rpx;
+    margin-bottom: 24rpx;
+    position: relative;
+}
+.right-list image{
+    width: 100%;
+}
+.right-list text{
+    position: absolute;
+    left: 0;
+    text-align: center;
+    bottom: -13rpx;
+    width: 100%;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.right-list-text1{
+    -webkit-text-stroke: 2rpx #EFAF37;
+    text-stroke: 2rpx #EFAF37;
+}
+.right-list-text2{
+    -webkit-text-stroke: 2rpx #9E7761;
+    text-stroke: 2rpx #9E7761;
+}
+.right-list-text3{
+    -webkit-text-stroke: 2rpx #EB3353;
+    text-stroke: 2rpx #EB3353;
+}
+.right-list-text4{
+    -webkit-text-stroke: 2rpx #C59C6E;
+    text-stroke: 2rpx #C59C6E;
+}
+.guang-huan{
+    position: absolute;width: 130rpx!important;height: 130rpx!important;top: -20rpx;left: -20rpx;
+    animation: guang-huan-dong 3000ms linear infinite;
+}
+@keyframes guang-huan-dong{
+    0%{
+        transform: rotateZ(0deg) scale(1);
+        opacity: 0.2;
+    }
+    50%{
+        transform: rotateZ(180deg) scale(1.1);
+        opacity: 0.8;
+    }
+    100%{
+        transform: rotateZ(360deg) scale(1);
+        opacity: 0.2;
+    }
+}
+.red-tips{
+    width: 64rpx!important;
+    height: 36rpx!important;
+    position: absolute!important;
+    top: -10rpx!important;
+    right: -10rpx!important;
+    text-align: center!important;
+    animation: red-tips-dong 1000ms linear infinite;
+}
+@keyframes red-tips-dong{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+/*下滑框 收获*/
+.shouhuo-title{
+    -webkit-text-stroke: 2rpx #0F9B3D;
+    text-stroke: 2rpx #0F9B3D;
+}
+.bottom-window-shadow{
+    width: 100%;height: 100vh;background-color: #00000050;position: absolute;left: 0;
+    transition: all 0.5s;
+}
+.bottom-window{
+    width: 100%;position: absolute;bottom: 0;
+}
+.bottom-window-title{
+    width: 750rpx;height: 89rpx;position: relative
+}
+.bottom-window-title-icon{
+    width: 100%;height: 167rpx;position: absolute;top: -166rpx;left: 50%;transform: translate(-50%,0)
+}
+.bottom-window-title-bg{
+    width: 100%;position: absolute
+}
+.bottom-window-title-text{
+    position: absolute;left: 50%;transform: translate(-50%,0%)
+}
+.bottom-window-title-close{
+    width: 46rpx;position: absolute;top: 20rpx;right: 28rpx
+}
+.bottom-window-content{
+    width: 100%;padding: 24rpx;padding-bottom:0;background-color: #34D268;box-sizing: border-box
+}
+.bottom-window-content-list{
+    width: 100%;background: #FEFDF8;border-radius: 30rpx 30rpx 0 0;padding: 0 30rpx;box-sizing: border-box
+}
+.bottom-window-content-list-title{
+    padding: 30rpx 0;border-bottom: 1rpx solid #EBE7E7;
+}
+.bottom-window-content-list-box{
+    max-height: 40vh;min-height: 15vh;
+}
+/*道具部分*/
+.daoJuTitle-tab{
+    text-shadow: 0px 2px 4px rgba(2, 100, 34, 0.4);margin-bottom: 20rpx;text-align: center;
+}
+.daoJuTitle-tab-border{
+    width: 76rpx;height: 5rpx;margin: 0 auto;margin-bottom: 6rpx;
+}
+.daoJuBox{
+    position:relative;width: 239rpx;height: 320rpx;
+    background:url('../../images/chengzi/ban.png') 0 0/100% 100%
+}
+.daoJuBox-typeImg{
+    width: 105rpx;height: 99rpx;position: absolute;right: 0;
+}
+.daoJuBox-title{
+    text-shadow: 0px 1px 3px #64461D;padding-top: 25rpx;width: 100%;text-align: center;margin-bottom: 28rpx;
+}
+.daoJuBox-img{
+    width: 105rpx;height: 105rpx;display: block;margin: 0 auto;margin-bottom: 18rpx;
+}
+.daoJuBox-btn{
+    margin:0 auto;color: #FFFFFF;text-align:center;text-shadow: 0px 3px 2px rgba(157, 96, 0, 0.4);width: 173rpx;height: 60rpx;line-height:50rpx;
+    background:url('../../images/chengzi/btn-quxiazai.png') 0 0/100% 100%;
+}
+/*设置密码的一系列弹框*/
+.dialog-style{
+    width: 100%;height: 100vh;background-color: #00000050;position: absolute;left: 0;top: 0;
+}
+.dialog-window{
+    width: 638rpx;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);
+}
+.dialog-window-close{
+    width: 100%;height: 47rpx;text-align: right;margin-bottom: 10rpx;
+}
+.dialog-window-close image{
+    width: 47rpx;height: 47rpx;
+}
+.dialog-window-box{
+    box-sizing: border-box;width: 100%;border-radius:50rpx;
+    padding: 24rpx
+}
+.dialog-window-title{
+    width: 61rpx;height: 61rpx;display: block;margin: 0 auto;
+}
+.dialog-window-title-text{
+    text-shadow: 0px 3rpx 4rpx rgba(24, 145, 100, 0.64);text-align: center;margin-bottom: 20rpx
+}
+.dialog-window-content{
+    width: 100%;background-color: #FEFDF8;box-shadow: 0px 10rpx 0px 0px rgba(24, 173, 73, 0.42);border-radius: 30rpx;padding: 40rpx;box-sizing: border-box;
+}
+
+.dialog-btn{
+    background:url('../../images/chengzi/icon-btnBg.png') 0 0/100% 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: 0px 3px 2px rgba(157, 96, 0, 0.4);
+    margin: 0 auto;
+}
+.dialog-btn1{
+    background:url('../../images/chengzi/btn-quguangkan.png') 0 0/100% 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: 0px 3px 2px rgba(157, 96, 0, 0.4);
+    margin: 0 auto;
+}
+
+/*云层动*/
+.yun-ceng{
+    position: absolute;
+    top: 18vh;
+    width: 100%;
+    height: 266rpx;
+}
+@keyframes yun-min-dong {
+    0% {right: -20%}
+    100% {right: 120%;}
+}
+.yun-min{
+    top:0rpx;
+    width: 142rpx;
+    height: 81rpx;
+    position: absolute;
+    animation: yun-min-dong 20s linear infinite;
+    opacity: 1;
+}
+@keyframes yun-max-dong {
+    0% {right: -20%}
+    100% {right: 120%;}
+}
+.yun-max{
+    top:54rpx;
+    width: 267rpx;
+    height: 152rpx;
+    position: absolute;
+    animation: yun-max-dong 10s linear infinite;
+    opacity: 1;
+}
+/*** 肥料包 吐肥料 动画 ***/
+.shou-fei-liao{
+    animation: shou-fei-liao-dong 150ms linear infinite;
+}
+@keyframes shou-fei-liao-dong {
+    0% {transform: scale(1)}
+    50% {transform: scale(1.1)}
+    100% {transform: scale(1)}
+}
+/*** 肥料块 移动***/
+.fei-liao-kuai{
+    animation: fei-liao-kuai-dong 1500ms linear;
+}
+@keyframes fei-liao-kuai-dong {
+    0% {bottom: 140rpx;right: 120rpx;opacity: 1}
+    30% {bottom: 236rpx;right: 120rpx;opacity: 1;z-index: 1}
+    50% {opacity: 1}
+    100% {bottom: -10.2vh;right: 400rpx;opacity: 0}
+}
+.fei-liao-kuai1{
+    animation: fei-liao-kuai-dong1 1000ms linear;
+}
+@keyframes fei-liao-kuai-dong1 {
+    0% {bottom: 140rpx;right: 120rpx;}
+    30% {bottom: 236rpx;right: 120rpx;opacity: 1;z-index: 1}
+    50% {opacity: 1}
+    100% {bottom: -10.2vh;right: 350rpx;}
+}
+.fei-liao-kuai2{
+    animation: fei-liao-kuai-dong2 1900ms linear;
+}
+@keyframes fei-liao-kuai-dong2 {
+    0% {bottom: 140rpx;right: 120rpx;}
+    30% {bottom: 236rpx;right: 120rpx;opacity: 1;z-index: 1}
+    50% {opacity: 1}
+    100% {bottom: -10.2vh;right: 280rpx;}
+}
+.fei-liao-kuai3{
+    animation: fei-liao-kuai-dong3 1800ms linear ;
+}
+@keyframes fei-liao-kuai-dong3 {
+    0% {bottom: 140rpx;right: 120rpx;}
+    30% {bottom: 236rpx;right: 120rpx;opacity: 1;z-index: 1}
+    50% {opacity: 1}
+    100% {bottom: -10.2vh;right: 200rpx;}
+}
+.fei-liao-kuai4{
+    animation: fei-liao-kuai-dong4 2000ms linear ;
+}
+@keyframes fei-liao-kuai-dong4 {
+    0% {bottom: 140rpx;right: 120rpx;}
+    30% {bottom: 236rpx;right: 120rpx;opacity: 1;z-index: 1}
+    50% {opacity: 1}
+    100% {bottom: -10.2vh;right: 130rpx;}
+}
+.shu-hu-xi{
+    animation: hu-xi 3000ms linear infinite;
+}
+@keyframes hu-xi {
+    0%{
+        transform: scale3d(1, 1, 1);
+    }
+    25%{
+        transform: scale3d(1.005, 0.995, 1);
+        transform-origin: 280rpx 500rpx;
+    }
+    75%{
+        transform: scale3d(0.995, 1.005, 1);
+        transform-origin: 280rpx 500rpx;
+    }
+    100%{
+        transform: scale3d(1, 1, 1);
+    }
+}
+.shu-q-tan{
+    animation: q-tan 1000ms linear;
+}
+@keyframes q-tan {
+    0%{
+        transform: scale3d(1, 1, 1);
+    }
+    20%{
+        transform: scale3d(1.01, 0.99, 1);
+        transform-origin: 280rpx 500rpx;
+    }
+    40%{
+        transform: scale3d(0.99, 1.01, 1);
+        transform-origin: 280rpx 500rpx;
+    }
+    60%{
+        transform: scale3d(1.01, 0.99, 1);
+        transform-origin: 280rpx 500rpx;
+    }
+    80%{
+        transform: scale3d(0.99, 1.01, 1);
+        transform-origin: 280rpx 500rpx;
+    }
+    100%{
+        transform: scale3d(1, 1, 1);
+    }
+}
+.feng-che{
+    animation: feng-che-dong 3000ms linear infinite;
+}
+@keyframes feng-che-dong {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(-360deg);
+    }
+}
+.can-Ling-qu{
+    width: 98rpx;height: 46rpx;position: absolute;left: 14rpx;top: -50rpx;
+    animation: can-Ling-qu-dong 3000ms linear infinite;
+}
+@keyframes can-Ling-qu-dong{
+    0%{
+        transform: translateY(0%) rotateY(0deg);
+    }
+    20%{
+        transform: translateY(20%) rotateY(0deg);
+    }
+    40%{
+        transform: translateY(0%) rotateY(0deg);
+    }
+    60%{
+        transform: translateY(20%) rotateY(0deg);
+    }
+    80%{
+        transform: translateY(0%) rotateY(0deg);
+    }
+    100%{
+        transform: translateY(0%) rotateY(360deg);
+    }
+}
+.can-zhai-qu{
+    background: url('../../images/chengzi/kezhaichengziqipao.png') 0 0/100%;
+    width: 242rpx;height: 100rpx;position: absolute;left: 124rpx;top: -400rpx;
+    text-align: center;
+    padding: 15rpx 0;
+    box-sizing: border-box;
+    animation: can-zhai-qu-dong 1000ms linear infinite;
+}
+.can-zhai-qu-text{
+    -webkit-text-stroke: 1rpx #FF8B2F;
+    text-stroke: 1rpx #FF8B2F;
+}
+@keyframes can-zhai-qu-dong{
+    0%{
+        transform: scale3d(1, 1, 1);
+    }
+    20%{
+        transform: scale3d(1.03, 0.97, 1);
+    }
+    40%{
+        transform: scale3d(0.97, 1.03, 1);
+    }
+    60%{
+        transform: scale3d(1.03, 0.97, 1);
+    }
+    80%{
+        transform: scale3d(0.97, 1.03, 1);
+    }
+    100%{
+        transform: scale3d(1, 1, 1);
+    }
+}
+/*** 收获橙子 移动***/
+.shou-cheng-zi{
+    animation: shou-cheng-zi-dong 200ms linear infinite;
+}
+@keyframes shou-cheng-zi-dong {
+    0% {bottom: 500rpx;left: 100rpx;opacity: 1}
+    50% {opacity: 1}
+    100% {bottom: 70vh;left: 580rpx;opacity: 0}
+}
+.shou-cheng-zi1{
+    animation: shou-cheng-zi-dong1 1000ms linear infinite;
+}
+@keyframes shou-cheng-zi-dong1 {
+    0% {bottom: 500rpx;left: 200rpx;opacity: 1}
+    50% {opacity: 1}
+    100% {bottom: 70vh;left: 580rpx;opacity: 0}
+}
+.shou-cheng-zi2{
+    animation: shou-cheng-zi-dong2 400ms linear infinite;
+}
+@keyframes shou-cheng-zi-dong2 {
+    0% {bottom: 500rpx;left: 300rpx;opacity: 1}
+    50% {opacity: 1}
+    100% {bottom: 70vh;left: 580rpx;opacity: 0}
+}
+.shou-cheng-zi3{
+    animation: shou-cheng-zi-dong3 500ms linear infinite;
+}
+@keyframes shou-cheng-zi-dong3 {
+    0% {bottom: 500rpx;left: 400rpx;opacity: 1}
+    50% {opacity: 1}
+    100% {bottom: 70vh;left: 580rpx;opacity: 0}
+}
+.shou-cheng-zi4{
+    animation: shou-cheng-zi-dong4 250ms linear infinite;
+}
+@keyframes shou-cheng-zi-dong4 {
+    0% {bottom: 500rpx;left: 500rpx;opacity: 1}
+    50% {opacity: 1}
+    100% {bottom: 70vh;left: 580rpx;opacity: 0}
+}
+/*** 树 收获 吐橙子 动画 ***/
+.shu-shou-huo{
+    animation: shu-shou-huo-dong 200ms linear infinite;
+}
+@keyframes shu-shou-huo-dong {
+    0%{
+        transform: scale3d(1, 1, 1);
+    }
+    20%{
+        transform: scale3d(1.01, 0.99, 1);
+        transform-origin: 280rpx 500rpx;
+    }
+    40%{
+        transform: scale3d(0.99, 1.01, 1);
+        transform-origin: 280rpx 500rpx;
+    }
+    60%{
+        transform: scale3d(1.01, 0.99, 1);
+        transform-origin: 280rpx 500rpx;
+    }
+    80%{
+        transform: scale3d(0.99, 1.01, 1);
+        transform-origin: 280rpx 500rpx;
+    }
+    100%{
+        transform: scale3d(1, 1, 1);
+    }
+}
+

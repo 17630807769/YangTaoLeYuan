@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/raiders/raiders",
+    "pages/feiLiaoList/feiLiaoList",
+    "pages/shiFeiList/shiFeiList",
+    "pages/logs/logs",
+    "pages/chengzi/chengzi",
+    "components/sixPassword/sixPassword",
+    "pages/mall/mall",
+    "pages/mallShopDetails/mallShopDetails",
+    "pages/mallConfirmOrder/mallConfirmOrder",
+    "pages/mallSelectAddress/mallSelectAddress",
+    "pages/mallAddAddress/mallAddAddress",
+    "pages/mallOrderList/mallOrderList",
+    "pages/mallOrderDetails/mallOrderDetails",
+    "pages/mallLookExpress/mallLookExpress"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

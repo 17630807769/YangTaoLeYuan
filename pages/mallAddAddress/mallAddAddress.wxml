@@ -1,0 +1,38 @@
+<!--pages/mallAddAddress/mallAddAddress.wxml-->
+<view style="padding:0 24rpx;margin: 17rpx 0;background-color: #ffffff">
+    <view class="flex-view" style="padding: 30rpx 0;border-bottom: 1rpx solid #F6F6F6;width: 100%;">
+        <view class="font-30 color-333333" style="width: 170rpx">收货人</view>
+        <input class="font-30 color-333333" style="width: 460rpx" type="text" bindinput="bindNameInput" placeholder="收货人姓名" value="{{name}}"/>
+    </view>
+    <view class="flex-view" style="padding: 30rpx 0;border-bottom: 1rpx solid #F6F6F6;width: 100%;">
+        <view class="font-30 color-333333" style="width: 170rpx">联系电话</view>
+        <input class="font-30 color-333333" style="width: 460rpx" type="text" bindinput="bindPhoneInput" placeholder="收货人号码" value="{{phone}}"/>
+    </view>
+    <view class="flex-view" style="padding: 30rpx 0;border-bottom: 1rpx solid #F6F6F6;width: 100%;">
+        <view class="font-30 color-333333" style="width: 170rpx">所在地区</view>
+<!--        <view class="font-30 color-666666" style="width: 460rpx"></view>-->
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+            <view class="color-666666" wx:if="{{region.length===0}}">请选择所在地区</view>
+            <view wx:else class="picker">
+               {{region[0]}}{{region[1]}}{{region[2]}}
+            </view>
+        </picker>
+    </view>
+    <view class="flex-view" style="padding: 30rpx 0;border-bottom: 1rpx solid #F6F6F6;width: 100%;">
+        <view class="font-30 color-333333" style="width: 170rpx">详细地址</view>
+        <input class="font-30 color-333333" style="width: 460rpx" type="text" bindinput="bindDetailsInput" placeholder="如街道、小区、门牌号等" value="{{details}}"/>
+    </view>
+</view>
+<view class="flex-view" style="padding: 24rpx;background-color: #ffffff;width: 100%;justify-content: space-between;box-sizing: border-box;">
+    <view>
+        <view class="font-30 font-bold color-333333">设置为默认地址</view>
+        <view class="font-26 color-C0C0C0">下单时将优先定位至默认地址</view>
+    </view>
+    <switch checked="{{status}}" bindchange="bindStatus" style=""/>
+</view>
+<view style="background-color: #ffffff;position: fixed;bottom: 0;width: 100%;padding: 8rpx 21rpx;box-sizing: border-box;">
+    <view bind:tap="clickSave" class="font-34 color-ffffff" style="width: 100%;height: 78rpx;line-height:78rpx;text-align:center;background: #35D06A;border-radius: 39rpx;">保存</view>
+    <view bind:tap="deleteAddress" data-id="{{id}}" wx:if="{{id}}" class="font-34 color-35D06A" style="width: 100%;height: 78rpx;line-height:78rpx;text-align:center;background: #ffffff;border:1rpx solid #35D06A;border-radius: 39rpx;margin-top: 20rpx">
+        删除
+    </view>
+</view>

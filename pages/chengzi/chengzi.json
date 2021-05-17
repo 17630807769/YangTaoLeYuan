@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "柚子",
+  "disableScroll": true,
+  "navigationStyle": "custom",
+  "navigateBack": true,
+  "usingComponents": {
+    "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
+    "six-password": "/components/sixPassword/sixPassword"
+  }
+}

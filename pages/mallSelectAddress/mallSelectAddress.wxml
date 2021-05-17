@@ -1,0 +1,21 @@
+<!--pages/mallSelectAddress/mallSelectAddress.wxml-->
+<view style="padding: 28rpx;margin-bottom: 98rpx">
+    <view bind:tap="selectTap"  wx:for="{{addressList}}" wx:key="id" data-i="{{index}}" class="flex-view" style="padding: 30rpx;box-sizing: border-box;border-radius: 12rpx;background-color: #ffffff;width: 100%;height: 150rpx;margin-bottom: 18rpx;">
+        <view style="width: 520rpx;">
+            <view class="flex-view">
+                <view class="font-30 color-333333">{{item.name}} </view>
+                <view class="font-26 color-666666" style="margin: 0 10rpx">{{item.phone}}</view>
+                <view wx:if="{{item.isDefault}}" class="font-24 color-35D06A" style="width: 64rpx;height: 32rpx;line-height:32rpx;text-align:center;background: #37C46520;border-radius: 16rpx;">默认</view>
+            </view>
+            <view class="font-26 color-333333">
+                {{item.pro}}{{item.city}}{{item.area}}{{item.detailAddress}}
+            </view>
+        </view>
+        <view catch:tap="editAddess" data-id="{{item.id}}" class="font-26 color-666666" style="height: 98rpx;border-left: 1rpx solid #f6f6f6;padding-left: 34rpx;line-height: 98rpx;">
+            编辑
+        </view>
+    </view>
+</view>
+<view style="background-color: #ffffff;position: fixed;bottom: 0;width: 100%;padding: 8rpx 21rpx;box-sizing: border-box;height: 97rpx;">
+    <view bind:tap="addAddess" class="font-34 color-ffffff" style="width: 100%;height: 78rpx;line-height:78rpx;text-align:center;background: #35D06A;border-radius: 39rpx;">+ 添加新地址</view>
+</view>

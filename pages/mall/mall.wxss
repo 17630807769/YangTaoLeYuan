@@ -1,0 +1,53 @@
+/* pages/mall/mall.wxss */
+page{
+    background-color: #E6E6E6;
+}
+.shop-box{
+    display:flex;position:relative;width: 100%;padding: 26rpx;box-sizing: border-box;background-color: #ffffff;border-radius: 16rpx;margin-bottom: 29rpx;
+}
+.shop-img{
+    width: 208rpx;height: 208rpx;border-radius: 12rpx;overflow: hidden;display: block;margin-right: 25rpx;
+}
+.shop-content{
+    width: 388rpx;height: 208rpx;display: flex;align-content: space-between;flex-wrap: wrap
+}
+.shop-shou-qing{
+    width: 145rpx;height: 145rpx;display: block;position: absolute;bottom: 9rpx;right: 9rpx;
+}
+.mall-tab{
+    width: 100%;height: 65rpx;background-color: #35D06A;
+}
+.mall-tab-top{
+    width: 100%;height: 65rpx;justify-content: space-around;
+    background-color: #35D06A;
+}
+.mall-tab-top-box{
+    justify-content:center;width:118rpx;height:46rpx;border-radius: 23rpx;
+}
+.mall-tab-top-box image{
+    width: 22rpx;height: 22rpx;display: block;margin: 5rpx;
+}
+.mall-tab-bottom{
+    position: absolute;top:58rpx;padding: 28rpx 15rpx;width:100%;
+    box-sizing:border-box;background-color: #ffffff;border-radius: 0 0 16rpx 16rpx;
+    display: none;
+}
+.mall-tab-bottom1{
+    display: block;
+}
+.fen-lei-box{
+    display: inline-block;
+    padding: 0 26rpx;border-radius: 27rpx;
+    height: 54rpx;
+    line-height: 54rpx;
+    margin: 10rpx;
+}
+.bc-fff{
+    background-color: #ffffff;
+}
+.bc-E6E6E6{
+    background-color: #E6E6E6;
+}
+.bc-35D06A{
+    background-color: #35D06A30;
+}

@@ -1,0 +1,10 @@
+/* pages/mallOrderDetails/mallOrderDetails.wxss */
+page{
+    background-color: #E6E6E6;
+}
+.btn1{
+    width: 160rpx;height: 54rpx;line-height:54rpx;margin:0 10rpx;text-align:center;border-radius: 27rpx;background: #ffffff;border: 1rpx solid #35D06A;
+}
+.btn2{
+    width: 160rpx;height: 54rpx;line-height:54rpx;margin:0 10rpx;text-align:center;border-radius: 27rpx;background: #35D06A;
+}

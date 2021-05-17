@@ -1,0 +1,21 @@
+/* pages/mallOrderList/mallOrderList.wxss */
+page{
+    background-color: #E9E9E9;
+}
+.order-box{
+    width: 100%;box-sizing: border-box;padding:20rpx 30rpx;background-color: #ffffff;border-radius: 16rpx;margin-bottom: 25rpx;
+}
+.shop-box{
+    display:flex;position:relative;width: 100%;background-color: #ffffff;
+    margin-bottom: 10rpx;
+}
+.shop-img{
+    width: 160rpx;height: 160rpx;border-radius: 12rpx;display: block;margin-right: 25rpx;
+}
+.shop-content{
+    width: 434rpx;height: 160rpx;display: flex;align-content: space-between;flex-wrap: wrap
+}
+.btn-class{
+    width: 128rpx;height: 44rpx;line-height:44rpx;text-align:center;border: 1rpx solid #FF6600;border-radius: 22rpx;
+    margin: 0 10rpx;
+}

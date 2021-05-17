@@ -1,0 +1,41 @@
+<!--pages/mallLookExpress/mallLookExpress.wxml-->
+<view class="font-34 font-bold color-ffffff" style="padding: 28rpx;background-color: #35D06A;box-sizing: border-box;height: 100rpx;">
+</view>
+<view style="padding: 28rpx;transform: translateY(-100rpx)">
+    <view class="flex-view" style="padding: 30rpx;padding-bottom:0;box-sizing: border-box;border-radius: 12rpx;background-color: #ffffff;margin-bottom: 18rpx;">
+        <view class="flex-view" style="width: 100%;height: 160rpx;margin-bottom: 20rpx;">
+            <image style="height: 160rpx;width: 160rpx;border-radius: 8rpx;margin-right: 26rpx" src="{{firstImg}}"></image>
+            <view class="flex-view" style="width: 440rpx;height: 160rpx;">
+                <view class="font-28 color-333333" style="width: 100%;margin-bottom: 20rpx">
+                    {{name}}
+                </view>
+                <view class="flex-view" style="width: 100%;margin-bottom: 20rpx;justify-content: space-between">
+                    <view class="flex-view" style="width: 200rpx">
+                        <text class="font-26color-666666">{{goodsOneMoney}}</text>
+                        <image style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="https://cz.krjie.com/images/chengzi/icon-ingots.png" mode="widthFix"></image>
+                    </view>
+                    <text class="font-24 color-666666">x{{goodsAmount}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="flex-view" style="width:100%;justify-content: space-between;padding: 20rpx 0;border-top: 1rpx solid #F6F6F6">
+            <view class="font-26 color-666666">{{trackingCompany}}</view>
+            <view class="font-24 color-666666">
+                {{trackingNumber}}
+            </view>
+        </view>
+    </view>
+    <view style="padding:30rpx;box-sizing: border-box;border-radius: 12rpx;background-color: #ffffff;margin-bottom: 18rpx;">
+        <view class="kuaidi_follow">
+            <view class="follow_title"></view>
+            <view class="follow_satus">
+                <view wx:for="{{traces}}" wx:key="index"  class="follow_address">
+                    <view class="label {{index===0?'default':''}}"></view>
+                    <view class="address {{index===0?'default':''}}">{{item.AcceptStation}}</view>
+                    <view class="date">{{item.AcceptTime}} <text class="time"></text></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+

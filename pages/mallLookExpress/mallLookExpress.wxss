@@ -1,0 +1,49 @@
+/* pages/mallLookExpress/mallLookExpress.wxss */
+page{
+    background-color: #E6E6E6;
+}
+.kuaidi_follow{
+    width: 100%;
+    background: #fff;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+.kuaidi_follow .follow_satus{
+    border-left: 1rpx solid #d5d5d5;
+}
+.kuaidi_follow .follow_satus .follow_address{
+    border-bottom: 1rpx solid #d5d5d5;
+    margin: 0 20rpx;
+    margin-top: 25rpx;
+    padding-bottom: 25rpx;
+    position: relative;
+
+}
+.kuaidi_follow .follow_satus .follow_address .address{
+    line-height: 60rpx;
+
+}
+.kuaidi_follow .follow_satus .follow_address .label{
+    width: 25rpx;
+
+    height: 25rpx;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    left: -30rpx;
+
+    top: -5rpx;
+
+    background: #d5d5d5;
+
+}
+.kuaidi_follow .follow_satus .follow_address .label.default{
+    background: #f23b4d;
+
+}
+.kuaidi_follow .follow_satus .follow_address .default{
+    color: #f23b4d;
+
+}

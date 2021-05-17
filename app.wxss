@@ -1,0 +1,97 @@
+/**app.wxss**/
+@import '/miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+.flex-view{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.font-bold{
+  font-weight: bold;
+}
+.font-20{
+  font-size: 20rpx;
+}
+.font-22{
+  font-size: 22rpx;
+}
+.font-24{
+  font-size: 24rpx;
+}
+.font-26{
+  font-size: 26rpx;
+}
+.font-28{
+  font-size: 28rpx;
+}
+.font-30{
+  font-size: 30rpx;
+}
+.font-34{
+  font-size: 34rpx;
+}
+.font-36{
+  font-size: 36rpx;
+}
+.font-40{
+  font-size: 40rpx;
+}
+.font-46{
+  font-size: 46rpx;
+}
+.font-50{
+  font-size: 50rpx;
+}
+.font-60{
+  font-size: 60rpx;
+}
+.color-ffeda6{
+  color: #FFEDA6;
+}
+.color-8F491B{
+  color: #8F491B;
+}
+.color-7A5A45{
+  color: #7A5A45;
+}
+.color-94734C{
+  color: #94734C;
+}
+.color-BC5D1E{
+  color: #BC5D1E;
+}
+.color-ffffff{
+  color: #ffffff;
+}
+.color-fefefe{
+  color: #fefefe;
+}
+.color-FE963A{
+  color: #FE963A;
+}
+.color-ADAAAA{
+  color: #ADAAAA;
+}
+.color-C0C0C0{
+  color: #C0C0C0;
+}
+.color-898888{
+  color: #898888;
+}
+.color-302424{
+  color: #302424;
+}
+.color-11B948{
+  color: #11B948;
+}
+.color-FFAE1A{
+  color: #FFAE1A;
+}
