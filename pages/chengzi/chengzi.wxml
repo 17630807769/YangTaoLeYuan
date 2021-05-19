@@ -11,7 +11,7 @@
         <view style="width: 490rpx;height: 190rpx;position: absolute;top: 50%;left: 50%;transform: translate(-50%,75%)">
             <image style="width: 100%" src="../../images/yangtao/zhonghziqu.png" mode="widthFix"></image>
             <image style="width:402rpx;height:102rpx;position: absolute;left:44rpx;top:-102rpx" src="../../images/yangtao/weilan.png"></image>
-            <image bind:tap="clickShu" class="{{shuClassName}}" style="position: absolute;bottom: 80rpx;width: 100%;left: 0%;" mode="widthFix" src="../../images/chengzi/shu.png"></image>
+            <image bind:tap="clickShu" class="{{shuClassName}}" style="position: absolute;bottom: 80rpx;width: 100%;left: 0%;" mode="widthFix" src="../../images/yangtao/{{notChargeOrangeAmount?'2':'1'}}-{{treeRank===1?treeRank:treeRank-1}}.png"></image>
             <view style="text-align: center;width: 138rpx;position: absolute;bottom:95rpx;left: 13rpx;transform:rotateZ(-5deg);line-height: 26rpx;">
                 <image style="width:138rpx;height:134rpx;" src="../../images/yangtao/wff.png"></image>
                 <view style="position:absolute;top:7rpx;text-align: center;width:100%">
@@ -34,7 +34,8 @@
                 <view style="width: 300rpx;border: 3rpx solid #FDE6A2;border-radius: 18rpx;background-color: #00000000;padding: 3rpx;">
                     <view style="width: {{progressWidth}}%" class="progress"></view>
                 </view>
-                <text style="white-space: nowrap;" class="font-24 color-fefefe">再施肥600就长成大树啦</text>
+                <text wx:if="{{treeRank<=10}}" style="white-space: nowrap;" class="font-24 color-ffffff">再施肥{{muckAmount}}g{{treeName}}</text>
+                <text wx:else style="white-space: nowrap;" class="font-24 color-ffffff">您已经是最高级了</text>
             </view>
             <view class="{{shiFeiBtnClass}}" bind:tap="" style="position: absolute;bottom: -18vh;left:62rpx;width: 365rpx;height:125rpx;">
                 <image wx:if="{{shiFeiGifShow}}" style="width: 100%;position: absolute;bottom: 80rpx;left: 0;" mode="widthFix" src="../../images/chengzi/shifei.gif"></image>

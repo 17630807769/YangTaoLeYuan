@@ -81,7 +81,8 @@ Page({
     notChargeOrangeAmount:0,//未收取橙子数
     notFertilizeAmount:0,//未施肥数量
     todayFertilizeAmount:0,//当日施肥数量
-    treeRank:0,//树的等级
+    treeRank:1,//树的下一个等级
+    treeName:'',
     shouHuoList:[],
     shouHuoBtnClass:'',//收获按钮的class名
     //收获数据
