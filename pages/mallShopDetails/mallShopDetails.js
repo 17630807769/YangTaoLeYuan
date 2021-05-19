@@ -1,6 +1,5 @@
 // pages/mallShopDetails/mallShopDetails.js
 const HTTP = require('../../utils/httputils');
-const Util = require('../../utils/util');
 Page({
 
   /**
@@ -19,7 +18,6 @@ Page({
     stock: 0,//库存
     buyCount:1,//购买数量
     chooseAmountShow:false,
-    allMoney:0,//总价
   },
   openDialog(){
     this.setData({
@@ -42,10 +40,8 @@ Page({
       return;
     }
     num+=1;
-    this.data.allMoney = Util.floatFour(this.data.orangeValue*num)
     this.setData({
-      buyCount: num,
-      allMoney:this.data.allMoney
+      buyCount: num
     })
   },
   lessBuyCount: function () {
@@ -59,10 +55,8 @@ Page({
       return;
     }
     num-=1;
-    this.data.allMoney = Util.floatFour(this.data.orangeValue*num)
     this.setData({
-      buyCount: num,
-      allMoney:this.data.allMoney
+      buyCount: num
     })
   },
   /**
@@ -94,10 +88,9 @@ Page({
           goodsDesc: data.data.goodsDesc,//描述
           limitBuyAmount: data.data.limitBuyAmount,//限制每个用户购买的数量
           name: data.data.name,//商品名称
-          orangeValue: data.data.orangeValue,//价格
+          orangeValue: data.data.money,//价格
           sellAmount: data.data.sellAmount,//已兑换
           stock: data.data.stock,//库存
-          allMoney:data.data.orangeValue
         })
       } else {
         wx.showToast({

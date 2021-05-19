@@ -1,39 +1,39 @@
 //index.js
 //获取应用实例
-const app = getApp()
-
+const app = getApp();
 Page({
   data: {
+    progressWidth:20,
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  login(){
-    wx.login({
-      success (res) {
-        if (res.code) {
-          //发起网络请求
-          wx.request({
-            url: 'https://test.com/onLogin',
-            data: {
-              code: res.code
-            }
+
+  onShow(){
+    this.setData({
+      progressWidth:20
+    })
+    setTimeout(()=>{
+      this.setData({
+        progressWidth:30
+      })
+      setTimeout(()=>{
+        this.setData({
+          progressWidth:60
+        })
+        setTimeout(()=>{
+          this.setData({
+            progressWidth:100
           })
-        } else {
-          console.log('登录失败！' + res.errMsg)
-        }
-      }
-    })
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+        },500)
+      },500)
+    },500)
+    setTimeout(()=>{
+      this.goToYouzi();
+    },2200)
   },
   onLoad: function () {
-    this.goToYouzi();
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -47,7 +47,6 @@ Page({
           userInfo: res.userInfo,
           hasUserInfo: true
         })
-        console.log(this.data.userInfo)
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
@@ -73,8 +72,13 @@ Page({
   goToYouzi: function (e) {
     wx.navigateTo({
       url: '/pages/chengzi/chengzi',
-      // url: '/pages/feiLiaoList/feiLiaoList',
-      // url: '/pages/shiFeiList/shiFeiList',
     });
+  },
+  onHide: function () {
+    setTimeout(()=>{
+      this.setData({
+        progressWidth:0
+      })
+    },1000)
   },
 })

@@ -59,23 +59,17 @@
 .color-8F491B{
   color: #8F491B;
 }
-.color-7A5A45{
-  color: #7A5A45;
-}
-.color-94734C{
-  color: #94734C;
-}
 .color-BC5D1E{
   color: #BC5D1E;
 }
 .color-ffffff{
   color: #ffffff;
 }
-.color-fefefe{
-  color: #fefefe;
-}
 .color-FE963A{
   color: #FE963A;
+}
+.color-FE1943{
+  color: #FE1943;
 }
 .color-ADAAAA{
   color: #ADAAAA;
@@ -86,12 +80,33 @@
 .color-898888{
   color: #898888;
 }
+.color-B3B3B3{
+  color: #B3B3B3;
+}
 .color-302424{
   color: #302424;
+}
+.color-333333{
+  color: #333333;
+}
+.color-666666{
+  color: #666666;
 }
 .color-11B948{
   color: #11B948;
 }
+.color-35D06A{
+  color: #35D06A;
+}
 .color-FFAE1A{
   color: #FFAE1A;
+}
+.color-FF6600{
+  color: #FF6600;
+}
+.color-ff3333{
+  color: #ff3333;
+}
+.icon-orange-style{
+  width: 34rpx;height: 34rpx;display: block;
 }

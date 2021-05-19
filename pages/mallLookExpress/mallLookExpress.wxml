@@ -12,7 +12,7 @@
                 <view class="flex-view" style="width: 100%;margin-bottom: 20rpx;justify-content: space-between">
                     <view class="flex-view" style="width: 200rpx">
                         <text class="font-26color-666666">{{goodsOneMoney}}</text>
-                        <image style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="https://cz.krjie.com/images/chengzi/icon-ingots.png" mode="widthFix"></image>
+                        <image style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="../../images/mall/icon-orange.png" mode="widthFix"></image>
                     </view>
                     <text class="font-24 color-666666">x{{goodsAmount}}</text>
                 </view>

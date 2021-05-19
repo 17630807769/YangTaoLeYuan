@@ -4,9 +4,7 @@
     "pages/raiders/raiders",
     "pages/feiLiaoList/feiLiaoList",
     "pages/shiFeiList/shiFeiList",
-    "pages/logs/logs",
     "pages/chengzi/chengzi",
-    "components/sixPassword/sixPassword",
     "pages/mall/mall",
     "pages/mallShopDetails/mallShopDetails",
     "pages/mallConfirmOrder/mallConfirmOrder",
@@ -14,7 +12,9 @@
     "pages/mallAddAddress/mallAddAddress",
     "pages/mallOrderList/mallOrderList",
     "pages/mallOrderDetails/mallOrderDetails",
-    "pages/mallLookExpress/mallLookExpress"
+    "pages/mallLookExpress/mallLookExpress",
+    "pages/login/login",
+    "components/sixPassword/sixPassword"
   ],
   "window":{
     "backgroundTextStyle":"light",

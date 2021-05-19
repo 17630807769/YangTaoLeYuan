@@ -6,20 +6,20 @@
         <view class="shop-content">
              <view class="font-30 color-333333" style="line-height: 32rpx;width: 100%">{{item.name}}</view>
              <view class="flex-view" style="width: 100%">
-                 <text class="font-30 color-FE963A" style="display:block;margin-right: 12rpx;">{{item.orangeValue}}</text>
-                 <image class="icon-orange-style" src="https://cz.krjie.com/images/chengzi/icon-ingots.png" mode="widthFix"></image>
+                 <text class="font-30 color-FE963A" style="display:block;margin-right: 12rpx;">{{item.money}}</text>
+                 <image class="icon-orange-style" src="../../images/mall/icon-orange.png" mode="widthFix"></image>
              </view>
              <text class="font-24 color-B3B3B3">{{item.stock}}库存</text>
         </view>
-        <image wx:if="{{item.stock===0}}" class="shop-shou-qing" src="https://cz.krjie.com/images/mall/yishouqing.png" mode="widthFix"></image>
+        <image wx:if="{{item.stock===0}}" class="shop-shou-qing" src="../../images/mall/yishouqing.png" mode="widthFix"></image>
     </view>
     <view style="padding: 24rpx 11rpx 24rpx 18rpx;border-radius: 20rpx;background: #9A9A9A;opacity: 0.9;position: fixed;bottom: 70rpx;right: 37rpx;">
         <navigator url="/pages/mallSelectAddress/mallSelectAddress">
-            <image style="width: 60rpx;height: 60rpx;display: block" src="https://cz.krjie.com/images/mall/my-address.png"></image>
+            <image style="width: 60rpx;height: 60rpx;display: block" src="../../images/mall/my-address.png"></image>
         </navigator>
         <view style="height: 2rpx;width: 50rpx;margin: 19rpx 0;background-color: #f6f6f6;"></view>
         <navigator url="/pages/mallOrderList/mallOrderList">
-            <image style="width: 60rpx;height: 60rpx;display: block" src="https://cz.krjie.com/images/mall/my-order.png"></image>
+            <image style="width: 60rpx;height: 60rpx;display: block" src="../../images/mall/my-order.png"></image>
         </navigator>
     </view>
 </view>
@@ -30,11 +30,11 @@
         </view>
         <view bind:tap="clickTabPrice" class="{{tabPrice!==1?'bc-fff color-35D06A':'color-ffffff'}} mall-tab-top-box font-30 flex-view">
             价格
-            <image src="https://cz.krjie.com/images/mall/paixu{{tabPrice}}.png"></image>
+            <image src="../../images/mall/paixu{{tabPrice}}.png"></image>
         </view>
         <view bind:tap="clickTabClass" class="{{!tabAll?'bc-fff color-35D06A':'color-ffffff'}} mall-tab-top-box font-30 flex-view">
             分类
-            <image src="https://cz.krjie.com/images/mall/fenlei{{!tabAll?'2':'1'}}.png"></image>
+            <image src="../../images/mall/fenlei{{!tabAll?'2':'1'}}.png"></image>
         </view>
     </view>
     <view class="mall-tab-bottom {{tabClassListShow?'mall-tab-bottom1':''}}">

@@ -1,0 +1,20 @@
+<!--pages/login/login.wxml-->
+<view wx:if="{{userInfo.avatarUrl}}" style="width: 100vw;height: 100vh;position: absolute;top: 0;">
+    <image src="{{userInfo.avatarUrl}}" style="width: 150rpx;height: 150rpx;border-radius: 50%;display: block;margin:0 auto;margin-top: 15vh"></image>
+    <view style="width: 100%;margin-top: 20rpx;text-align: center">{{userInfo.nickName}}</view>
+    <view wx:if="{{hasInfo}}" style="margin-top: 150rpx;">
+        <button type="primary" open-type="getPhoneNumber" bindgetphonenumber="getLogin" style="width: 470rpx;border: 0">
+            一键登录
+        </button>
+    </view>
+    <view wx:else style="margin-top: 150rpx;">
+        <view class="color-666666" style="width: 100%;text-align: center">您还没有关联手机号，</view>
+        <view class="color-666666" style="width: 100%;text-align: center;margin-bottom: 50rpx">这将会影响部分功能的使用</view>
+        <button type="primary" open-type="getPhoneNumber" bindgetphonenumber="getLogin" style="width: 470rpx;border: 0">一键关联手机号</button>
+    </view>
+</view>
+<button wx:else type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo" style="width: 470rpx;border: 0;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)">
+    微信登录
+</button>
+
+

@@ -1,20 +1,16 @@
 /**
  * 请求地址
  */
-const BASE_URL = 'http://cz.krjie.com'
+const BASE_URL = 'https://cz.krjie.com'
 // const BASE_URL = 'https://www.yunlemuyuan.com';
-const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNjIxMjM0OTUzLCJleHAiOjEwMjYxMTQ4NTUzLCJqdGkiOiJ7XCJhY2NvdW50U3RhdHVzXCI6MCxcImFsbEZlcnRpbGl6ZUFtb3VudFwiOjAuMDAsXCJhdmF0YXJcIjpcImh0dHA6Ly90aGlyZHd4LnFsb2dvLmNuL21tb3Blbi9zUlVBbFI5ckczVUJBNFdMN29xa21FSXVKZUhHRTVVY2IxZU1yaWI0TjN6bDFJMVdxaWEyNVJackNLTXpGRE9LaWN6NWdjZmZQNTNnSE9sSkdwRFEzYnhVUm1FNUpub0VpYk9xLzEzMlwiLFwiY3JlYXRlVGltZVwiOlwiMjAyMTA1MTcxNDU2MjhcIixcImlkXCI6MSxcImlzRGVsZXRlXCI6ZmFsc2UsXCJpc0xvZ2luXCI6dHJ1ZSxcIm5pY2tOYW1lXCI6XCLlsI_npaVcIixcIm5vdENoYXJnZUVnZ0Ftb3VudFwiOjAuMDAsXCJub3RDaGFyZ2VNdWNrQW1vdW50XCI6MC4wMDAwLFwibm90Q2hhcmdlT3JhbmdlQW1vdW50XCI6MC4wMDAwLFwibm90RmVydGlsaXplQW1vdW50XCI6MC4wMCxcIm9wZW5pZFwiOlwidGVzdHRlc3R0ZXN0XCIsXCJvcmFuZ2VBbW91bnRcIjowLjAwMDAsXCJvdmVyRWdnQW1vdW50XCI6MC4wMCxcIm92ZXJJbmdvdHNBbW91bnRcIjowLjAwMDAsXCJvdmVyT3JhbmdlQW1vdW50XCI6MC4wMDAwLFwicGhvbmVcIjpcIjE1NTY1NTM2MzI1XCIsXCJ0b2RheUZlcnRpbGl6ZUFtb3VudFwiOjAuMDAsXCJ0b3RhbEVnZ0Ftb3VudFwiOjAuMDAsXCJ1cGRhdGVUaW1lXCI6XCIyMDIxMDUxNzE1MDIzM1wiLFwidXNlckluZ290c0Ftb3VudFwiOjAuMDAwMCxcInZlcnNpb25cIjoxfSJ9.vFkor4_BgNPM9OlcPt2skvv4bRNOP2BrSVFtX2VG0zw'
+var wss_url = 'wss://cz.socket.krjie.com/ws';
 /**
  * 请求头
  */
 var header = {
     'content-type': 'application/json;charset=UTF-8',
-    'token':wx.getStorageSync("token"),
-    // 'Authorization': "Bearer " + wx.getStorageSync("token"),
-    'Authorization': "Bearer " + token,
-    // 'os': 'android',
-    // 'version': '1.0.0',
-    // 'device_token': 'ebc9f523e570ef14',
+    // 'token':wx.getStorageSync("token"),
+    'Authorization': "Bearer " + wx.getStorageSync("token"),
 }
 
 /**
@@ -34,6 +30,22 @@ function get(url, params, onSuccess, onFailed) {
 }
 
 /**
+ * 供外部PUT请求调用
+ */
+function put(url, params, onSuccess, onFailed) {
+    // console.log("请求方式：", "PUT")
+    request(url, params, "PUT", onSuccess, onFailed);
+}
+
+/**
+ * 供外部DELETE请求调用
+ */
+function delete1(url, params, onSuccess, onFailed) {
+    // console.log("请求方式：", "DELETE")
+    request(url, params, "DELETE", onSuccess, onFailed);
+}
+
+/**
  * function: 封装网络请求
  * @url URL地址
  * @params 请求参数
@@ -43,10 +55,10 @@ function get(url, params, onSuccess, onFailed) {
  */
 
 function request(url, params, method, onSuccess, onFailed) {
-    // if(header.Authorization === 'Bearer '||header.Authorization === 'Bearer undefined'){
-    //     header['Authorization'] = "Bearer " + wx.getStorageSync("token");
-    // }
-    header['userId'] = 1;
+    if(header.Authorization === 'Bearer '||header.Authorization === 'Bearer undefined'){
+        header['Authorization'] = "Bearer " + wx.getStorageSync("token");
+    }
+    // header['userId'] = 1;
     // console.log('请求url：'+ BASE_URL + url);
     wx.showLoading({
         title: "正在加载中...",
@@ -63,9 +75,24 @@ function request(url, params, method, onSuccess, onFailed) {
             if (res.data) {
                 /** start 根据需求 接口的返回状态码进行处理 */
                 if (res.statusCode == 200) {
-                    if(res.data.code === 400){//跳到登陆去
+                    console.log(res.data);
+                    // if(res.data.code === 200){
+                    //     onSuccess(res.data); //request success
+                    // } else {
+                    //     if(res.data.code === 411){//跳到登陆去
+                    //         wx.removeStorage("token");
+                    //         wx.redirectTo({url:'/pages/login/login'});
+                    //     }
+                    //     wx.showToast({
+                    //         icon:"none",
+                    //         title: res.data.message,
+                    //         duration: 2000
+                    //     })
+                    // }
+                    if(res.data.code === 411){//跳到登陆去
                         wx.removeStorage("token");
-                        wx.navigateTo({url:'/pages/login-type/index'})
+                        wx.redirectTo({url:'/pages/login/login'});
+                        return
                     }
                     onSuccess(res.data); //request success
                 } else {
@@ -96,9 +123,13 @@ function request(url, params, method, onSuccess, onFailed) {
 }
 let socketOpen=false;//判断是否已经成功open
 let socketMsgQueue=[];//成功open之前，要发的消息暂存此数组。。open之后 循环发出
+let initCount = 1;
+let time=null;//心跳定时器
 function initSocket() {
+    let wss_url1 = wss_url + '?token='+wx.getStorageSync("token");
+    console.log(wss_url1)
     wx.connectSocket({
-        url: 'ws://192.168.0.11:7000/ws?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNjA3NDgzMTgzLCJleHAiOjEwMjQ3Mzk2NzgzLCJqdGkiOiJ7XCJpZFwiOjF9In0.YInvjw9y-0kBVweqNEOCNjZtmCDHzlS-iw8FyBEPQJU'
+        url: wss_url1,
     })
     wx.onSocketOpen(function(res) {
         socketOpen = true;
@@ -106,16 +137,33 @@ function initSocket() {
             sendSocketMessage(socketMsgQueue[i])
         }
         socketMsgQueue = [];
+        //发送心跳包
+        clearInterval(time);
+        time = setInterval(()=>{
+            sendMessage('000000',{},'000000')
+        },10000)
     })
     wx.onSocketClose(function(res) {
         console.log('WebSocket 已关闭！');
+        clearInterval(time);
         //重连
     })
     wx.onSocketError(function () {
         console.log('WebSocket 异常！');
+        clearInterval(time);
+        if (initCount<3){
+            setTimeout(()=>{
+                initSocket();
+                console.log('WebSocket 第'+initCount+'次重连！');
+                initCount+=1;
+            },1000)
+        } else {
+            console.log('WebSocket 重连失败');
+        }
         //重连
     })
 }
+
 // 发送方法的封装
 function sendSocketMessage(msg) {
     console.log(msg)
@@ -129,20 +177,25 @@ function sendSocketMessage(msg) {
 }
 // 发送方法的封装1
 function sendMessage(info,param,type) {
-    let msg = {info:info,param:{},type:'100000'};
-    if (param){
-        msg.param = param
-    }
-    if (type){
-        msg.type = type
-    }
-    msg = JSON.stringify(msg);
-    if (socketOpen) {
-        wx.sendSocketMessage({
-            data:msg
-        })
+    if (wx.getStorageSync("token")){
+        let msg = {info:info,param:{},type:'100000'};
+        if (param){
+            msg.param = param
+        }
+        if (type){
+            msg.type = type
+        }
+        msg = JSON.stringify(msg);
+        if (socketOpen) {
+            wx.sendSocketMessage({
+                data:msg
+            })
+        } else {
+            socketMsgQueue.push(msg)
+        }
     } else {
-        socketMsgQueue.push(msg)
+        wx.removeStorage("token");
+        wx.redirectTo({url:'/pages/login/login'});
     }
 }
 //返回的方法封装
@@ -151,8 +204,12 @@ function onSocketMessage(res,callback) {
     console.log(result);
     if (result.code === 200){
         callback(result)
+    } else if(result.code === 202) {
+        // console.log('心跳包，不处理')
     } else if(result.code === 411) {
-        //重新登录 //message
+        //重新登录
+        wx.removeStorage("token");
+        wx.redirectTo({url:'/pages/login/login'});
     } else {
         //message
         wx.showToast({
@@ -176,6 +233,8 @@ function dealParams(params) {
 module.exports = {
     post: post,
     get: get,
+    put:put,
+    delete:delete1,
     initSocket:initSocket,
     sendMessage:sendMessage,
     onSocketMessage:onSocketMessage

@@ -2,12 +2,13 @@
 <view style="width: 100%;box-sizing: border-box;padding: 32rpx;padding-top: 0;">
     <view wx:for="{{list}}" wx:key="index" class="flex-view" style="width: 100%;padding: 25rpx 0;border-bottom: 1px solid #EBE7E7;justify-content: space-between;">
         <view>
-            <view class="font-30 font-bold color-302424">观看视频</view>
-            <view class="font-26 color-C0C0C0">2020-10-25 12:25:11</view>
+            <view class="font-30 font-bold color-302424">{{item.muckTypeText}}</view>
+            <view class="font-26 color-C0C0C0">{{item.createTimeText}}</view>
         </view>
         <view>
-            <view class="font-40 font-bold color-FE963A">+624g</view>
-            <view class="font-24 color-C0C0C0">剩余1232g</view>
+            <view wx:if="{{item.muckAmount>=0}}" class="font-40 font-bold color-FE963A">{{item.muckAmount}}g</view>
+            <view wx:else class="font-40 font-bold color-ADAAAA">{{item.muckAmount}}g</view>
+            <view class="font-24 color-C0C0C0" style="text-align: right">剩余{{item.lastAmount}}g</view>
         </view>
     </view>
 </view>

@@ -6,9 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isMallOrder:true,//是否为商城订单  false为兑换实物订单
-    id:null,
-    phone:'',
     //控制设置密码框的展示类型  0关闭  1设置密码  2输入密码 3忘记密码输入验证码  4重置密码
     setPasswordType:0,
     tipsPasswordShow:false,
@@ -56,8 +53,8 @@ Page({
       detailAddress:'',
       isDefault:true,
     },
-    //0关闭 1成功 2失败 3兑换实物订单成功；
-    confirmOrderFinsh:0,
+    orderKey:null,
+    time2:null,
   },
   // 当组件输入数字6位数时的自定义函数
   valueSix(e) {
@@ -82,6 +79,21 @@ Page({
     console.log(e.detail);
     this.data.inputValue1=e.detail;
   },
+  getOrderkey(){
+    HTTP.get('/api/v1/user/pay/gen/orderkey',{},(data)=>{
+      if(data.code == 200){
+        this.setData({
+          orderKey: data.data,
+        })
+      } else {
+        wx.showToast({
+          icon:"none",
+          title: data.message,
+          duration: 2000
+        })
+      }
+    })
+  },
 //控制设置密码框的展示类型  0关闭  1设置密码  2输入密码 3忘记密码输入验证码  4重置密码
   openSetPassword1() {
     this.resetInput();
@@ -89,13 +101,10 @@ Page({
       setPasswordType: 1,
     })
   },
-  openSetPassword2(e) {
-    console.log(e);
+  openSetPassword2() {
     this.resetInput();
     this.setData({
       setPasswordType: 2,
-      whyNeedPassword:e
-
     })
   },
   openSetPassword3() {
@@ -177,7 +186,7 @@ Page({
       })
       return
     }
-    let data={phone:this.data.phone,payPassword:this.data.inputValue1};
+    let data={phone:17638172927,payPassword:this.data.inputValue1};
     if(this.setPasswordType===4){//此时为重置密码
       data.code = this.data.code;
     }
@@ -199,7 +208,7 @@ Page({
     })
   },
   clickSendCode(){
-    HTTP.post('/api/v1/user/user/info/send/code',{phone:this.data.phone},(data)=>{
+    HTTP.post('/api/v1/user/user/info/send/code',{phone:17638172927},(data)=>{
       if(data.code == 200){
         clearInterval(this.data.time1)
         this.data.time1 = setInterval(()=>{
@@ -245,7 +254,7 @@ Page({
       })
       return
     }
-    HTTP.post('/api/v1/user/user/info/check/code',{phone:this.data.phone,code:this.data.inputValue},(data)=>{
+    HTTP.post('/api/v1/user/user/info/check/code',{phone:17638172927,code:this.data.inputValue},(data)=>{
       if(data.code == 200){
         this.data.code = this.data.inputValue;
         this.openSetPassword4();
@@ -258,18 +267,19 @@ Page({
       }
     })
   },
-  //打开密码框
+  //提交订单
+
   openPay(){
     //1.是否已经设置密码
     HTTP.get('/api/v1/user/user/info/is/have/password',{},(data)=>{
       console.log(data)
       if(data.code == 200){
         if(data.data){//有密码
-          this.openSetPassword2(1);
+          this.openSetPassword2();
         } else {
           this.openTipsPassword();
           wx.showToast({
-            title: '请先设置柚子密码',
+            title: '请先设置橙子密码',
             icon: 'none'
           })
         }
@@ -288,33 +298,16 @@ Page({
   onLoad: function (options) {
     if(options){
       let res = JSON.parse(options.value);
-      let goodsId;
-      if (res.type){//此时为兑换订单
-        this.data.isMallOrder = false;
-        goodsId = res.type*1;
-      } else {
-        this.data.isMallOrder = true;
-        goodsId = res.goodsId;//商品id
-      }
       this.setData({
-        isMallOrder:this.data.isMallOrder,
-        goodsId:goodsId,//商品id
+        goodsId:res.goodsId,//商品id
         firstImg: res.firstImg,//首图
         name: res.name,//商品名称
         orangeValue: res.orangeValue,//价格
         buyCount:res.buyCount,//购买数量
       })
     }
-    let that = this;
-    wx.getStorage({
-      key:'phone',
-      success(res) {
-        that.setData({
-          phone:res.data
-        })
-      }
-    })
     this.getAddress();
+    this.getOrderkey();
   },
   getAddress(){
     HTTP.get('/api/v1/user/address/get/default/address', {},(data)=>{
@@ -363,66 +356,47 @@ Page({
       })
       return;
     }
-    if(this.data.isMallOrder){
-      let params={
-        type:2,
-        buyAmount:this.data.buyCount,
-        buyGoodsId:this.data.goodsId,
-        addressId:this.data.address.id,
-        payPassword:this.data.inputValue
+    let params={
+      type:2,
+      buyAmount:this.data.buyCount,
+      buyGoodsId:this.data.goodsId,
+      addressId:this.data.address.id,
+      payPassword:this.data.inputValue,
+      orderKey:this.data.orderKey
+    }
+    //如果选择了微信支付 还要加一个参数 wxType:1;
+    HTTP.post('/api/v1/user/pay/minipay',params,(data)=>{
+      if(data.code == 200){
+        wx.showLoading({
+          mask:true,
+        });
+        this.data.time2 = setInterval(()=>{
+          this.getOrderStatus();
+        },1000)
+        console.log(this.data.time2)
+      } else {
+        wx.showToast({
+          icon:"none",
+          title: data.message,
+          duration: 2000
+        })
       }
-      HTTP.post('/api/v1/user/pay/minipay',params,(data)=>{
-        if(data.code == 200){
-          this.setData({
-            confirmOrderFinsh:1,
-            id:data.data
-          })
-          this.closeSetPassword()
-        } else {
-          wx.showToast({
-            icon:"none",
-            title: data.message,
-            duration: 2000
-          })
-        }
-      })
-    } else {
-      let param = {"type":this.data.goodsId,"amount":this.data.buyCount,"password":this.data.inputValue,"addressId":this.data.address.id};
-      HTTP.sendMessage('100032',param)
-    }
-  },
-  exchangeGoodsBack(data){
-    this.setData({
-      confirmOrderFinsh:3,
-      id:data
-    })
-    this.closeSetPassword();
-  },
-  closeConfirmOrderFinsh(){
-    this.setData({
-      confirmOrderFinsh:0,
     })
   },
-  goToMall(){
-    this.closeConfirmOrderFinsh();
-    wx.navigateBack({delta: 2});
-  },
-  goToChengZi(){
-    this.closeConfirmOrderFinsh();
-    wx.navigateBack({delta: 3});
-  },
-  goToOrderDetails(){
-    this.closeConfirmOrderFinsh();
-    let id = this.data.id;
-    if(this.data.isMallOrder){
-      wx.navigateTo({
-        url: "/pages/mallOrderDetails/mallOrderDetails?orderId="+id
-      })
-    } else {
-      wx.navigateTo({
-        url: "/pages/exchangeOrderDetail/exchangeOrderDetail?orderId="+id
-      })
-    }
+  getOrderStatus(){
+    HTTP.get('/api/v1/user/pay/get/order/status',{orderKey:this.data.orderKey},(data)=>{
+      if(data.code == 422){
+      } else {
+        clearInterval(this.data.time2)
+        wx.hideLoading();
+        wx.showToast({
+          icon:"none",
+          title: data.message,
+          duration: 2000
+        })
+        wx.navigateBack();
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -440,14 +414,6 @@ Page({
         address:getApp().globalData.address
       })
     }
-    let that = this;
-    wx.onSocketMessage(function (res) {//收到消息
-      HTTP.onSocketMessage(res,function (result) {
-        if (result.info === '100032'){
-          that.exchangeGoodsBack(result.data)
-        }
-      })
-    })
   },
 
   /**

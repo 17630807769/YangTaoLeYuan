@@ -14,7 +14,7 @@
 <view style="padding: 26rpx;background-color: #ffffff;margin-bottom: 6rpx;">
     <view class="flex-view" style="margin-bottom: 10rpx;">
         <text class="font-36 font-bold color-ff3333">{{orangeValue}}</text>
-        <image style="width: 46rpx;height: 46rpx;display: block;margin: 0 10rpx;" src="https://cz.krjie.com/images/chengzi/icon-ingots.png" mode="widthFix"></image>
+        <image style="width: 46rpx;height: 46rpx;display: block;margin: 0 10rpx;" src="../../images/mall/icon-orange.png" mode="widthFix"></image>
         <view class="font-24 color-35D06A" style="margin: 0 10rpx;border: 1px solid #35D06A;border-radius: 4rpx;width: 60rpx;height: 32rpx;line-height: 32rpx;text-align: center">包邮</view>
         <text class="font-24 color-35D06A" style="margin: 0 10rpx;">限兑{{limitBuyAmount}}件</text>
     </view>
@@ -27,8 +27,8 @@
 </view>
 <view class="flex-view" style="justify-content: space-between;background-color: #ffffff;position: fixed;bottom: 0;width: 100%;padding: 0 30rpx;box-sizing: border-box;height: 97rpx;">
     <view class="flex-view">
-        <text class="font-36 font-bold color-ff3333">{{allMoney}}</text>
-        <image style="width: 46rpx;height: 46rpx;display: block;margin: 0 10rpx;" src="https://cz.krjie.com/images/chengzi/icon-ingots.png" mode="widthFix"></image>
+        <text class="font-36 font-bold color-ff3333">{{orangeValue}}</text>
+        <image style="width: 46rpx;height: 46rpx;display: block;margin: 0 10rpx;" src="../../images/mall/icon-orange.png" mode="widthFix"></image>
     </view>
     <view bind:tap="openDialog" class="font-34 color-ffffff" style="width: 380rpx;height: 78rpx;line-height:78rpx;text-align:center;background: #35D06A;border-radius: 39rpx;">立即兑换</view>
 </view>
@@ -39,7 +39,7 @@
             <view class="flex-view" style="width: 500rpx;height: 160rpx;">
                 <view class="flex-view" style="margin-bottom: 20rpx">
                     <text class="font-36 font-bold color-ff3333">{{orangeValue}}</text>
-                    <image style="width: 46rpx;height: 46rpx;display: block;margin: 0 10rpx;" src="https://cz.krjie.com/images/chengzi/icon-ingots.png" mode="widthFix"></image>
+                    <image style="width: 46rpx;height: 46rpx;display: block;margin: 0 10rpx;" src="../../images/mall/icon-orange.png" mode="widthFix"></image>
                     <text class="font-24 color-35D06A" style="margin: 0 10rpx;">限兑{{limitBuyAmount}}件</text>
                 </view>
                 <view class="font-28 color-333333" style="width: 440rpx">
@@ -49,8 +49,8 @@
         </view>
         <view class="flex-view" style="justify-content: space-between;margin-bottom: 40rpx">
             <view class="flex-view">
-                <text class="font-36 font-bold color-ff3333">{{allMoney}}</text>
-                <image style="width: 46rpx;height: 46rpx;display: block;margin: 0 10rpx;" src="https://cz.krjie.com/images/chengzi/icon-ingots.png" mode="widthFix"></image>
+                <text class="font-36 font-bold color-ff3333">{{orangeValue*buyCount}}</text>
+                <image style="width: 46rpx;height: 46rpx;display: block;margin: 0 10rpx;" src="../../images/mall/icon-orange.png" mode="widthFix"></image>
             </view>
             <view class="flex-view">
                 <text class="font-24 color-666666">库存{{stock}}件 </text>
@@ -64,6 +64,6 @@
             </view>
          </view>
         <view bind:tap="goToConfirmOrder" class="font-34 color-ffffff" style="width: 100%;height: 78rpx;line-height:78rpx;text-align:center;background: #35D06A;border-radius: 39rpx;">确定兑换</view>
-        <image bind:tap="closeDialog" style="width: 24rpx;height: 24rpx;position: absolute;top: 20rpx;right: 20rpx" src="https://cz.krjie.com/images/mall/mallClose.png"></image>
+        <image bind:tap="closeDialog" style="width: 24rpx;height: 24rpx;position: absolute;top: 20rpx;right: 20rpx" src="../../images/mall/mallClose.png"></image>
     </view>
 </view>

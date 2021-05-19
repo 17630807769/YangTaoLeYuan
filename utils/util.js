@@ -21,8 +21,13 @@ function timeFuc1(time) {
   let data = time + '';
   return data.substring(4,6)+'-'+data.substring(6,8)
 }
+function timeFuc2(time) {
+  let data = time + '';
+  return data.substring(0,4)+'-'+data.substring(4,6)+'-'+data.substring(6,8)+' '+data.substring(8,10)+':'+data.substring(10,12)
+}
 module.exports = {
   formatTime: formatTime,
   timeFuc: timeFuc,
   timeFuc1: timeFuc1,
+  timeFuc2:timeFuc2
 }

@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "攻略"
+  "navigationBarTitleText": "攻略",
+  "navigationBarBackgroundColor": "#35D06A",
+  "navigationBarTextStyle": "white"
 }

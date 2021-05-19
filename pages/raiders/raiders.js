@@ -37,7 +37,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let that = this;
+    wx.onSocketMessage(function (res) {//收到消息
+      HTTP.onSocketMessage(res,function (result) {
+        if (result.info === '100018'){
+          that.setData({
+            imgUrl:result.data
+          })
+        }
+      })
+    })
   },
 
   /**
