@@ -18,6 +18,10 @@
     width: 100%;
     height: 100vh;
 }
+.mouthVip{
+    -webkit-text-stroke: 2rpx #FFFFFF;
+    text-stroke: 2rpx #FFFFFF;
+}
 /*果树部分*/
 .muban-text{
     -webkit-text-stroke: 2rpx #A98961;
@@ -223,7 +227,7 @@
     text-shadow: 0px 3rpx 4rpx rgba(24, 145, 100, 0.64);text-align: center;margin-bottom: 20rpx
 }
 .dialog-window-content{
-    width: 100%;background-color: #FEFDF8;box-shadow: 0px 10rpx 0px 0px rgba(24, 173, 73, 0.42);border-radius: 30rpx;padding: 40rpx;box-sizing: border-box;
+    width: 100%;background-color: #FEFDF8;box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.2);border-radius: 60rpx;padding: 40rpx;box-sizing: border-box;
 }
 
 .dialog-btn{
@@ -255,7 +259,7 @@
     100% {right: 120%;}
 }
 .yun-min{
-    top:190rpx;
+    top:-130rpx;
     width: 142rpx;
     height: 81rpx;
     position: absolute;
@@ -267,7 +271,7 @@
     100% {right: 120%;}
 }
 .yun-max{
-    top:104rpx;
+    top:-70rpx;
     width: 267rpx;
     height: 152rpx;
     position: absolute;

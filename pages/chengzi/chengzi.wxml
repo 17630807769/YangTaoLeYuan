@@ -6,12 +6,12 @@
         <image class="yun-min" src="../../images/chengzi/xiaoyun.png"></image>
     </view>
     <view class="content">
-        <view style="width: 40rpx;height: 70rpx;position: absolute;top: 50%;right: 100rpx;transform: translate(0%,250%)">
-            <image style="width: 40rpx;height: 70rpx;" src="../../images/chengzi/fengche1.png"></image>
-            <image class="feng-che" style="width: 68rpx;height: 68rpx;position: absolute;top: -16rpx;left: -13rpx;" src="../../images/chengzi/fengche2.png"></image>
-        </view>
-        <image style="width: 100%;position: absolute;bottom: 0rpx;left: 0;" mode="widthFix" src="../../images/chengzi/hudie.gif"></image>
-        <image style="width: 100%;position: absolute;top: 80rpx;left: 0;" mode="widthFix" src="../../images/chengzi/niao.gif"></image>
+<!--        <view style="width: 40rpx;height: 70rpx;position: absolute;top: 50%;right: 100rpx;transform: translate(0%,250%)">-->
+<!--            <image style="width: 40rpx;height: 70rpx;" src="../../images/chengzi/fengche1.png"></image>-->
+<!--            <image class="feng-che" style="width: 68rpx;height: 68rpx;position: absolute;top: -16rpx;left: -13rpx;" src="../../images/chengzi/fengche2.png"></image>-->
+<!--        </view>-->
+<!--        <image style="width: 100%;position: absolute;bottom: 0rpx;left: 0;" mode="widthFix" src="../../images/chengzi/hudie.gif"></image>-->
+<!--        <image style="width: 100%;position: absolute;top: 80rpx;left: 0;" mode="widthFix" src="../../images/chengzi/niao.gif"></image>-->
         <!--果树部分-->
         <view style="width: 593rpx;height: 287rpx;position: absolute;top: 50%;left: 50%;transform: translate(-50%,75%)">
             <image style="width: 100%" src="../../images/chengzi/keng.png" mode="widthFix"></image>
@@ -93,10 +93,10 @@
             <view bind:tap="openTouFeiLiao">
                 <image class="guang-huan" src="../../images/chengzi/guanghuan.png" mode="widthFix"></image>
                 <image src="../../images/chengzi/btn-zhaofeiliao.png" mode="widthFix"></image>
-                <text class="font-26 right-list-text2">偷肥料</text>
+                <text class="font-26 right-list-text2">找肥料</text>
 <!--                <view class="font-20 color-ffffff red-tips" style="background: url('../../images/chengzi/redTips.png') 0 0/100%">可偷</view>-->
             </view>
-            <view bind:tap="openDaoJu">
+            <view bind:tap="getAllPropsList">
                 <image src="../../images/chengzi/btn-daoju.png" mode="widthFix"></image>
                 <text class="font-26 right-list-text3">道具</text>
             </view>
@@ -106,28 +106,29 @@
             </view>
         </view>
 <!--    下方滑出弹框-->
-        <!--偷肥料-->
+        <!--找肥料-->
         <view class="bottom-window-shadow" style="{{touFeiLiaoShow?'top: 0;':'top:100%;'}}">
             <view class="bottom-window" style="{{touFeiLiaoShow?'bottom: 0;':'bottom:-100vh;'}}">
                 <view class="bottom-window-title">
-                    <image class="bottom-window-title-icon" src="../../images/chengzi/touFeiLiao-title.png" mode="widthFix"></image>
-                    <image class="bottom-window-title-bg" src="../../images/chengzi/title1.png" mode="widthFix"></image>
-                    <text class="bottom-window-title-text shouhuo-title font-40 font-bold color-ffffff">偷肥料</text>
+                    <image class="bottom-window-title-icon" src="../../images/chengzi/zhaofeiliaotitle.png" mode="widthFix"></image>
                     <image class="bottom-window-title-close" bind:tap="closeTouFeiLiao" src="../../images/chengzi/icon-close.png" mode="widthFix"></image>
                 </view>
                 <view class="bottom-window-content">
-                    <view class="bottom-window-content-list" style="padding: 0">
-                        <view class="flex-view" style="background: #FFFAEA;border-radius: 30px 30px 0px 0px;padding: 25rpx;justify-content: space-between;">
+                    <view class="bottom-window-content-list" style="padding: 25rpx;">
+                        <view class="flex-view" style="background: #FFD26440;border-radius: 50rpx;box-shadow: 0px 10px 18px 2px rgba(0, 0, 0, 0.1);padding:25rpx;justify-content: space-between;">
                             <view class="flex-view">
-                                <image style="width: 106rpx;height: 106rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="../../images/chengzi/icon-shentoushoutao1.png"></image>
+                                <image style="width: 106rpx;height: 106rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="../../images/chengzi/zhaoqu.png"></image>
                                 <view>
-                                    <view class="font-36 color-FE963A">获得橙子</view>
-                                    <view class="font-24 color-C0C0C0">购买神投手套自动偷</view>
+                                    <view class="font-36 color-FE1943">超级手套</view>
+                                    <view class="font-24 color-C0C0C0">自动找肥料</view>
                                 </view>
                             </view>
-                            <image bind:tap="clickGoBuy" src="../../images/chengzi/gobuy.png" style="width: 173rpx;height: 81rpx"></image>
+                            <view bind:tap="clickGoBuy" style="width: 173rpx;height: 81rpx;" class="btn-box">
+                                <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                                <view class="btn-box-text font-34 color-ffffff">去购买</view>
+                            </view>
                         </view>
-                        <scroll-view bindscrolltolower="getCanStealList" style="height: 50vh;padding: 0 25rpx;box-sizing: border-box;" scroll-y="true">
+                        <scroll-view bindscrolltolower="getCanStealList" style="height: 50vh;box-sizing: border-box;" scroll-y="true">
                             <view wx:for="{{canStealList}}" wx:key="index" class="flex-view" style="padding: 20rpx 0;border-bottom: 1rpx solid #EBE7E7;justify-content: space-between;">
                                 <view class="flex-view">
                                     <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="{{item.avatar}}"></image>
@@ -136,7 +137,7 @@
                                         <view class="font-26 color-C0C0C0">{{item.phone}}</view>
                                     </view>
                                 </view>
-                                <image wx:if="{{item.id}}" bind:tap="goToSteal" data-i="{{index}}" src="../../images/chengzi/icon-shou.png" style="width: 80rpx;height: 84rpx"></image>
+                                <image wx:if="{{item.id}}" bind:tap="goToSteal" data-i="{{index}}" src="../../images/chengzi/btn-zhaofeiliao.png" style="width: 80rpx;height: 84rpx"></image>
                             </view>
                         </scroll-view>
                     </view>
@@ -147,11 +148,9 @@
         <view class="bottom-window-shadow" style="{{daoJuShow?'top: 0%;':'top: 100%;'}}">
             <view class="bottom-window" style="{{daoJuShow?'bottom: 0;':'bottom:-100vh;'}}">
                 <view class="bottom-window-title" style="height: 156rpx">
-                    <image class="bottom-window-title-icon" src="../../images/chengzi/daoju-title.png" mode="widthFix"></image>
-                    <image class="bottom-window-title-bg" style="height: 156rpx" src="../../images/chengzi/daoju-title1.png" mode="widthFix"></image>
-                    <text class="bottom-window-title-text shouhuo-title font-40 font-bold color-ffffff">道具</text>
-                    <image class="bottom-window-title-close" bind:tap="closeDaoJu" src="../../images/chengzi/icon-close.png" mode="widthFix"></image>
-                    <view class="flex-view" style="width: 100%;position: absolute;bottom: 0;">
+                    <image class="bottom-window-title-icon" style="top:-122rpx;" src="../../images/chengzi/daojutitle.png" mode="widthFix"></image>
+                    <image class="bottom-window-title-close" style="top:0" bind:tap="closeDaoJu" src="../../images/chengzi/icon-close.png" mode="widthFix"></image>
+                    <view class="flex-view" style="width: 100%;position: absolute;bottom: 0;background-color: #d5ec96;">
                         <view bind:tap="clickDaoJuTab" data-type="{{item.type}}" wx:for="{{daoJuTab}}" wx:key="index" style="width: 33%">
                             <view class="daoJuTitle-tab font-30 font-bold color-ffffff" style="">{{item.text}}</view>
                             <view class="daoJuTitle-tab-border" style="{{item.type===daoJuNowType?'background-color: #ffae1a;':''}}"></view>
@@ -164,9 +163,12 @@
 <!--                            <image src="../../images/chengzi/shiyongzhong.png" class="daoJuBox-typeImg"></image>-->
                             <view class="daoJuBox-title font-28 font-bold color-ffffff">{{item.name}}</view>
                             <image class="daoJuBox-img" src="{{item.img}}"></image>
-                            <view class="daoJuBox-btn font-28">
-                                {{item.money}}元/天
+                            <view bind:tap="clickGoBuy" style="width: 173rpx;height: 60rpx;margin:0 auto;" class="btn-box">
+                                <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                                <view class="btn-box-text font-28 color-ffffff">{{item.money}}元/天</view>
                             </view>
+
+
                         </view>
                     </view>
                 </scroll-view>
@@ -211,50 +213,91 @@
         <view class="bottom-window-shadow" style="{{jiFeiLiaoShow?'top: 0%;':'top: 100%;'}}">
             <view class="bottom-window" style="{{jiFeiLiaoShow?'bottom: 0;':'bottom:-100vh;'}}">
                 <view class="bottom-window-title">
-                    <image class="bottom-window-title-icon" src="../../images/chengzi/jifeiliao-title.png" mode="widthFix"></image>
-                    <image class="bottom-window-title-bg" src="../../images/chengzi/title1.png" mode="widthFix"></image>
-                    <text class="bottom-window-title-text shouhuo-title font-40 font-bold color-ffffff">集肥料</text>
+                    <image class="bottom-window-title-icon" src="../../images/chengzi/jifeiliaotitle.png" mode="widthFix"></image>
                     <image class="bottom-window-title-close" bind:tap="closeJiFeiLiao" src="../../images/chengzi/icon-close.png" mode="widthFix"></image>
                 </view>
                 <view class="bottom-window-content">
                     <view class="bottom-window-content-list" style="padding: 0">
-                        <scroll-view style="height: 60vh;border-radius: 30rpx 30rpx 0px 0px;box-sizing: border-box;" scroll-y="true">
-                            <view class="flex-view" style="padding: 40rpx 30rpx;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">
+                        <scroll-view style="height: 60vh;padding:29rpx 33rpx;border-radius: 60rpx 60rpx 0px 0px;box-sizing: border-box;" scroll-y="true">
+<!--                            <view class="flex-view" style="background:#FFD26440;padding:30rpx;box-shadow: 0px 10px 18px 2px rgba(0, 0, 0, 0.1);border-radius: 50rpx;justify-content: space-between;">-->
+<!--                                <view class="flex-view">-->
+<!--                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="../../images/chengzi/icon-vvip.png"></image>-->
+<!--                                    <view style="width: 285rpx;">-->
+<!--                                        <view class="font-34 font-bold color-FE1943 mouthVip">开通包月VIP</view>-->
+<!--                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">送保护道具，每日肥料翻倍，商城打折</view>-->
+<!--                                    </view>-->
+<!--                                </view>-->
+<!--                                <view style="width: 160rpx;height: 60rpx;" class="btn-box">-->
+<!--                                    <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>-->
+<!--                                    <view class="btn-box-text font-28 color-ffffff">去开通</view>-->
+<!--                                </view>-->
+<!--                            </view>-->
+                            <view class="flex-view" style="padding: 20rpx 0;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">
                                 <view class="flex-view">
-                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="../../images/chengzi/icon-shiping.png"></image>
+                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="../../images/chengzi/icon-shipin.png"></image>
                                     <view style="width: 285rpx;">
                                         <view class="font-30 font-bold color-302424">看视频领肥料({{watchAmount}}/{{maxAmount}})</view>
                                         <view class="font-24 color-C0C0C0" style="line-height: 25rpx">每看一段视频，可以领取500g肥料</view>
                                     </view>
                                 </view>
-                                <view class="dialog-btn1" style="width: 174rpx;height: 82rpx;line-height:72rpx;">
-                                    去观看
+                                <view style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                    <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                                    <view class="btn-box-text font-28 color-ffffff">去观看</view>
                                 </view>
                             </view>
-                            <view class="flex-view" style="padding: 40rpx 30rpx;border-radius: 30rpx 30rpx 0px 0px;background:#FFFAEA;justify-content: space-between;">
+                            <view class="flex-view" style="padding: 20rpx 0;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">
                                 <view class="flex-view">
-                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="../../images/chengzi/icon-xiazai.png"></image>
+                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="../../images/chengzi/icon-fenxiang.png"></image>
                                     <view style="width: 285rpx;">
-                                        <view class="font-30 font-bold color-302424">下载柚子</view>
-                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">下载柚子APP，获得更多肥料</view>
+                                        <view class="font-30 font-bold color-302424">分享微信好友</view>
+                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">分享微信好友获得肥料</view>
                                     </view>
                                 </view>
-                                <view bind:tap="getDownImgUrl" class="dialog-btn1" style="width: 174rpx;height: 82rpx;line-height:72rpx;">
-                                    去下载
+                                <view style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                    <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                                    <view class="btn-box-text font-28 color-ffffff">去分享</view>
                                 </view>
                             </view>
-                            <view class="flex-view" style="padding: 40rpx 30rpx;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">
+                            <view class="flex-view" style="padding: 20rpx 0;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">
                                 <view class="flex-view">
-                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="../../images/chengzi/icon-shiping.png"></image>
+                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="../../images/chengzi/icon-goumai.png"></image>
                                     <view style="width: 285rpx;">
-                                        <view class="font-30 font-bold color-302424">兑换肥料</view>
-                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">输入兑换码，兑换肥料</view>
+                                        <view class="font-30 font-bold color-302424">购买道具</view>
+                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">购买道具获得肥料</view>
                                     </view>
                                 </view>
-                                <view bind:tap="openExchange" class="dialog-btn1" style="width: 174rpx;height: 82rpx;line-height:72rpx;">
-                                    去兑换
+                                <view style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                    <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                                    <view class="btn-box-text font-28 color-ffffff">去购买</view>
                                 </view>
                             </view>
+                            <view class="flex-view" style="padding: 20rpx 0;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">
+                                <view class="flex-view">
+                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="../../images/chengzi/icon-shangchengqianggou.png"></image>
+                                    <view style="width: 285rpx;">
+                                        <view class="font-30 font-bold color-302424">商城抢购商品</view>
+                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">用户抢购商品获得费料</view>
+                                    </view>
+                                </view>
+                                <view style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                    <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                                    <view class="btn-box-text font-28 color-ffffff">去抢购</view>
+                                </view>
+                            </view>
+                            <view class="flex-view" style="padding: 20rpx 0;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">
+                                <view class="flex-view">
+                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="../../images/chengzi/icon-chongdianbao.png"></image>
+                                    <view style="width: 285rpx;">
+                                        <view class="font-30 font-bold color-302424">租借充电宝获得肥料</view>
+                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">每租借1次获得100g肥料</view>
+                                    </view>
+                                </view>
+                                <view style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                    <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                                    <view class="btn-box-text font-28 color-ffffff">去租借</view>
+                                </view>
+                            </view>
+
                         </scroll-view>
                     </view>
                 </view>
@@ -281,10 +324,15 @@
                                 <view class="font-34 color-302424">{{expendOrange}}</view>
                             </view>
                         </view>
-                        <view class="flex-view" style="justify-content: space-between;">
-                            <image bind:tap="openSongChengZi" style="width: 278rpx;height: 90rpx;" src="../../images/chengzi/icon-songchengzi1.png" mode="widthFix"></image>
-                            
-                            <image bind:tap="goToMall" style="width: 278rpx;height: 90rpx;" src="../../images/chengzi/icon-chengzishangcheng.png" mode="widthFix"></image>
+                        <view class="flex-view" style="justify-content: space-around;">
+                            <view bind:tap="openSongChengZi" style="width:245rpx;height:94rpx;" class="btn-box">
+                                <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                                <view class="btn-box-text font-34 color-ffffff">送杨桃</view>
+                            </view>
+                            <view bind:tap="goToMall" style="width:245rpx;height:94rpx;" class="btn-box">
+                                <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                                <view class="btn-box-text font-34 color-ffffff">杨桃商城</view>
+                            </view>
                         </view>
                     </view>
                     <view class="bottom-window-content-list" style="padding: 0">
@@ -347,8 +395,10 @@
                             <input class="font-28 color-FFAE1A" name="friendNumber" type="number" bindinput="bindFriendNumberInput" placeholder="请输入橙子数量" value="{{friendNumber}}" />
                         </view>
                         <view class="font-24 color-FE963A" style="text-align: right;">{{nowOrange}}个橙子可送</view>
-                        <view bind:tap="clickNext" class="dialog-btn" style="width: 280rpx;height:86rpx;line-height:70rpx;">
-                            下一步
+
+                        <view bind:tap="clickNext" style="width:228rpx;height:90rpx;margin:0 auto;" class="btn-box">
+                            <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                            <view class="btn-box-text font-34 color-ffffff">下一步</view>
                         </view>
                         <scroll-view wx:if="{{friendListShow}}" style="max-height: 30vh;min-height: 15vh;" scroll-y="true">
                             <view wx:for="{{friendList}}" wx:key="index" class="flex-view" style="padding: 15rpx 0;border-bottom: 1rpx solid #EBE7E7;justify-content: space-between;">
@@ -359,7 +409,10 @@
                                         <view class="font-26 color-C0C0C0">{{item.phone}}</view>
                                     </view>
                                 </view>
-                                <image bind:tap="clickFriendList" data-phone="{{item.phone}}" style="width: 140rpx;height:60rpx" src="../../images/chengzi/btn-songchengzi.png"></image>
+                                <view bind:tap="clickFriendList" data-phone="{{item.phone}}" style="width:160rpx;height:70rpx;" class="btn-box">
+                                    <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                                    <view class="btn-box-text font-26 color-ffffff">送杨桃</view>
+                                </view>
                             </view>
                         </scroll-view>
                         <view wx:else class="flex-view" style="padding: 15rpx 0;border-bottom: 1rpx solid #EBE7E7;justify-content: space-between;">
@@ -370,7 +423,10 @@
                                     <view class="font-26 color-C0C0C0">{{friendInfo.phone}}</view>
                                 </view>
                             </view>
-                            <image bind:tap="clickFriendList" data-phone="{{friendInfo.phone}}" style="width: 140rpx;height:60rpx" src="../../images/chengzi/btn-songchengzi.png"></image>
+                            <view bind:tap="clickFriendList" data-phone="{{friendInfo.phone}}" style="width:160rpx;height:70rpx;" class="btn-box">
+                                <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                                <view class="btn-box-text font-26 color-ffffff">送杨桃</view>
+                            </view>
                         </view>
                     </view>
                 </view>
@@ -506,7 +562,7 @@
                 <view style="position: absolute;top: 47rpx;right: 16rpx;">
                     <image style="width: 47rpx;height: 47rpx;" bind:tap="closeBuyDaoJu" src="../../images/chengzi/icon-close.png"></image>
                 </view>
-                <view class="dialog-window-box" style="background: url('http://cz.h5.krjie.com//images/chengzi/daojuxiangqing-bg.png') 0 0/100%;">
+                <view class="dialog-window-box" style="background: url('../../images/chengzi/daojuxiangqing-bg.png') 0 0/100% 100%;">
                     <view class="dialog-window-content" style="margin-top: 150rpx;">
                         <image style="width: 216rpx;height: 216rpx;display: block;margin:0 auto;" src="{{allPropsList[nowShowPropsIndex].img}}"></image>
                         <view class="font-36 font-bold color-302424" style="padding: 30rpx 0;text-align: center">{{allPropsList[nowShowPropsIndex].name}}</view>
@@ -600,7 +656,7 @@
                         </view>
                         <view class="flex-view" style="justify-content: space-between;padding: 10rpx 0;">
                             <text class="font-40 color-302424">获得橙子</text>
-                            <text class="font-40 color-FE963A">{{chengZiListDetails.orangeAmount}}个</text>
+                            <text class="font-40 color-FE963A">{{chengZiListDetails.amount}}个</text>
                         </view>
                     </view>
                     <view wx:if="{{chengZiListDetailsShow===2}}">

@@ -110,3 +110,12 @@
 .icon-orange-style{
   width: 34rpx;height: 34rpx;display: block;
 }
+.btn-box{
+  position: relative;
+}
+.btn-box-img{
+  position: absolute;width:100%;height:100%
+}
+.btn-box-text{
+  position: absolute;width:100%;height:90%;text-align: center;display: flex;align-items: center;justify-content: center;
+}

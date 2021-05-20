@@ -637,7 +637,7 @@ Page({
   },
   clickGoBuy(){
     this.closeTouFeiLiao();
-    this.openDaoJu();
+    this.getAllPropsList();
   },
   goToSteal(e){
     let index = e.currentTarget.dataset.i;
