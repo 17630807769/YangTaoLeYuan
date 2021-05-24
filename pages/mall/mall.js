@@ -15,14 +15,9 @@ Page({
         //   name: "1类别"
         //   version: 0,bool:false}
         ],
-    shopList:[
-      // {firstImg: "https://img.alicdn.com/imgextra/i2/1714128138/O1CN01bR8ins29zFnbfROKt_!!1714128138.jpg_430x430q90.jpg"
-      //   goodsDesc: "0商品描述描述描述"
-      //   id: 1
-      //   name: "0商品名称"
-      //   orangeValue: 1
-      //   stock: 1}
-    ],
+    shopList:[],
+    thisWeekShopList:[],
+    nextWeekShopList:[],
     pageSize:10,
     pageNum:1,
     pages:1,
@@ -92,6 +87,7 @@ Page({
   onLoad: function (options) {
     this.getType();
     this.getList();
+    this.getTeHuiList();
   },
   goToDetails: function(e) {
     wx.navigateTo({
@@ -108,6 +104,31 @@ Page({
         this.data.tabClassList = arr;
         this.setData({
           tabClassList:this.data.tabClassList
+        })
+      } else {
+        wx.showToast({
+          icon:"none",
+          title: data.message,
+          duration: 2000
+        })
+      }
+    })
+  },
+  getTeHuiList(){
+    HTTP.get('/api/v1/user/shop/get/panic/buying/goods',{},(data)=>{
+      if(data.code == 200){
+        this.data.pageNum+=1
+        let arr = data.data.thisWeek;
+        let arr1 = data.data.nextWeek;
+        for (let i = 0; i < arr.length; i++) {
+          this.data.thisWeekShopList.push(arr[i]);
+        }
+        for (let j = 0; j < arr1.length; j++) {
+          this.data.nextWeekShopList.push(arr1[j]);
+        }
+        this.setData({
+          thisWeekShopList:this.data.thisWeekShopList,
+          nextWeekShopList:this.data.nextWeekShopList,
         })
       } else {
         wx.showToast({

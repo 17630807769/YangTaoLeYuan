@@ -55,7 +55,7 @@
 .right-list view{
     width: 90rpx;
     height: 90rpx;
-    margin-bottom: 47rpx;
+    margin-bottom: 30rpx;
     position: relative;
 }
 .right-list image{

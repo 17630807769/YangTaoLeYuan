@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    phone:'',
     isMyTree:true,//true是自己的树 false是偷肥料
     treeId:'',//当前要偷好友的id
     signName:'自己',//***的橙子乐园
@@ -654,8 +655,17 @@ Page({
     this.stealFriend(this.data.treeId);
   },
   goToMyTree(){
+    let that = this;
     this.setData({
       isMyTree:true,
+    })
+    wx.getStorage({
+      key:'nickName',
+      success(res) {
+        that.setData({
+          signName:res.data
+        })
+      }
     })
   },
   /*** 道具 ***/
@@ -1281,6 +1291,22 @@ Page({
           }
         }
       })
+    })
+    wx.getStorage({
+      key:'phone',
+      success(res) {
+        that.setData({
+          phone:res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key:'nickName',
+      success(res) {
+        that.setData({
+          signName:res.data
+        })
+      }
     })
   },
 

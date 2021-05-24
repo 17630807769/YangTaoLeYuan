@@ -85,7 +85,7 @@
                 <view style="position: absolute;bottom:-20rpx;width:100%" class="muban-text font-28 font-bold color-ffffff">施肥越多获得的杨桃越多</view>
             </view>
         </view>
-        <view wx:if="{{isMyTree}}" class="right-list flex-view" style="bottom: 150rpx;">
+        <view wx:if="{{isMyTree}}" class="right-list flex-view" style="bottom: 40rpx;">
             <view class="{{shouHuoBtnClass}}" bind:tap="openShouHuo">
                 <image src="../../images/chengzi/btn-shouhuo.png" mode="widthFix"></image>
                 <text class="font-26 right-list-text1">收获</text>
@@ -105,7 +105,9 @@
                 <text class="font-26 right-list-text4">集肥料</text>
             </view>
         </view>
-<!--    下方滑出弹框-->
+        <!--杨桃商城-->
+        <image bind:tap="goToMall" style="width:300rpx;position: absolute;top: 35vh;right: -50rpx;" mode="widthFix" src="../../images/chengzi/shangcheng.png"></image>
+        <!--    下方滑出弹框-->
         <!--找肥料-->
         <view class="bottom-window-shadow" style="{{touFeiLiaoShow?'top: 0;':'top:100%;'}}">
             <view class="bottom-window" style="{{touFeiLiaoShow?'bottom: 0;':'bottom:-100vh;'}}">
@@ -469,9 +471,10 @@
                             <view class="font-30 color-302424">手机号</view>
                             <view class="flex-view" style="justify-content:space-between;width: 402rpx;height: 80rpx;background: #FFF5D4;border-radius: 40rpx;padding: 0 20rpx;box-sizing: border-box">
                                 <view class="font-32 color-302424">+86</view>
-                                <text class="font-28 color-FFAE1A">17638172927</text>
-                                <view wx:if="{{second>=60}}" bind:tap="clickSendCode" class="font-24 color-ffffff" style="width: 90rpx;height: 50rpx;line-height:50rpx;text-align:center;background:url('http://cz.h5.krjie.com//images/chengzi/icon-btnBg.png') 0 0/100% 100%;">
-                                    发送
+                                <text class="font-28 color-FFAE1A">{{phone}}</text>
+                                <view wx:if="{{second>=60}}" bind:tap="clickSendCode" style="width:90rpx;height:44rpx;margin:0 auto;" class="btn-box">
+                                    <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                                    <view class="btn-box-text font-24 color-ffffff">发送</view>
                                 </view>
                                 <view wx:else class="font-24 color-ffffff" style="width: 90rpx;height: 50rpx;line-height:50rpx;text-align:center;background:url('http://cz.h5.krjie.com//images/chengzi/icon-btnBg.png') 0 0/100% 100%;">
                                     {{second}}s
@@ -512,17 +515,21 @@
                                     interval="{{inputData1.interval}}">
                             </six-password>
                         </view>
-                        <view bind:tap="clickSetPassword" wx:if="{{setPasswordType === 1}}" class="dialog-btn" style="width: 280rpx;height: 100rpx;line-height:90rpx;">
-                            确定
+                        <view bind:tap="clickSetPassword" wx:if="{{setPasswordType === 1}}" style="width:280rpx;height:100rpx;margin:0 auto;" class="btn-box">
+                            <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                            <view class="btn-box-text font-34 color-ffffff">确定</view>
                         </view>
-                        <view bind:tap="giveFriend" wx:if="{{setPasswordType === 2}}" class="dialog-btn" style="width: 280rpx;height: 100rpx;line-height:90rpx;">
-                            确定
+                        <view bind:tap="giveFriend" wx:if="{{setPasswordType === 2}}" style="width:280rpx;height:100rpx;margin:0 auto;" class="btn-box">
+                            <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                            <view class="btn-box-text font-34 color-ffffff">确定</view>
                         </view>
-                        <view bind:tap="clickCheckCode" wx:if="{{setPasswordType === 3}}" class="dialog-btn" style="width: 280rpx;height: 100rpx;line-height:90rpx;">
-                            下一步
+                        <view bind:tap="clickCheckCode" wx:if="{{setPasswordType === 3}}" style="width:280rpx;height:100rpx;margin:0 auto;" class="btn-box">
+                            <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                            <view class="btn-box-text font-34 color-ffffff">下一步</view>
                         </view>
-                        <view bind:tap="clickSetPassword" wx:if="{{setPasswordType === 4}}" class="dialog-btn" style="width: 280rpx;height: 100rpx;line-height:90rpx;">
-                            确定
+                        <view bind:tap="clickSetPassword" wx:if="{{setPasswordType === 4}}" style="width:280rpx;height:100rpx;margin:0 auto;" class="btn-box">
+                            <image class="btn-box-img" src="../../images/chengzi/btn-bg.png"></image>
+                            <view class="btn-box-text font-34 color-ffffff">确定</view>
                         </view>
                     </view>
                     <view wx:if="{{setPasswordType === 2}}" style="height: 56rpx;margin: 30rpx 0 0 0">

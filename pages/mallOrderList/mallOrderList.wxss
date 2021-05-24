@@ -16,6 +16,6 @@ page{
     width: 434rpx;height: 160rpx;display: flex;align-content: space-between;flex-wrap: wrap
 }
 .btn-class{
-    width: 128rpx;height: 44rpx;line-height:44rpx;text-align:center;border: 1rpx solid #FF6600;border-radius: 22rpx;
+    width: 128rpx;height: 44rpx;line-height:44rpx;text-align:center;border: 1rpx solid #color-FFAA01;border-radius: 22rpx;
     margin: 0 10rpx;
 }

@@ -62,6 +62,15 @@
 .color-BC5D1E{
   color: #BC5D1E;
 }
+.color-EB451E{
+  color: #EB451E;
+}
+.color-999999{
+  color: #999999;
+}
+.color-666666{
+  color: #666666;
+}
 .color-ffffff{
   color: #ffffff;
 }
@@ -98,8 +107,17 @@
 .color-35D06A{
   color: #35D06A;
 }
+.color-FDB747{
+  color: #FDB747;
+}
 .color-FFAE1A{
   color: #FFAE1A;
+}
+.color-89673E{
+  color:#89673E
+}
+.color-FFAA01{
+  color: #FFAA01;
 }
 .color-FF6600{
   color: #FF6600;

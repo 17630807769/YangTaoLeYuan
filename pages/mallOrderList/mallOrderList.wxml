@@ -1,11 +1,11 @@
 <!--pages/mallOrderList/mallOrderList.wxml-->
-<view style="width: 100%;height: 64rpx;background-color: #35D06A">
+<view style="width: 100%;height: 64rpx;background-color: #FDB747">
 </view>
 <view style="width: 100%;box-sizing: border-box;padding: 30rpx;">
     <view bind:tap="goToOrderDetails" wx:for="{{orderList}}" data-id="{{item.id}}" wx:key="index" class="order-box">
         <view class="flex-view" style="justify-content: space-between;margin-bottom: 10rpx;">
             <text class="font-24 color-ADAAAA">订单时间：{{item.createTimeText}}</text>
-            <text class="font-24 color-FF6600">{{item.statusText}}</text>
+            <text class="font-24 color-FFAA01">{{item.statusText}}</text>
         </view>
         <view class="shop-box">
             <image class="shop-img" src="{{item.firstImg}}" mode="widthFix"></image>
@@ -25,19 +25,19 @@
             </view>
         </view>
         <view class="flex-view" style="width: 100%;justify-content: flex-end">
-            <view catch:tap="clickLook" data-id="{{item.id}}" wx:if="{{item.status===2}}" class="font-26 color-FF6600 btn-class">
+            <view catch:tap="clickLook" data-id="{{item.id}}" wx:if="{{item.status===2}}" class="font-26 color-FFAA01 btn-class">
                 查看物流
             </view>
-            <view catch:tap="clickConfirm" data-id="{{item.id}}" wx:if="{{item.status===2}}" class="font-26 color-FF6600 btn-class">
+            <view catch:tap="clickConfirm" data-id="{{item.id}}" wx:if="{{item.status===2}}" class="font-26 color-FFAA01 btn-class">
                 确认收货
             </view>
-            <view catch:tap="clickCancel" data-id="{{item.id}}" data-i="{{index}}" wx:if="{{item.status===1}}" class="font-26 color-FF6600 btn-class">
+            <view catch:tap="clickCancel" data-id="{{item.id}}" data-i="{{index}}" wx:if="{{item.status===1}}" class="font-26 color-FFAA01 btn-class">
                 取消订单
             </view>
         </view>
     </view>
 </view>
-<view class="flex-view" style="justify-content: space-around;width: 100%;height: 64rpx;background-color: #35D06A;position: fixed;top: 0;">
+<view class="flex-view" style="justify-content: space-around;width: 100%;height: 64rpx;background-color: #FDB747;position: fixed;top: 0;">
     <view bind:tap="bindTab" data-type="{{item.type}}" class="font-30 color-ffffff" style="text-align: center;" wx:for="{{tabList}}" wx:key="index">
         {{item.text}}
         <view style="width: 60rpx;height: 4rpx;margin: 0 auto;{{item.type===nowType?'background-color: #ffffff':'background-color: #ffffff00'}}"></view>

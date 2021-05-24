@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "确认订单",
-  "navigationBarBackgroundColor": "#35D06A",
+  "navigationBarBackgroundColor": "#FDB747",
   "navigationBarTextStyle": "white",
   "usingComponents": {
     "six-password": "/components/sixPassword/sixPassword"

@@ -1,6 +1,41 @@
 <!--pages/mall/mall.wxml-->
 <view class="mall-tab"></view>
-<view style="width: 100%;padding: 28rpx;box-sizing: border-box;">
+<view style="width: 100%;padding: 24rpx;box-sizing: border-box;">
+    <view class="tehui">
+        <view style="width: 48%">
+            <view class="flex-view" style=";border-bottom:4rpx solid #FFD264;">
+                <view class="font-30 color-333333" style="margin-right:10rpx;">周五特惠</view>
+                <view class="tehui-time font-24 color-ffffff">
+                    11
+                </view>
+                :
+                <view class="tehui-time font-24 color-ffffff">
+                    00
+                </view>
+            </view>
+            <view bind:tap="goToDetails" data-id="{{item.id}}" wx:for="{{thisWeekShopList}}" wx:key="index" style="width:100%;padding-top:10rpx;">
+                <image src="{{item.firstImg}}" style="width:100%;height:148rpx;background: #D9D9D9;border-radius: 14rpx;display:block"></image>
+                <view>
+                    <text class="font-22 color-EB451E">￥</text>
+                    <text class="font-28 color-EB451E">{{item.money}} </text>
+<!--                    <text class="font-20 color-999999" style="text-decoration: line-through;">￥599</text>-->
+                </view>
+            </view>
+        </view>
+        <view style="width: 48%;">
+            <view class="flex-view" style=";border-bottom:4rpx solid #ffffff;">
+                <view class="font-30 color-333333" style="margin-right:10rpx;">下周预告</view>
+            </view>
+            <view bind:tap="goToDetails" data-id="{{item.id}}" wx:for="{{thisWeekShopList}}" wx:key="index" style="width:100%;padding-top:10rpx;">
+                <image src="{{item.firstImg}}" style="width:100%;height:148rpx;background: #D9D9D9;border-radius: 14rpx;display:block"></image>
+                <view>
+                    <text class="font-22 color-EB451E">￥</text>
+                    <text class="font-28 color-EB451E">{{item.money}} </text>
+                    <!--                    <text class="font-20 color-999999" style="text-decoration: line-through;">￥599</text>-->
+                </view>
+            </view>
+        </view>
+    </view>
     <view bind:tap="goToDetails" data-id="{{item.id}}" wx:for="{{shopList}}" wx:key="index" class="shop-box">
         <image class="shop-img" src="{{item.firstImg}}" mode="widthFix"></image>
         <view class="shop-content">
@@ -25,20 +60,20 @@
 </view>
 <view class="mall-tab" style="position: fixed;top: 0;">
     <view class="mall-tab-top flex-view">
-        <view bind:tap="clickTabAll" class="{{tabAll?'bc-fff color-35D06A':'color-ffffff'}} mall-tab-top-box font-30 flex-view">
+        <view bind:tap="clickTabAll" class="{{tabAll?'bc-fff color-FDB747':'color-ffffff'}} mall-tab-top-box font-30 flex-view">
             全部
         </view>
-        <view bind:tap="clickTabPrice" class="{{tabPrice!==1?'bc-fff color-35D06A':'color-ffffff'}} mall-tab-top-box font-30 flex-view">
+        <view bind:tap="clickTabPrice" class="{{tabPrice!==1?'bc-fff color-FDB747':'color-ffffff'}} mall-tab-top-box font-30 flex-view">
             价格
             <image src="../../images/mall/paixu{{tabPrice}}.png"></image>
         </view>
-        <view bind:tap="clickTabClass" class="{{!tabAll?'bc-fff color-35D06A':'color-ffffff'}} mall-tab-top-box font-30 flex-view">
+        <view bind:tap="clickTabClass" class="{{!tabAll?'bc-fff color-FDB747':'color-ffffff'}} mall-tab-top-box font-30 flex-view">
             分类
             <image src="../../images/mall/fenlei{{!tabAll?'2':'1'}}.png"></image>
         </view>
     </view>
     <view class="mall-tab-bottom {{tabClassListShow?'mall-tab-bottom1':''}}">
-        <view bind:tap="clickTabClassList" wx:for="{{tabClassList}}" wx:key="index" data-index="{{index}}" class="font-26 fen-lei-box {{item.bool?'color-35D06A bc-35D06A':'color-333333 bc-E6E6E6'}}" style="">
+        <view bind:tap="clickTabClassList" wx:for="{{tabClassList}}" wx:key="index" data-index="{{index}}" class="font-26 fen-lei-box {{item.bool?'color-FDB747 bc-35D06A':'color-333333 bc-E6E6E6'}}" style="">
             {{item.name}}
         </view>
     </view>

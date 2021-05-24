@@ -11,7 +11,7 @@
             <view class="flex-view">
                 <view class="font-30 color-333333">{{address.name}} </view>
                 <view class="font-26 color-666666" style="margin: 0 10rpx">{{address.phone}}</view>
-                <view wx:if="{{address.isDefault}}" class="font-24 color-35D06A" style="width: 64rpx;height: 32rpx;line-height:32rpx;text-align:center;background: #37C46520;border-radius: 16rpx;">默认</view>
+                <view wx:if="{{address.isDefault}}" class="font-24 color-FDB747" style="width: 64rpx;height: 32rpx;line-height:32rpx;text-align:center;background: #FDB74720;border-radius: 16rpx;">默认</view>
             </view>
             <view class="font-26 color-333333">
                 {{address.pro}}{{address.city}}{{address.area}}{{address.detailAddress}}
@@ -49,7 +49,7 @@
         <text class="font-46 font-bold color-ff3333">{{buyCount*orangeValue}}</text>
         <image style="width: 46rpx;height: 46rpx;display: block;margin: 0 10rpx;" src="../../images/mall/icon-orange.png" mode="widthFix"></image>
     </view>
-    <view bind:tap="openPay" class="font-34 color-ffffff" style="width: 240rpx;height: 78rpx;line-height:78rpx;text-align:center;background: #35D06A;border-radius: 39rpx;">提交订单</view>
+    <view bind:tap="openPay" class="font-34 color-ffffff" style="width: 240rpx;height: 78rpx;line-height:78rpx;text-align:center;background: linear-gradient(90deg, #FCA02F 0%, #FFD264 100%);border-radius: 39rpx;">提交订单</view>
 </view>
         <!--设置密码框 setPasswordType  0关闭  1设置密码  2输入密码 3忘记密码输入验证码  4重置密码-->
 <view wx:if="{{setPasswordType}}" class="dialog-style">

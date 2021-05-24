@@ -59,6 +59,14 @@ Page({
                       key:"token",
                       data:data.data.token
                     })
+                    wx.setStorage({
+                      key:"phone",
+                      data:data.data.phone
+                    })
+                    wx.setStorage({
+                      key:"nickName",
+                      data:data.data.nickName
+                    })
                     wx.showToast({
                       icon:"success",
                       title: '微信登录成功',
