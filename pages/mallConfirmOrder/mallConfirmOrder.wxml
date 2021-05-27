@@ -28,8 +28,9 @@
                 </view>
                 <view class="flex-view" style="width: 100%;margin-bottom: 20rpx;justify-content: space-between">
                     <view class="flex-view" style="width: 200rpx">
+                        <text wx:if="{{goodsType==2}}" class="font-24 font-bold color-666666">￥</text>
                         <text class="font-26color-666666">{{orangeValue}}</text>
-                        <image style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
+                        <image wx:if="{{goodsType==1}}" style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
                     </view>
                     <text class="font-24 color-666666">x{{buyCount}}</text>
                 </view>
@@ -38,34 +39,36 @@
         <view class="flex-view" style="width:100%;justify-content: space-between;padding: 20rpx 0;border-top: 1rpx solid #F6F6F6">
             <view class="font-26 color-666666">总计</view>
             <view class="flex-view">
-                <text class="font-26color-666666">{{buyCount*orangeValue}}</text>
-                <image style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
+                <text wx:if="{{goodsType==2}}" class="font-24 font-bold color-666666">￥</text>
+                <text class="font-26 color-666666">{{buyCount*orangeValue}}</text>
+                <image wx:if="{{goodsType==1}}" style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
             </view>
         </view>
     </view>
-    <view class="flex-view" style="padding: 30rpx;padding-bottom:0;box-sizing: border-box;border-radius: 12rpx;background-color: #ffffff;margin-bottom: 18rpx;">
-        <view bind:tap="changePayWay" data-payway="1" class="flex-view" style="width:100%;justify-content: space-between;margin-bottom:18rpx">
-            <view class="flex-view">
-                <image src="http://cz.h5.krjie.com/images/mall/icon-orange.png" style="width:46rpx;height:44rpx;display: block;margin-right:10rpx"></image>
-                <text  class="font-24 color-333333">杨桃支付</text>
-            </view>
-            <image wx:if="{{payWay==1}}" src="http://cz.h5.krjie.com/images/mall/icon-gou.png" style="width:40rpx;height:40rpx;display: block;"></image>
-            <image wx:else src="http://cz.h5.krjie.com/images/mall/icon-gou1.png" style="width:40rpx;height:40rpx;display: block;"></image>
-        </view>
-        <view bind:tap="changePayWay" data-payway="2" class="flex-view" style="width:100%;justify-content: space-between;margin-bottom:18rpx">
-            <view class="flex-view">
-                <image src="http://cz.h5.krjie.com/images/mall/weixinzhifu.png" style="width:46rpx;height:44rpx;display: block;margin-right:10rpx"></image>
-                <text  class="font-24 color-333333">微信支付</text>
-            </view>
-            <image wx:if="{{payWay==2}}" src="http://cz.h5.krjie.com/images/mall/icon-gou.png" style="width:40rpx;height:40rpx;display: block;"></image>
-            <image wx:else src="http://cz.h5.krjie.com/images/mall/icon-gou1.png" style="width:40rpx;height:40rpx;display: block;"></image>
-        </view>
-    </view>
+<!--    <view class="flex-view" style="padding: 30rpx;padding-bottom:0;box-sizing: border-box;border-radius: 12rpx;background-color: #ffffff;margin-bottom: 18rpx;">-->
+<!--        <view bind:tap="changePayWay" data-payway="1" class="flex-view" style="width:100%;justify-content: space-between;margin-bottom:18rpx">-->
+<!--            <view class="flex-view">-->
+<!--                <image src="http://cz.h5.krjie.com/images/mall/icon-orange.png" style="width:46rpx;height:44rpx;display: block;margin-right:10rpx"></image>-->
+<!--                <text  class="font-24 color-333333">杨桃支付</text>-->
+<!--            </view>-->
+<!--            <image wx:if="{{payWay==1}}" src="http://cz.h5.krjie.com/images/mall/icon-gou.png" style="width:40rpx;height:40rpx;display: block;"></image>-->
+<!--            <image wx:else src="http://cz.h5.krjie.com/images/mall/icon-gou1.png" style="width:40rpx;height:40rpx;display: block;"></image>-->
+<!--        </view>-->
+<!--        <view bind:tap="changePayWay" data-payway="2" class="flex-view" style="width:100%;justify-content: space-between;margin-bottom:18rpx">-->
+<!--            <view class="flex-view">-->
+<!--                <image src="http://cz.h5.krjie.com/images/mall/weixinzhifu.png" style="width:46rpx;height:44rpx;display: block;margin-right:10rpx"></image>-->
+<!--                <text  class="font-24 color-333333">微信支付</text>-->
+<!--            </view>-->
+<!--            <image wx:if="{{payWay==2}}" src="http://cz.h5.krjie.com/images/mall/icon-gou.png" style="width:40rpx;height:40rpx;display: block;"></image>-->
+<!--            <image wx:else src="http://cz.h5.krjie.com/images/mall/icon-gou1.png" style="width:40rpx;height:40rpx;display: block;"></image>-->
+<!--        </view>-->
+<!--    </view>-->
 </view>
 <view class="flex-view" style="justify-content: flex-end;background-color: #ffffff;position: fixed;bottom: 0;width: 100%;padding: 0 30rpx;box-sizing: border-box;height: 97rpx;">
     <view class="flex-view">
+        <text wx:if="{{goodsType==2}}" class="font-24 font-bold color-ff3333">￥</text>
         <text class="font-46 font-bold color-ff3333">{{buyCount*orangeValue}}</text>
-        <image style="width: 46rpx;height: 46rpx;display: block;margin: 0 10rpx;" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
+        <image wx:if="{{goodsType==1}}" style="width: 46rpx;height: 46rpx;display: block;margin: 0 10rpx;" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
     </view>
     <view bind:tap="openPay" class="font-34 color-ffffff" style="width: 240rpx;height: 78rpx;line-height:78rpx;text-align:center;background: linear-gradient(90deg, #FCA02F 0%, #FFD264 100%);border-radius: 39rpx;">提交订单</view>
 </view>

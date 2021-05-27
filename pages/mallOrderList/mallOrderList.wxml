@@ -12,14 +12,16 @@
             <view class="shop-content">
                 <view class="font-30 color-333333" style="line-height: 32rpx;width: 100%">{{item.name}}</view>
                 <view class="flex-view" style="width: 100%">
+                    <text wx:if="{{item.goodsType==2}}" class="font-24 color-FE963A">￥</text>
                     <text class="font-30 color-FE963A" style="display:block;margin-right: 12rpx;">{{item.goodsOneMoney}}</text>
-                    <image class="icon-orange-style" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
+                    <image wx:if="{{item.goodsType==1}}" class="icon-orange-style" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
                 </view>
                 <view class="flex-view" style="width: 100%;justify-content: flex-end">
                     <text class="font-24 color-B3B3B3">共{{item.goodsAmount}}件商品</text>
                     <view class="flex-view" style="margin-left: 30rpx;">
-                        <text class="font-30 color-FE963A" style="display:block;margin-right: 12rpx;">合计：{{item.orangeMoney}}</text>
-                        <image class="icon-orange-style" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
+                        <text wx:if="{{item.goodsType==2}}" class="font-24 color-FE963A">￥</text>
+                        <text class="font-30 color-FE963A" style="display:block;margin-right: 12rpx;">合计：{{item.totalMoney}}</text>
+                        <image wx:if="{{item.goodsType==1}}" class="icon-orange-style" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
                     </view>
                 </view>
             </view>

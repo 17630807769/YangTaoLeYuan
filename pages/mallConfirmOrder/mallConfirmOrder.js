@@ -42,6 +42,7 @@ Page({
     firstImg: "",//首图
     name: "",//商品名称
     orangeValue: 0,//价格
+    goodsType:1,//1 普通 2抢购
     buyCount:1,//购买数量
     address:{
       id:null,
@@ -310,6 +311,7 @@ Page({
         firstImg: res.firstImg,//首图
         name: res.name,//商品名称
         orangeValue: res.orangeValue,//价格
+        goodsType: res.goodsType,
         buyCount:res.buyCount,//购买数量
       })
     }
@@ -371,7 +373,7 @@ Page({
       payPassword:this.data.inputValue,
       orderKey:this.data.orderKey
     }
-    if (this.data.payWay == 2){
+    if (this.data.goodsType == 2){
       params.wxType = 1
     }
     //如果选择了微信支付 还要加一个参数 wxType:1;
@@ -383,7 +385,6 @@ Page({
         this.data.time2 = setInterval(()=>{
           this.getOrderStatus();
         },1000)
-        console.log(this.data.time2)
       } else {
         wx.showToast({
           icon:"none",
@@ -398,15 +399,27 @@ Page({
       if(data.code == 422){
       } else {
         clearInterval(this.data.time2)
-        wx.showToast({
-          icon:"none",
-          title: data.data,
-          duration: 2000
-        })
-        setTimeout(()=>{
-          wx.hideLoading();
-          wx.navigateBack();
-        },1000)
+        if (this.data.goodsType == 1){
+          wx.showToast({
+            icon:"none",
+            title: data.message,
+            duration: 2000
+          })
+          setTimeout(()=>{
+            wx.hideLoading();
+            wx.navigateBack();
+          },1000)
+        } else {
+          wx.showToast({
+            icon:"none",
+            title: "拉起微信支付",
+            duration: 2000
+          })
+          setTimeout(()=>{
+            wx.hideLoading();
+            wx.navigateBack();
+          },1000)
+        }
       }
     })
   },

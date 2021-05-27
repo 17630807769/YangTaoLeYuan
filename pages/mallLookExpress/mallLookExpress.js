@@ -23,6 +23,7 @@ Page({
     status: -1,
     statusText:'',
     createTimeText:'',
+    goodType:1,
     traces:[
     // {
     //   "AcceptTime": "2014/06/25 04:01:28",
@@ -75,6 +76,7 @@ Page({
           name:  data.data.name,
           orangeMoney:  data.data.orangeMoney,
           orderNumber:  data.data.orderNumber,
+          goodType:data.data.goodType,
           status: data.data.status,
           trackingNumber: data.data.trackingNumber,
           statusText:statusText,

@@ -1,5 +1,5 @@
 <!--pages/mallLookExpress/mallLookExpress.wxml-->
-<view class="font-34 font-bold color-ffffff" style="padding: 28rpx;background-color: #35D06A;box-sizing: border-box;height: 100rpx;">
+<view class="font-34 font-bold color-ffffff" style="padding: 28rpx;background-color: #FDB747;box-sizing: border-box;height: 100rpx;">
 </view>
 <view style="padding: 28rpx;transform: translateY(-100rpx)">
     <view class="flex-view" style="padding: 30rpx;padding-bottom:0;box-sizing: border-box;border-radius: 12rpx;background-color: #ffffff;margin-bottom: 18rpx;">
@@ -11,8 +11,9 @@
                 </view>
                 <view class="flex-view" style="width: 100%;margin-bottom: 20rpx;justify-content: space-between">
                     <view class="flex-view" style="width: 200rpx">
-                        <text class="font-26color-666666">{{goodsOneMoney}}</text>
-                        <image style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
+                        <text wx:if="{{goodType==2}}" class="font-26 color-666666">￥</text>
+                        <text class="font-26 color-666666">{{goodsOneMoney}}</text>
+                        <image wx:if="{{goodType==1}}" style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
                     </view>
                     <text class="font-24 color-666666">x{{goodsAmount}}</text>
                 </view>

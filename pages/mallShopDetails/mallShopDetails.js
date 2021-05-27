@@ -17,6 +17,7 @@ Page({
     sellAmount: 0,//已兑换
     stock: 0,//库存
     buyCount:1,//购买数量
+    goodsType:1,//1 普通 2抢购
     chooseAmountShow:false,
   },
   openDialog(){
@@ -91,6 +92,7 @@ Page({
           orangeValue: data.data.money,//价格
           sellAmount: data.data.sellAmount,//已兑换
           stock: data.data.stock,//库存
+          goodsType:data.data.goodsType
         })
       } else {
         wx.showToast({
@@ -117,6 +119,7 @@ Page({
       name: this.data.name,//商品名称
       orangeValue: this.data.orangeValue,//价格
       buyCount:this.data.buyCount,//购买数量
+      goodsType:this.data.goodsType
     }
     value = JSON.stringify(value);
     wx.navigateTo({
