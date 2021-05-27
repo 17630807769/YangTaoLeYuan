@@ -11,7 +11,7 @@ Page({
     phone:'',
     isMyTree:true,//true是自己的树 false是偷肥料
     treeId:'',//当前要偷好友的id
-    signName:'自己',//***的橙子乐园
+    signName:'自己',//***的杨桃乐园
     //进度条宽度
     progressWidth:0,
     //控制 领取肥料时 没有可领取的肥料 弹框
@@ -35,9 +35,9 @@ Page({
     shouhuoShow:false,
     songChengZiShow:false,
     tipsPasswordShow:false,
-    //送橙子 好友账号
+    //送杨桃 好友账号
     friendPhone:null,
-    //送橙子 数量
+    //送杨桃 数量
     friendNumber:null,
     friendList:[
     ],
@@ -83,11 +83,11 @@ Page({
     //控制树的动画class名
     shuClassName:'shu-hu-xi',
     //首页数据
-    todayNumber:0,//今日橙子数量
+    todayNumber:0,//今日杨桃数量
     lastFertilizeAmount:0,//最少施肥数
     muckAmount:0,//到下一个等级需要的肥料数量
     notChargeMuckAmount:0,//未收取肥料数量
-    notChargeOrangeAmount:0,//未收取橙子数
+    notChargeOrangeAmount:0,//未收取杨桃数
     notFertilizeAmount:0,//未施肥数量
     todayFertilizeAmount:0,//当日施肥数量
     treeRank:1,//树的下一个等级
@@ -96,7 +96,7 @@ Page({
     shouHuoBtnClass:'',//收获按钮的class名
     shiFeiGifShow:false,//控制施肥动图展示
     //收获数据
-    nowOrange:0,//当前剩余橙子
+    nowOrange:0,//当前剩余杨桃
     incomeOrange:0,//累计收入
     expendOrange:0,//累计支出
     pickerStart:'2020-01-01',
@@ -105,16 +105,16 @@ Page({
     timeStart:null,//时间筛选开始时间
     timeEnd:null,//时间筛选结束时间
     chengZiList:[],
-    chengZiListDetailsShow:0,//0 关闭 1获得橙子，2收到好友赠送，3送给好友橙子，4商城兑换 5商城取消订单
+    chengZiListDetailsShow:0,//0 关闭 1获得杨桃，2收到好友赠送，3送给好友杨桃，4商城兑换 5商城取消订单
     chengZiListDetails:{
       //nickName 好友昵称
-      // orangeAmount橙子数量
+      // orangeAmount杨桃数量
       // createTimeText创建时间
       //fertilizeAmount当天总施肥量
-      // orangeAmount总橙子数量
+      // orangeAmount总杨桃数量
       // userFertilizeAmount用户总施肥量
       // userFertilizeRatio用户占比
-      // userOrangeAmount用户获得的橙子数量
+      // userOrangeAmount用户获得的杨桃数量
     },
     pageSize:10,
     pageNum:1,
@@ -133,10 +133,36 @@ Page({
     //集肥料
     watchAmount:0,
     maxAmount:0,
+    // 看视频领取的肥料数
+    seeOneVideoAmount:0,
+    // 微信今日分享朋友圈次数
+    shareFriendCircle:0,
+    // 微信今日分享朋友圈最大次数
+    shareFriendCircleMax:0,
+    // 分享到朋友圈今日可领取的肥料
+    shareFriendCircleMuck:0,
+    // 微信今日分享朋友次数
+    shareFriend:0,
+    // 微信今日分享朋友最大次数
+    shareFriendMax:0,
+    // 微信今日分享朋友可领取肥料
+    shareFriendMuck:0,
+    // 微信邀请有效好友注册次数
+    inviteRegister:0,
+    // 微信邀请有效好友注册最大次数
+    inviteRegisterMax:0,
+    // 微信邀请有效好友注册可领取肥料
+    inviteRegisterMuck:0,
+    // 购买道具获得的肥料数量
+    buyPropsMuckAmount:0,
+    // 抢购商品获得的肥料数量
+    buyGoodsMuckAmount:0,
+    
     downImgShow:false,
     downImgUrl:'',
     exchangeShow:false,
     exchangeCode:'',//兑换码
+
   },
   //点击树的动画
   clickShu(){
@@ -194,7 +220,7 @@ Page({
       })
     },2000)
   },
-  /***点击摘取橙子气泡***/
+  /***点击摘取杨桃气泡***/
   clickZaiQu(){
     this.lingChengZi(2);
   },
@@ -209,7 +235,7 @@ Page({
   /***点击施肥***/
   clickShiFeiBtn(){
     // if (this.data.notChargeOrangeAmount>0){
-    //   //橙子没有收 ,不可以施肥
+    //   //杨桃没有收 ,不可以施肥
     //   return
     // }
     if (this.data.shiFeiGifShow){
@@ -302,7 +328,7 @@ Page({
     let index = e.currentTarget.dataset.i;
     let obj = this.data.chengZiList[index];
     if(obj.useType===1){
-      //获得橙子 类型 发送请求
+      //获得杨桃 类型 发送请求
       let time = obj.createTime.substring(0,8);
       this.data.chengZiListDetails = obj;
       this.getChengZiListDetails(time);
@@ -375,7 +401,7 @@ Page({
     })
     this.getChengZiList();
   },
-  //打开送橙子
+  //打开送杨桃
   openSongChengZi(){
     //1.是否已经设置密码
     HTTP.get('/api/v1/user/user/info/is/have/password',{},(data)=>{
@@ -396,7 +422,7 @@ Page({
         } else {
           this.openTipsPassword();
           wx.showToast({
-            title: '请先设置橙子密码',
+            title: '请先设置杨桃密码',
             icon: 'none'
           })
         }
@@ -414,11 +440,11 @@ Page({
       songChengZiShow: false,
     })
   },
-  //送橙子弹框 点击下一步
+  //送杨桃弹框 点击下一步
   clickNext(){
     if (this.data.friendPhone === null){
       wx.showToast({
-        title: '请输入好友橙子账号',
+        title: '请输入好友杨桃账号',
         icon: 'none',
         duration: 2000
       })
@@ -426,7 +452,7 @@ Page({
     }
     if (this.data.friendNumber === null){
       wx.showToast({
-        title: '请输入橙子数量',
+        title: '请输入杨桃数量',
         icon: 'none',
         duration: 2000
       })
@@ -434,7 +460,7 @@ Page({
     }
     if (this.data.friendNumber > this.data.nowOrange){
       wx.showToast({
-        title: '当前橙子余额不足',
+        title: '当前杨桃余额不足',
         icon: 'none',
         duration: 2000
       })
@@ -442,7 +468,7 @@ Page({
     }
     this.openSetPassword2();
   },
-  //送橙子点击好友列表
+  //送杨桃点击好友列表
   clickFriendList(e){
     this.setData({
       friendPhone:e.currentTarget.dataset.phone
@@ -638,6 +664,9 @@ Page({
   },
   clickGoBuy(){
     this.closeTouFeiLiao();
+    this.setData({
+      jiFeiLiaoShow:false
+    })
     this.getAllPropsList();
   },
   goToSteal(e){
@@ -739,7 +768,8 @@ Page({
     let params = {
       type:1,
       buyAmount:this.data.buyCount,
-      buyGoodsId:this.data.allPropsList[this.data.nowShowPropsIndex].id
+      buyGoodsId:this.data.allPropsList[this.data.nowShowPropsIndex].id,
+      wxType:1
     }
     HTTP.post('/api/v1/user/pay/minipay',params,(data)=>{
       if(data.code == 200){
@@ -903,7 +933,7 @@ Page({
   onShow(){
 
   },
-  getChengzi(){//http获取橙子数量 没登陆就进入首页；
+  getChengzi(){//http获取杨桃数量 没登陆就进入首页；
     HTTP.get('/api/v1/user/user/info/outer/get/today/amount',{},(data)=>{
       if(data.code == 200){
         this.setData({
@@ -920,19 +950,19 @@ Page({
   },
 /***请求发送与处理***/
   /**发送请求**/
-  //获取今日橙子数
+  //获取今日杨桃数
   getChengZiNumber() {
     HTTP.sendMessage('100001')
   },
-  //获取用户主页肥料记录 进度条,剩余肥料等, 树的页面除了当前橙子数,全在这里
+  //获取用户主页肥料记录 进度条,剩余肥料等, 树的页面除了当前杨桃数,全在这里
   getChengZiInfo() {
     HTTP.sendMessage('100002')
   },
-  //获取用户当前剩余 橙子数 + 累计支出橙子 + 累计计入橙子
+  //获取用户当前剩余 杨桃数 + 累计支出杨桃 + 累计计入杨桃
   getUserCount() {
     HTTP.sendMessage('100003')
   },
-  //获取橙子流水
+  //获取杨桃流水
   getChengZiList() {
     if (this.data.pageNum>this.data.pages){
       wx.showToast({
@@ -994,20 +1024,20 @@ Page({
     let param = {pageNum:this.data.pageNum,pageSize:this.data.pageSize};
     HTTP.sendMessage('100010',param)
   },
-  //用户领取橙子或者肥料或者施肥type 类型 1是领取肥料 2是领取橙子 3是施肥
+  //用户领取杨桃或者肥料或者施肥type 类型 1是领取肥料 2是领取杨桃 3是施肥
   lingChengZi(type){
     let param = {type:type};
     HTTP.sendMessage('100011',param)
   },
-  //用户获取橙子的流水明细
+  //用户获取杨桃的流水明细
   getChengZiListDetails(time){
     let param = {time:time};
     HTTP.sendMessage('100012',param)
   },
   //用户获取肥料流水记录
   //获取用户施肥流水记录
-  //获取昨日施肥数,昨日橙子数,历史总施肥,历史总分配
-  //赠送好友橙子16
+  //获取昨日施肥数,昨日杨桃数,历史总施肥,历史总分配
+  //赠送好友杨桃16
   giveFriend(){
     if (this.data.inputValue===null||this.data.inputValue.length !== 6){
       wx.showToast({
@@ -1029,11 +1059,11 @@ Page({
   getDownImgUrl(){
     HTTP.sendMessage('100018',{type:2});
   },
-  //获取送橙子 好友列表19
+  //获取送杨桃 好友列表19
   getFriendList() {
     HTTP.sendMessage('100019')
   },
-  //送橙子时 查询当前手机号是否存在20
+  //送杨桃时 查询当前手机号是否存在20
   findPhone() {
     let param={phone:this.data.friendPhone}
     HTTP.sendMessage('100020',param);
@@ -1042,6 +1072,16 @@ Page({
   getExchange() {
     let param={password:this.data.exchangeCode}
     HTTP.sendMessage('100021',param);
+  },
+  //分享好友成功
+  shareFinish(type){//1分享朋友圈 2分享好友
+    let param={type:type}
+    HTTP.sendMessage('100058',param);
+  },
+  //领取集肥料地方的肥料
+  lingQuFeiLiao(e){//1领取抢购商品肥料，2领取购买保护道具肥料 3领取分享朋友圈肥料 4领取分享好友肥料 5领取邀请有效好友注册肥料
+    let param={type:e.currentTarget.dataset.type}
+    HTTP.sendMessage('100059',param);
   },
   /**返回处理**/
   getChengZiNumberBack(data) {//100001
@@ -1065,7 +1105,7 @@ Page({
   },
   getUserCountBack(data){//100003
     this.setData({
-      nowOrange:data.orangeAmount,//当前剩余橙子
+      nowOrange:data.orangeAmount,//当前剩余杨桃
       incomeOrange:data.income,//累计收入
       expendOrange:data.expend,//累计支出
     })
@@ -1075,13 +1115,13 @@ Page({
     for (let i = 0; i < arr.length; i++) {
       switch (arr[i].useType) {
         case 1:
-          arr[i].orangeTypeText = '获得橙子'
+          arr[i].orangeTypeText = '获得杨桃'
           break;
         case 2:
           arr[i].orangeTypeText = '收到好友赠送'
           break;
         case 3:
-          arr[i].orangeTypeText = '送给好友橙子'
+          arr[i].orangeTypeText = '送给好友杨桃'
           break;
         case 8:
           arr[i].orangeTypeText = '兑换送到家订单'
@@ -1119,7 +1159,19 @@ Page({
   getVideoAmountBack(data){
     this.setData({
       maxAmount:data.maxAmount,
-      watchAmount:data.watchAmount
+      watchAmount:data.watchAmount,
+      seeOneVideoAmount:data.seeOneVideoAmount,
+      shareFriendCircle:data.shareFriendCircle,
+      shareFriendCircleMax:data.shareFriendCircleMax,
+      shareFriendCircleMuck:data.shareFriendCircleMuck,
+      shareFriend:data.shareFriend,
+      shareFriendMax:data.shareFriendMax,
+      shareFriendMuck:data.shareFriendMuck,
+      inviteRegister:data.inviteRegister,
+      inviteRegisterMax:data.inviteRegisterMax,
+      inviteRegisterMuck:data.inviteRegisterMuck,
+      buyPropsMuckAmount:data.buyPropsMuckAmount,
+      buyGoodsMuckAmount:data.buyGoodsMuckAmount,
     })
   },
   getAllPropsListBack(data){//100008
@@ -1159,8 +1211,8 @@ Page({
       msg = '肥料领取成功';
       this.playShouFeiLiao();
     }
-    if (data.chooseType===2){//领取橙子成功
-      msg = '橙子领取成功';
+    if (data.chooseType===2){//领取杨桃成功
+      msg = '杨桃领取成功';
       this.playShouHuo();
     }
     if (data.chooseType===3){//施肥成功
@@ -1182,10 +1234,10 @@ Page({
   },
   getChengZiListDetailsBack(data){
     this.data.chengZiListDetails.fertilizeAmount = data.fertilizeAmount;//当天总施肥量
-    this.data.chengZiListDetails.orangeAmount1 = data.orangeAmount;//总橙子数量
+    this.data.chengZiListDetails.orangeAmount1 = data.orangeAmount;//总杨桃数量
     this.data.chengZiListDetails.userFertilizeAmount = data.userFertilizeAmount;//用户总施肥量
     this.data.chengZiListDetails.userFertilizeRatio = data.userFertilizeRatio;//用户占比
-    this.data.chengZiListDetails.userOrangeAmount = data.userOrangeAmount;//用户获得的橙子数量
+    this.data.chengZiListDetails.userOrangeAmount = data.userOrangeAmount;//用户获得的杨桃数量
     this.setData({
       chengZiListDetailsShow:1,
       chengZiListDetails:this.data.chengZiListDetails
@@ -1231,6 +1283,14 @@ Page({
     })
     wx.showToast({//100021
       title:'兑换成功',
+      icon: 'none',
+      duration: 2000
+    })
+  },
+  getLingQuFeiLiao(data){
+    this.getVideoAmount();
+    wx.showToast({//100059
+      title:'领取成功',
       icon: 'none',
       duration: 2000
     })
@@ -1288,6 +1348,8 @@ Page({
             that.findPhoneBack(result.data);
           }if (result.info === '100021'){
             that.getExchangeBack(result.data);
+          }if (result.info === '100059'){
+            that.getLingQuFeiLiao(result.data);
           }
         }
       })
@@ -1338,11 +1400,38 @@ Page({
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  /* 转发*/
+  onShareAppMessage: function (ops) {
+    console.log(ops)
+    if (ops.from === 'button') {
+      // 来自页面内转发按钮
+      // console.log(ops.target)
+    }
+    this.shareFinish(2)
+    return {
+      title: '杨桃乐园，福利多多',
+      path: '/pages/index/index?uid='+ 1 ,
+      imageUrl:'http://cz.h5.krjie.com/images/index/big-bg.png',
+      success: function (res) {
+        // 转发成功
+        console.log("转发成功:" + JSON.stringify(res));
+        var shareTickets = res.shareTickets;
+        // if (shareTickets.length == 0) {
+        //   return false;
+        // }
+        // //可以获取群组信息
+        // wx.getShareInfo({
+        //   shareTicket: shareTickets[0],
+        //   success: function (res) {
+        //     console.log(res)
+        //   }
+        // })
+      },
+      fail: function (res) {
+        // 转发失败
+        console.log("转发失败:" + JSON.stringify(res));
+      }
+    }
   },
 
 

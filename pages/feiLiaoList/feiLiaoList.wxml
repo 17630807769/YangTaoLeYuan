@@ -6,8 +6,8 @@
             <view class="font-26 color-C0C0C0">{{item.createTimeText}}</view>
         </view>
         <view>
-            <view wx:if="{{item.muckAmount>=0}}" class="font-40 font-bold color-FE963A">{{item.muckAmount}}g</view>
-            <view wx:else class="font-40 font-bold color-ADAAAA">{{item.muckAmount}}g</view>
+            <view wx:if="{{item.muckAmount>=0}}" class="font-40 font-bold color-FE963A" style="text-align: right">{{item.muckAmount}}g</view>
+            <view wx:else class="font-40 font-bold color-ADAAAA" style="text-align: right">{{item.muckAmount}}g</view>
             <view class="font-24 color-C0C0C0" style="text-align: right">剩余{{item.lastAmount}}g</view>
         </view>
     </view>

@@ -77,6 +77,9 @@
 .color-FE963A{
   color: #FE963A;
 }
+.color-FCA02F{
+  color: #FCA02F;
+}
 .color-FE1943{
   color: #FE1943;
 }
@@ -132,7 +135,8 @@
   position: relative;
 }
 .btn-box-img{
-  position: absolute;width:100%;height:100%
+  position: absolute;width:100%;height:100%;
+  left: 0;
 }
 .btn-box-text{
   position: absolute;width:100%;height:90%;text-align: center;display: flex;align-items: center;justify-content: center;

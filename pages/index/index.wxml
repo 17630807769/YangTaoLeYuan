@@ -1,12 +1,12 @@
 <!--index.wxml-->
 <view class="container">
-  <image src="../../images/index/big-bg.png" class="bg-img" mode="widthFix"></image>
-<!--  <image src="../../images/index/guang.png" class="guang-img" mode="widthFix"></image>-->
-  <image src="../../images/index/chi-zi.png" class="chi-zi-img" mode="widthFix"></image>
-<!--  <image src="../../images/index/bottom.png" class="bottom-img" mode="widthFix"></image>-->
+  <image src="http://cz.h5.krjie.com/images/index/big-bg.png" class="bg-img" mode="widthFix"></image>
+<!--  <image src="http://cz.h5.krjie.com/images/index/guang.png" class="guang-img" mode="widthFix"></image>-->
+  <image src="http://cz.h5.krjie.com/images/index/chi-zi.png" class="chi-zi-img" mode="widthFix"></image>
+<!--  <image src="http://cz.h5.krjie.com/images/index/bottom.png" class="bottom-img" mode="widthFix"></image>-->
   <view class="progres-box" style="">
     <view class="progres-box1" style="width: {{progressWidth}}%">
-      <image class="progres-box1-img" src="../../images/index/jindu.png" mode="widthFix"></image>
+      <image class="progres-box1-img" src="http://cz.h5.krjie.com/images/index/jindu.png" mode="widthFix"></image>
     </view>
   </view>
 </view>

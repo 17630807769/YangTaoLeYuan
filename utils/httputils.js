@@ -55,9 +55,10 @@ function delete1(url, params, onSuccess, onFailed) {
  */
 
 function request(url, params, method, onSuccess, onFailed) {
-    if(header.Authorization === 'Bearer '||header.Authorization === 'Bearer undefined'){
-        header['Authorization'] = "Bearer " + wx.getStorageSync("token");
-    }
+    // if(header.Authorization === 'Bearer '||header.Authorization === 'Bearer undefined'){
+    //     header['Authorization'] = "Bearer " + wx.getStorageSync("token");
+    // }
+    header['Authorization'] = "Bearer " + wx.getStorageSync("token");
     // header['userId'] = 1;
     // console.log('请求url：'+ BASE_URL + url);
     wx.showLoading({

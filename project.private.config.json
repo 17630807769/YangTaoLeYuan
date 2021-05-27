@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -14,6 +15,12 @@
         {
           "name": "pages/mall/mall",
           "pathName": "pages/mall/mall",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mallConfirmOrder/mallConfirmOrder",
+          "pathName": "pages/mallConfirmOrder/mallConfirmOrder",
           "scene": null
         }
       ]

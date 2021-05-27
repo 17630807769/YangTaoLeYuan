@@ -12,9 +12,9 @@ Page({
     pageNum:1,
     pages:1,
     historyFertilize:0,//历史总施肥
-    historyOrange:0,//历史总橙子
+    historyOrange:0,//历史总杨桃
     yesterdayFertilize:0,//昨天施肥
-    yesterdayOrange:0,//昨天橙子数
+    yesterdayOrange:0,//昨天杨桃数
   },
 
   /**
@@ -23,7 +23,7 @@ Page({
   onLoad: function (options) {
     //获取施肥流水
     this.gitList();
-    //获取昨日施肥数，昨日橙子数，历史总施肥，历史总分配
+    //获取昨日施肥数，昨日杨桃数，历史总施肥，历史总分配
     this.getHistory();
     let that = this;
     wx.onSocketMessage(function (res) {//收到消息
@@ -85,9 +85,9 @@ Page({
   getHistoryBack(data){
     this.setData({
       historyFertilize:data.historyFertilize,//历史总施肥
-      historyOrange:data.historyOrange,//历史总橙子
+      historyOrange:data.historyOrange,//历史总杨桃
       yesterdayFertilize:data.yesterdayFertilize,//昨天施肥
-      yesterdayOrange:data.yesterdayOrange,//昨天橙子数
+      yesterdayOrange:data.yesterdayOrange,//昨天杨桃数
     })
   },
   /**

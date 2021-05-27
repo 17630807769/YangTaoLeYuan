@@ -13,7 +13,7 @@
         <button type="primary" open-type="getPhoneNumber" bindgetphonenumber="getLogin" style="width: 470rpx;border: 0">一键关联手机号</button>
     </view>
 </view>
-<button wx:else type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo" style="width: 470rpx;border: 0;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)">
+<button wx:else type="primary" bind:tap="getUserInfo" style="width: 470rpx;border: 0;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)">
     微信登录
 </button>
 

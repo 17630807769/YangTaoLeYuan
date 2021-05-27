@@ -7,7 +7,7 @@
         <view style="width: 1rpx;height: 80rpx;background: #EBE7E7;"></view>
         <view style="width: 49%;text-align: center">
             <view class="font-46 font-bold color-302424">{{yesterdayOrange}}<text class="font-24 color-302424">个</text></view>
-            <view class="font-24 color-898888">昨日总分配橙子</view>
+            <view class="font-24 color-898888">昨日总分配杨桃</view>
         </view>
     </view>
     <view class="flex-view" style="width: 100%;padding: 35rpx 0;margin-bottom:20rpx;background: #FFFFFF;box-shadow: 0rpx 10rpx 22rpx 0rpx rgba(174, 182, 177, 0.18);border-radius: 30rpx;">

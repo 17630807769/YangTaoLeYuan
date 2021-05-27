@@ -55,7 +55,9 @@ Page({
     },
     orderKey:null,
     time2:null,
+    payWay:1,// 1 杨桃支付  2微信支付
   },
+
   // 当组件输入数字6位数时的自定义函数
   valueSix(e) {
     console.log(e.detail);
@@ -92,6 +94,11 @@ Page({
           duration: 2000
         })
       }
+    })
+  },
+  changePayWay(e){
+    this.setData({
+      payWay:e.currentTarget.dataset.payway
     })
   },
 //控制设置密码框的展示类型  0关闭  1设置密码  2输入密码 3忘记密码输入验证码  4重置密码
@@ -279,7 +286,7 @@ Page({
         } else {
           this.openTipsPassword();
           wx.showToast({
-            title: '请先设置橙子密码',
+            title: '请先设置杨桃密码',
             icon: 'none'
           })
         }
@@ -364,6 +371,9 @@ Page({
       payPassword:this.data.inputValue,
       orderKey:this.data.orderKey
     }
+    if (this.data.payWay == 2){
+      params.wxType = 1
+    }
     //如果选择了微信支付 还要加一个参数 wxType:1;
     HTTP.post('/api/v1/user/pay/minipay',params,(data)=>{
       if(data.code == 200){
@@ -388,13 +398,15 @@ Page({
       if(data.code == 422){
       } else {
         clearInterval(this.data.time2)
-        wx.hideLoading();
         wx.showToast({
           icon:"none",
-          title: data.message,
+          title: data.data,
           duration: 2000
         })
-        wx.navigateBack();
+        setTimeout(()=>{
+          wx.hideLoading();
+          wx.navigateBack();
+        },1000)
       }
     })
   },

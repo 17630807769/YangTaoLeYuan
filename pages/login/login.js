@@ -15,17 +15,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(app.globalData.userInfo)
     if (app.globalData.userInfo){
-      this.setData({
-        userInfo:app.globalData.userInfo,
-        hasInfo:true,
-      })
+      if(app.globalData.userInfo.nickName != '微信用户'){
+        this.setData({
+          userInfo:app.globalData.userInfo,
+          hasInfo:true,
+        })
+      }
     }
+
   },
-  getUserInfo(e){
-    app.globalData.userInfo = e.detail.userInfo;
-    this.setData({
-      userInfo:e.detail.userInfo,
+  getUserInfo(){
+    wx.getUserProfile({
+      desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+        console.log(res)
+      }
     })
   },
   getLogin: function(e) {

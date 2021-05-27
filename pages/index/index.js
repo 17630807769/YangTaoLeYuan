@@ -33,7 +33,11 @@ Page({
       this.goToYouzi();
     },2200)
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    if(options.uid){
+      getApp().globalData.yaoQingpeople = options.uid;
+    }
+    console.log(options.uid,getApp().globalData.yaoQingpeople)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

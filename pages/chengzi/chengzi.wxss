@@ -37,7 +37,7 @@
     height: 30rpx;border-radius: 15rpx;
     transition: all 1s;
 }
-/*橙子池子*/
+/*杨桃池子*/
 .leyuan-title{
     -webkit-text-stroke: 2rpx #c7cff9;
     text-stroke: 2rpx #c7cff9;
@@ -245,6 +245,7 @@
     color: #FFFFFF;
     text-shadow: 0px 3px 2px rgba(157, 96, 0, 0.4);
     margin: 0 auto;
+
 }
 
 /*云层动*/
@@ -416,9 +417,9 @@
 }
 .can-zhai-qu{
     background: url('http://cz.h5.krjie.com//images/chengzi/kezhaichengziqipao.png') 0 0/100%;
-    width: 242rpx;height: 124rpx;position: absolute;left: 175rpx;top: -500rpx;
+    width: 242rpx;position: absolute;left: 175rpx;top: -500rpx;
     text-align: center;
-    padding: 25rpx 0;
+    padding: 9rpx 0;
     box-sizing: border-box;
     animation: can-zhai-qu-dong 1000ms linear infinite;
 }
@@ -446,7 +447,7 @@
         transform: scale3d(1, 1, 1);
     }
 }
-/*** 收获橙子 移动***/
+/*** 收获杨桃 移动***/
 .shou-cheng-zi{
     animation: shou-cheng-zi-dong 200ms linear infinite;
 }
@@ -454,7 +455,7 @@
     0% {bottom: 280rpx;left: 300rpx;}
     10% {bottom: 500rpx;left: 100rpx;opacity: 1}
     50% {opacity: 1}
-    100% {bottom: 70vh;left: 580rpx;opacity: 0}
+    100% {bottom: 15vh;left: 580rpx;opacity: 0}
 }
 .shou-cheng-zi1{
     animation: shou-cheng-zi-dong1 1000ms linear infinite;
@@ -463,7 +464,7 @@
     0% {bottom: 280rpx;left: 300rpx;}
     10% {bottom: 500rpx;left: 200rpx;opacity: 1}
     50% {opacity: 1}
-    100% {bottom: 70vh;left: 580rpx;opacity: 0}
+    100% {bottom: 15vh;left: 580rpx;opacity: 0}
 }
 .shou-cheng-zi2{
     animation: shou-cheng-zi-dong2 400ms linear infinite;
@@ -472,7 +473,7 @@
     0% {bottom: 280rpx;left: 300rpx;}
     10% {bottom: 500rpx;left: 300rpx;opacity: 1}
     50% {opacity: 1}
-    100% {bottom: 70vh;left: 580rpx;opacity: 0}
+    100% {bottom: 15vh;left: 580rpx;opacity: 0}
 }
 .shou-cheng-zi3{
     animation: shou-cheng-zi-dong3 500ms linear infinite;
@@ -481,7 +482,7 @@
     0% {bottom: 280rpx;left: 300rpx;}
     10% {bottom: 500rpx;left: 400rpx;opacity: 1}
     50% {opacity: 1}
-    100% {bottom: 70vh;left: 580rpx;opacity: 0}
+    100% {bottom: 15vh;left: 580rpx;opacity: 0}
 }
 .shou-cheng-zi4{
     animation: shou-cheng-zi-dong4 250ms linear infinite;
@@ -490,9 +491,9 @@
     0% {bottom: 280rpx;left: 300rpx;}
     10% {bottom: 500rpx;left: 500rpx;opacity: 1}
     50% {opacity: 1}
-    100% {bottom: 70vh;left: 580rpx;opacity: 0}
+    100% {bottom: 15vh;left: 580rpx;opacity: 0}
 }
-/*** 树 收获 吐橙子 动画 ***/
+/*** 树 收获 吐杨桃 动画 ***/
 .shu-shou-huo{
     animation: shu-shou-huo-dong 200ms linear infinite;
 }
