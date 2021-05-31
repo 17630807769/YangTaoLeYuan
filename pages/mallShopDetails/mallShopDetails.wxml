@@ -32,7 +32,8 @@
         <text class="font-36 font-bold color-89673E">{{orangeValue}}</text>
         <image wx:if="{{goodsType==1}}" style="width: 46rpx;height: 46rpx;display: block;margin: 0 10rpx;" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
     </view>
-    <view bind:tap="openDialog" class="font-34 color-ffffff" style="width: 380rpx;height: 78rpx;line-height:78rpx;text-align:center;background: linear-gradient(90deg, #FCA02F 0%, #FFD264 100%);border-radius: 39rpx;">立即兑换</view>
+    <view wx:if="{{canBuy}}" bind:tap="openDialog" class="font-34 color-ffffff" style="width: 380rpx;height: 78rpx;line-height:78rpx;text-align:center;background: linear-gradient(90deg, #FCA02F 0%, #FFD264 100%);border-radius: 39rpx;">立即兑换</view>
+    <view wx:if="{{!canBuy}}" bind:tap="openTips" class="font-34 color-ffffff" style="width: 380rpx;height: 78rpx;line-height:78rpx;text-align:center;background: linear-gradient(90deg, #C0C0C0 0%, #C0C0C0 100%);border-radius: 39rpx;">立即兑换</view>
 </view>
 <view class="mall-dialog" style="{{chooseAmountShow?'top: 0%;':'top: 100%;'}}">
     <view style="position: absolute;{{chooseAmountShow?'bottom: 0;':'bottom:-100vh;'}}width: 100%;padding: 30rpx;box-sizing: border-box;background-color: #ffffff;border-radius: 16rpx 16rpx 0px 0px;">

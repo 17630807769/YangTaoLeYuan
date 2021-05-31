@@ -19,6 +19,14 @@ Page({
     buyCount:1,//购买数量
     goodsType:1,//1 普通 2抢购
     chooseAmountShow:false,
+    canBuy:false,
+  },
+  openTips(){
+    wx.showToast({
+      title: '此商品未到出售时间',
+      icon: 'none',
+      duration: 2000
+    })
   },
   openDialog(){
     this.setData({
@@ -81,6 +89,10 @@ Page({
             this.data.detailsImgs.push(arr[i]);
           }
         }
+        let time = new Date();
+        if (data.data.statusTime<time.getTime()){
+          this.data.canBuy = true;
+        }
         this.setData({
           goodsImgs: this.data.goodsImgs,
           detailsImgs:this.data.detailsImgs,
@@ -92,7 +104,8 @@ Page({
           orangeValue: data.data.money,//价格
           sellAmount: data.data.sellAmount,//已兑换
           stock: data.data.stock,//库存
-          goodsType:data.data.goodsType
+          goodsType:data.data.goodsType,
+          canBuy:this.data.canBuy
         })
       } else {
         wx.showToast({
