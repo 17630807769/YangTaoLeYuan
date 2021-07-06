@@ -1,9 +1,10 @@
 /**
  * 请求地址
  */
-const BASE_URL = 'https://cz.krjie.com'
-// const BASE_URL = 'https://www.yunlemuyuan.com';
-var wss_url = 'wss://cz.socket.krjie.com/ws';
+// const BASE_URL = 'https://cz.krjie.com'
+// var wss_url = 'wss://cz.socket.krjie.com/ws';
+const BASE_URL = 'https://ytapi.laishida.cn'
+var wss_url = 'wss://yangtao.laishida.cn/ws';
 /**
  * 请求头
  */
@@ -55,10 +56,9 @@ function delete1(url, params, onSuccess, onFailed) {
  */
 
 function request(url, params, method, onSuccess, onFailed) {
-    // if(header.Authorization === 'Bearer '||header.Authorization === 'Bearer undefined'){
-    //     header['Authorization'] = "Bearer " + wx.getStorageSync("token");
-    // }
-    header['Authorization'] = "Bearer " + wx.getStorageSync("token");
+    if(header.Authorization === 'Bearer '||header.Authorization === 'Bearer undefined'){
+        header['Authorization'] = "Bearer " + wx.getStorageSync("token");
+    }
     // header['userId'] = 1;
     // console.log('请求url：'+ BASE_URL + url);
     wx.showLoading({

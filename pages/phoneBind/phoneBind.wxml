@@ -1,0 +1,28 @@
+<!--pages/phoneBind/phoneBind.wxml-->
+<view style="width:100%;padding:60rpx 80rpx;box-sizing: border-box;">
+  <view class="font-40 color-333333">
+    绑定手机号
+  </view>
+  <view class="font-28 color-BEBEBE" style="margin-bottom:105rpx">
+    绑定手机号号码即可领取红包
+  </view>
+  <view>
+    <view class="flex-view">
+      <image src="../../images/chengzi/icon-tel.png" style="width:44rpx;margin-right:24rpx;" mode="widthFix"></image>
+      <text class="font-30 color-333333">手机号</text>
+    </view>
+    <view style="width:100%;border-bottom:1px solid #BEBEBE;margin-bottom:60rpx;padding:30rpx 30rpx 30rpx 68rpx;box-sizing: border-box;">
+      <input class="font-28 color-FFAE1A" name="phone" type="number" bindinput="bindPhoneInput" placeholder="请输入手机号码" maxlength="{{11}}" value="{{phone}}"/>
+    </view>
+    <view class="flex-view">
+      <image src="../../images/chengzi/icon-yanzhengma.png" style="width:44rpx;margin-right:24rpx;" mode="widthFix"></image>
+      <text class="font-30 color-333333">验证码</text>
+    </view>
+    <view class="flex-view" style="width:100%;border-bottom:1px solid #BEBEBE;margin-bottom:60rpx;padding:30rpx 30rpx 30rpx 68rpx;box-sizing: border-box;justify-content: space-between;">
+      <input class="font-28 color-FFAE1A" name="code" type="number" bindinput="bindCodeInput" placeholder="请输入验证码" maxlength="{{6}}" value="{{code}}"/>
+      <view bind:tap="getCode" class="font-28 color-FE1943">{{second==60?'获取':second}}</view>
+    </view>
+    <view bind:tap="clickBind" class="font-36 color-ffffff" style="width: 290rpx;height: 100rpx;line-height: 100rpx;text-align: center;background: #FFAA01;border-radius: 50rpx;margin:0 auto">确认绑定</view>
+  </view>
+  
+</view>

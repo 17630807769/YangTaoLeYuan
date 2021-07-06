@@ -545,4 +545,15 @@
         transform: scale3d(1, 1, 1);
     }
 }
+.hongbao-text{
+    font-size: 88rpx;
+    width: 100%;
+    text-align: center;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: #FFE5B3;
+    text-shadow: 1px 13px 16px rgba(160, 11, 0, 0.48);
+    position: absolute;
+    top: 20%;
+}
 

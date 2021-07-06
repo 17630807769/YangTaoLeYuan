@@ -66,7 +66,9 @@
             </view>
             <view wx:if="{{notChargeOrangeAmount&&isMyTree}}" bind:tap="clickZaiQu" class="font-20 color-ffffff can-zhai-qu">
                 <view class="flex-view" style="justify-content: center">
+                    <image style="width: 24rpx;height: 24rpx;" src="../../images/chengzi/chengZiTitle.png"></image>
                     <view class="font-26 font-bold color-ffffff right-list-text1" style="padding: 0 14rpx">可摘取</view>
+                    <image style="width: 24rpx;height: 24rpx;" src="../../images/chengzi/chengZiTitle.png"></image>
                 </view>
                 <view class="font-24 font-bold color-ffffff right-list-text1">{{notChargeOrangeAmount}}个杨桃</view>
             </view>
@@ -790,6 +792,24 @@
                         保存图片
                     </view>
                 </view>
+            </view>
+        </view>
+        <!--红包-->
+        <view class="bottom-window-shadow" style="{{showHongbao1?'top: 0%;':'top: 100%;'}}">
+            <view style="width:670rpx;height:980rpx;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
+            <image src="../../images/chengzi/hongbao-bg.png" style="width:100%" mode="widthFix"></image>
+            <image src="../../images/chengzi/hongbao-right.png" style="width:346rpx;position:absolute;top:0;right:0" mode="widthFix"></image>
+            <view class="hongbao-text">送你{{hongbaoCount}}元红包</view>
+            <image bind:tap="clickHongbao1" src="../../images/chengzi/hongbao-btn.png" style="position:absolute;width:452rpx;left:109rpx;bottom:10rpx" mode="widthFix"></image>
+            <image bind:tap="closeHongbao1" src="../../images/chengzi/icon-close1.png" style="position:absolute;width:74rpx;left:298rpx;bottom:-90rpx" mode="widthFix"></image>
+            </view>
+        </view>
+        <!--红包2-->
+        <view class="bottom-window-shadow" style="{{showHongbao2?'top: 0%;':'top: 100%;'}}">
+            <view style="width:710rpx;height:755rpx;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
+            <image bind:tap="closeHongbao2" src="../../images/chengzi/hongbao.png" style="width:100%" mode="widthFix"></image>
+            <view style="font-size:113rpx;color:#FF4A20;width:100%;text-align:center;position:absolute;top:240rpx">{{hongbaoCount}}元</view>
+            <image bind:tap="openJiChong" src="../../images/chengzi/btn-lijishiyong.png" style="position:absolute;width:355rpx;left:175rpx;bottom:100rpx" mode="widthFix"></image>
             </view>
         </view>
     </view>

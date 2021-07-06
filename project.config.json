@@ -21,9 +21,8 @@
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
-    "useMultiFrameRuntime": true,
+    "useMultiFrameRuntime": false,
     "useApiHook": true,
-    "useApiHostProcess": false,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -39,9 +38,9 @@
     "packNpmRelationList": [],
     "minifyWXSS": true
   },
-  "compileType": "miniprogram",
+  "compileType": "game",
   "libVersion": "2.14.1",
-  "appid": "wxc7bfc46e86988ce4",
+  "appid": "wxd96fe3583accf81c",
   "projectname": "ChengZi",
   "debugOptions": {
     "hidedInDevtools": []
@@ -50,18 +49,24 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
+    "plugin": {
       "list": []
     },
     "game": {
-      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
       "list": []
     },
     "miniprogram": {
-      "list": []
+      "list": [
+        {
+          "name": "pages/chengzi/chengzi",
+          "pathName": "pages/chengzi/chengzi",
+          "query": "",
+          "scene": null
+        }
+      ]
     }
   }
 }

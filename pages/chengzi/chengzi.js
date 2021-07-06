@@ -157,12 +157,57 @@ Page({
     buyPropsMuckAmount:0,
     // 抢购商品获得的肥料数量
     buyGoodsMuckAmount:0,
-    
+
     downImgShow:false,
     downImgUrl:'',
     exchangeShow:false,
     exchangeCode:'',//兑换码
+    showHongbao1:false,
+    showHongbao2:false,
+    hongbaoCount:0,
+  },
+  //红包部分
+  havePhone(){
+    HTTP.get('/api/v1/user/user/info/get/user/have/phone',{},(data)=>{
+      if(data.code == 200){
+        if(data.data){
+          this.havereceive();
+        } else {
+          wx.navigateTo({
+            url: "/pages/phoneBind/phoneBind"
+          })
+        }
+      }
+    })
+  },
+  havereceive(){
+    HTTP.get('/api/v1/user/coupon/query/have/receive',{},(data)=>{
+      if(data.code == 200){
+        this.setData({
+          hongbaoCount:data.data,
+          showHongbao1:true
+        })
+      }
+    })
+  },
+  closeHongbao1(){
+    this.setData({
+      showHongbao1:false
+    })
+  },
+  clickHongbao1(){
+    this.setData({
+      showHongbao1:false,
+      showHongbao2:true,
+    })
+  },
+  openJiChong(){
 
+  },
+  closeHongbao2(){
+    this.setData({
+      showHongbao2:false
+    })
   },
   //点击树的动画
   clickShu(){
@@ -929,9 +974,7 @@ Page({
       })
     }
     this.getChengzi();
-  },
-  onShow(){
-
+    
   },
   getChengzi(){//http获取杨桃数量 没登陆就进入首页；
     HTTP.get('/api/v1/user/user/info/outer/get/today/amount',{},(data)=>{
@@ -1309,6 +1352,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.havePhone();
     let that = this;
     wx.onSocketMessage(function (res) {//收到消息
       HTTP.onSocketMessage(res,function (result) {

@@ -14,7 +14,8 @@
     "pages/mallOrderDetails/mallOrderDetails",
     "pages/mallLookExpress/mallLookExpress",
     "pages/login/login",
-    "components/sixPassword/sixPassword"
+    "components/sixPassword/sixPassword",
+    "pages/phoneBind/phoneBind"
   ],
   "window":{
     "backgroundTextStyle":"light",
