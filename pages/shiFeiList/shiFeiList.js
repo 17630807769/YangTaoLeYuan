@@ -69,6 +69,12 @@ Page({
         case 3:
           arr[i].typeText = '偷好友肥料'
           break;
+        case 4:
+          arr[i].typeText = '购买商品获得肥料'
+          break;
+        case 5:
+          arr[i].typeText = '购买道具获得肥料'
+          break;
       }
       arr[i].createTimeText = Util.timeFuc2(arr[i].createTime);
       this.data.list.push(arr[i]);

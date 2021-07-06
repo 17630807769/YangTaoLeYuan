@@ -78,6 +78,7 @@ Page({
         title: '请填写收件人姓名',
         duration: 2000
       });
+      return
     }
     if (this.data.phone===null){
       wx.showToast({
@@ -85,6 +86,7 @@ Page({
         title: '请填写收件人电话',
         duration: 2000
       });
+      return
     }
     if (this.data.details===null){
       wx.showToast({
@@ -92,6 +94,7 @@ Page({
         title: '请填写详细地址',
         duration: 2000
       });
+      return
     }
     if (this.data.region.length!==3){
       wx.showToast({
@@ -99,6 +102,7 @@ Page({
         title: '请选择所在地区',
         duration: 2000
       });
+      return
     }
     let params = {};
     params.name = this.data.name;

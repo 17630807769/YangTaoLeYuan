@@ -8,14 +8,14 @@
   </view>
   <view>
     <view class="flex-view">
-      <image src="../../images/chengzi/icon-tel.png" style="width:44rpx;margin-right:24rpx;" mode="widthFix"></image>
+      <image src="http://img.laishida.cn/images/chengzi/icon-tel.png" style="width:44rpx;margin-right:24rpx;" mode="widthFix"></image>
       <text class="font-30 color-333333">手机号</text>
     </view>
     <view style="width:100%;border-bottom:1px solid #BEBEBE;margin-bottom:60rpx;padding:30rpx 30rpx 30rpx 68rpx;box-sizing: border-box;">
       <input class="font-28 color-FFAE1A" name="phone" type="number" bindinput="bindPhoneInput" placeholder="请输入手机号码" maxlength="{{11}}" value="{{phone}}"/>
     </view>
     <view class="flex-view">
-      <image src="../../images/chengzi/icon-yanzhengma.png" style="width:44rpx;margin-right:24rpx;" mode="widthFix"></image>
+      <image src="http://img.laishida.cn/images/chengzi/icon-yanzhengma.png" style="width:44rpx;margin-right:24rpx;" mode="widthFix"></image>
       <text class="font-30 color-333333">验证码</text>
     </view>
     <view class="flex-view" style="width:100%;border-bottom:1px solid #BEBEBE;margin-bottom:60rpx;padding:30rpx 30rpx 30rpx 68rpx;box-sizing: border-box;justify-content: space-between;">

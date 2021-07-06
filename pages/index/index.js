@@ -74,7 +74,7 @@ Page({
     })
   },
   goToYouzi: function (e) {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/chengzi/chengzi',
     });
   },

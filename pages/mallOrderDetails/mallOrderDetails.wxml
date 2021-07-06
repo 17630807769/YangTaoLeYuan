@@ -4,7 +4,7 @@
 </view>
 <view style="padding: 28rpx;transform: translateY(-100rpx)">
     <view class="flex-view" style="padding: 30rpx;box-sizing: border-box;border-radius: 12rpx;background-color: #ffffff;width: 100%;height: 150rpx;margin-bottom: 18rpx;">
-        <image style="width: 35rpx;height: 50rpx" src="http://cz.h5.krjie.com/images/mall/address.png" mode="widthFix"></image>
+        <image style="width: 35rpx;height: 50rpx" src="http://img.laishida.cn/images/mall/address.png" mode="widthFix"></image>
             <view style="width: 520rpx;padding: 0 30rpx;">
                 <view class="flex-view">
                     <view class="font-30 color-333333">{{addressName}} </view>
@@ -27,7 +27,7 @@
                     <view class="flex-view" style="width: 200rpx">
                         <text wx:if="{{goodsType==2}}" class="font-24 color-666666">￥</text>
                         <text class="font-26 color-666666">{{goodsOneMoney}}</text>
-                        <image wx:if="{{goodsType==1}}" style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
+                        <image wx:if="{{goodsType==1}}" style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="http://img.laishida.cn/images/mall/icon-orange.png" mode="widthFix"></image>
                     </view>
                     <text class="font-24 color-666666">x{{goodsAmount}}</text>
                 </view>
@@ -38,7 +38,7 @@
             <view class="flex-view">
                 <text wx:if="{{goodsType==2}}" class="font-24 color-666666">￥</text>
                 <text class="font-26color-666666">{{orangeMoney}}</text>
-                <image wx:if="{{goodsType==1}}" style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
+                <image wx:if="{{goodsType==1}}" style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="http://img.laishida.cn/images/mall/icon-orange.png" mode="widthFix"></image>
             </view>
         </view>
     </view>

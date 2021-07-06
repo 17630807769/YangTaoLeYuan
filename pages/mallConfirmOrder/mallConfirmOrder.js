@@ -410,15 +410,38 @@ Page({
             wx.navigateBack();
           },1000)
         } else {
-          wx.showToast({
-            icon:"none",
-            title: "拉起微信支付",
-            duration: 2000
+          let payData = data.data;
+          payData = JSON.parse(payData);
+          wx.requestPayment({
+            timeStamp: payData.timeStamp,
+            nonceStr: payData.nonceStr,
+            package: payData.package,
+            signType: payData.signType,
+            paySign: payData.paySign,
+            success (res) {
+              console.log('支付成功')
+              wx.showToast({
+                icon:"none",
+                title: "支付成功",
+                duration: 2000
+              })
+              setTimeout(()=>{
+                wx.hideLoading();
+                wx.navigateBack();
+              },1000)
+            },
+            fail (res) {
+              wx.showToast({
+                icon:"none",
+                title: "支付失败",
+                duration: 2000
+              })
+              setTimeout(()=>{
+                wx.hideLoading();
+                wx.navigateBack();
+              },1000)
+            }
           })
-          setTimeout(()=>{
-            wx.hideLoading();
-            wx.navigateBack();
-          },1000)
         }
       }
     })

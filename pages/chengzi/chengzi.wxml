@@ -1,47 +1,47 @@
 <!--pages/chengzi/chengzi.wxml-->
 <view class="you-zi">
-    <image class="bg-img" src="http://cz.h5.krjie.com/images/chengzi/bg.png" mode="widthFix"></image>
+    <image class="bg-img" src="http://img.laishida.cn/images/chengzi/bg.png" mode="widthFix"></image>
     <view class="yun-ceng">
-        <image class="yun-max" src="http://cz.h5.krjie.com/images/chengzi/dayun.png"></image>
-        <image class="yun-min" src="http://cz.h5.krjie.com/images/chengzi/xiaoyun.png"></image>
+        <image class="yun-max" src="http://img.laishida.cn/images/chengzi/dayun.png"></image>
+        <image class="yun-min" src="http://img.laishida.cn/images/chengzi/xiaoyun.png"></image>
     </view>
     <view class="content">
 <!--        <view style="width: 40rpx;height: 70rpx;position: absolute;top: 50%;right: 100rpx;transform: translate(0%,250%)">-->
-<!--            <image style="width: 40rpx;height: 70rpx;" src="http://cz.h5.krjie.com/images/chengzi/fengche1.png"></image>-->
-<!--            <image class="feng-che" style="width: 68rpx;height: 68rpx;position: absolute;top: -16rpx;left: -13rpx;" src="http://cz.h5.krjie.com/images/chengzi/fengche2.png"></image>-->
+<!--            <image style="width: 40rpx;height: 70rpx;" src="http://img.laishida.cn/images/chengzi/fengche1.png"></image>-->
+<!--            <image class="feng-che" style="width: 68rpx;height: 68rpx;position: absolute;top: -16rpx;left: -13rpx;" src="http://img.laishida.cn/images/chengzi/fengche2.png"></image>-->
 <!--        </view>-->
-<!--        <image style="width: 100%;position: absolute;bottom: 0rpx;left: 0;" mode="widthFix" src="http://cz.h5.krjie.com/images/chengzi/hudie.gif"></image>-->
-<!--        <image style="width: 100%;position: absolute;top: 80rpx;left: 0;" mode="widthFix" src="http://cz.h5.krjie.com/images/chengzi/niao.gif"></image>-->
+<!--        <image style="width: 100%;position: absolute;bottom: 0rpx;left: 0;" mode="widthFix" src="http://img.laishida.cn/images/chengzi/hudie.gif"></image>-->
+<!--        <image style="width: 100%;position: absolute;top: 80rpx;left: 0;" mode="widthFix" src="http://img.laishida.cn/images/chengzi/niao.gif"></image>-->
         <!--果树部分-->
         <view style="width: 593rpx;height: 287rpx;position: absolute;top: 50%;left: 50%;transform: translate(-50%,75%)">
-            <image style="width: 100%" src="http://cz.h5.krjie.com/images/chengzi/keng.png" mode="widthFix"></image>
-            <image bind:tap="clickShu" class="{{shuClassName}}" style="position: absolute;bottom: 88rpx;width: 100%;left: 0%;" mode="widthFix" src="http://cz.h5.krjie.com/images/chengzi/{{notChargeOrangeAmount&&isMyTree?'2':'1'}}-{{treeRank===1?treeRank:treeRank-1}}.png"></image>
+            <image style="width: 100%" src="http://img.laishida.cn/images/chengzi/keng.png" mode="widthFix"></image>
+            <image bind:tap="clickShu" class="{{shuClassName}}" style="position: absolute;bottom: 88rpx;width: 100%;left: 0%;" mode="widthFix" src="http://img.laishida.cn/images/chengzi/{{notChargeOrangeAmount&&isMyTree?'2':'1'}}-{{treeRank===1?treeRank:treeRank-1}}.png"></image>
             <view style="text-align: center;width: 150rpx;position: absolute;top: 54rpx;left: 78rpx;transform:rotateZ(-5deg);line-height: 26rpx;">
                 <view class="font-20 color-ffeda6">{{signName}}</view>
                 <view class="font-20 color-ffeda6">的杨桃乐园</view>
             </view>
-            <image wx:for="{{feiLiaoBing}}" wx:key="index" class="{{item}}" style="width: 50rpx;height: 50rpx;position: absolute;bottom: 140rpx;right: 120rpx;" mode="widthFix" src="http://cz.h5.krjie.com/images/chengzi/feiliaoli.png"></image>
+            <image wx:for="{{feiLiaoBing}}" wx:key="index" class="{{item}}" style="width: 50rpx;height: 50rpx;position: absolute;bottom: 140rpx;right: 120rpx;" mode="widthFix" src="http://img.laishida.cn/images/chengzi/feiliaoli.png"></image>
             <view wx:if="{{isMyTree}}" class="{{feiLiaoDaiClass}}" bind:tap="clickFeiLiaoBao" style="position: absolute;bottom: 111rpx;width: 125rpx;height:125rpx;right: 82rpx;">
-                <image class="{{notChargeMuckAmount>0?'fei-liao-bao':''}}" style="width: 100%;height: auto" mode="widthFix" src="http://cz.h5.krjie.com/images/chengzi/icon-feiliao.png"></image>
+                <image class="{{notChargeMuckAmount>0?'fei-liao-bao':''}}" style="width: 100%;height: auto" mode="widthFix" src="http://img.laishida.cn/images/chengzi/icon-feiliao.png"></image>
                 <view class="{{notChargeMuckAmount>0?'fei-liao-bao':''}}"  style="position: absolute;width: 100%;bottom: 14rpx;text-align: center;line-height: 30rpx;">
                     <text class="font-20 color-8F491B">
                         肥料
                     </text>
                     <text class="font-30 font-bold color-8F491B">{{notChargeMuckAmount}}</text>
                 </view>
-                <image wx:if="{{notChargeMuckAmount}}" class="can-Ling-qu" src="http://cz.h5.krjie.com/images/chengzi/qipao.png" mode="widthFix"></image>
+                <image wx:if="{{notChargeMuckAmount}}" class="can-Ling-qu" src="http://img.laishida.cn/images/chengzi/qipao.png" mode="widthFix"></image>
             </view>
             <view wx:if="{{!isMyTree}}" class="{{feiLiaoDaiClass}}" bind:tap="clickTou" style="position: absolute;bottom: 111rpx;width: 125rpx;height:125rpx;right: 82rpx;">
-                <image class="{{canStealCount>0?'fei-liao-bao':''}}" style="width: 100%;height: auto" mode="widthFix" src="http://cz.h5.krjie.com/images/chengzi/icon-feiliao.png"></image>
+                <image class="{{canStealCount>0?'fei-liao-bao':''}}" style="width: 100%;height: auto" mode="widthFix" src="http://img.laishida.cn/images/chengzi/icon-feiliao.png"></image>
                 <view class="{{canStealCount>0?'fei-liao-bao':''}}" style="position: absolute;width: 100%;bottom: 14rpx;text-align: center;line-height: 30rpx;">
                     <text class="font-20 color-8F491B">
                         肥料
                     </text>
                     <text class="font-30 font-bold color-8F491B">{{canStealCount}}</text>
                 </view>
-                <image class="can-Ling-qu" src="http://cz.h5.krjie.com/images/chengzi/tou-qipao.png" mode="widthFix"></image>
+                <image class="can-Ling-qu" src="http://img.laishida.cn/images/chengzi/tou-qipao.png" mode="widthFix"></image>
             </view>
-            <image style="position: absolute;bottom: 45rpx;width: 68rpx;height:auto;right: 98rpx" mode="widthFix" src="http://cz.h5.krjie.com/images/chengzi/huaduo.gif"></image>
+            <image style="position: absolute;bottom: 45rpx;width: 68rpx;height:auto;right: 98rpx" mode="widthFix" src="http://img.laishida.cn/images/chengzi/huaduo.gif"></image>
             <view wx:if="{{isMyTree}}" style="position:absolute;bottom:0;left:50%;transform:translate(-50%,0);width: 300rpx;height: 88rpx;text-align:center;">
                 <view style="width: 300rpx;border: 3rpx solid #FDEB9F;border-radius: 18rpx;background-color: #8C584A;padding: 3rpx;">
                     <view style="width: {{progressWidth}}%" class="progress"></view>
@@ -50,15 +50,15 @@
                 <text wx:else style="white-space: nowrap;" class="font-24 color-ffffff">您已经是最高级了</text>
             </view>
             <view wx:if="{{isMyTree}}" class="{{shiFeiBtnClass}}" bind:tap="" style="position: absolute;bottom: -10vh;left:114rpx;width: 365rpx;height:125rpx;">
-                <image wx:if="{{shiFeiGifShow}}" style="width: 100%;position: absolute;bottom: 80rpx;left: 0;" mode="widthFix" src="http://cz.h5.krjie.com/images/chengzi/shifei.gif"></image>
-                <image style="width: 100%" mode="widthFix" src="http://cz.h5.krjie.com/images/chengzi/btnshifei-bg.png"></image>
+                <image wx:if="{{shiFeiGifShow}}" style="width: 100%;position: absolute;bottom: 80rpx;left: 0;" mode="widthFix" src="http://img.laishida.cn/images/chengzi/shifei.gif"></image>
+                <image style="width: 100%" mode="widthFix" src="http://img.laishida.cn/images/chengzi/btnshifei-bg.png"></image>
                 <view bind:tap="clickShiFeiBtn" style="position: absolute;top:0;left:0;width: 100%;text-align: center;padding-top: 22rpx;line-height: 40rpx;">
                     <view class="font-36 font-bold color-8F491B">施肥</view>
                     <view class="font-26 font-bold color-BC5D1E">我的肥料 {{notFertilizeAmount}}</view>
                 </view>
             </view>
             <view wx:if="{{!isMyTree}}" class="{{shiFeiBtnClass}}" bind:tap="" style="position: absolute;bottom: -10vh;left:114rpx;width: 365rpx;height:125rpx;">
-                <image style="width: 100%" mode="widthFix" src="http://cz.h5.krjie.com/images/chengzi/btnshifei-bg.png"></image>
+                <image style="width: 100%" mode="widthFix" src="http://img.laishida.cn/images/chengzi/btnshifei-bg.png"></image>
                 <view bind:tap="goToMyTree" style="position: absolute;top:0;left:0;width: 100%;text-align: center;padding-top: 22rpx;line-height: 40rpx;">
                     <view class="font-36 font-bold color-8F491B">我的庄园</view>
                     <view class="font-26 font-bold color-BC5D1E">我的肥料 {{notFertilizeAmount}}</view>
@@ -66,18 +66,18 @@
             </view>
             <view wx:if="{{notChargeOrangeAmount&&isMyTree}}" bind:tap="clickZaiQu" class="font-20 color-ffffff can-zhai-qu">
                 <view class="flex-view" style="justify-content: center">
-                    <image style="width: 24rpx;height: 24rpx;" src="../../images/chengzi/chengZiTitle.png"></image>
+                    <image style="width: 24rpx;height: 24rpx;" src="http://img.laishida.cn/images/chengzi/chengZiTitle.png"></image>
                     <view class="font-26 font-bold color-ffffff right-list-text1" style="padding: 0 14rpx">可摘取</view>
-                    <image style="width: 24rpx;height: 24rpx;" src="../../images/chengzi/chengZiTitle.png"></image>
+                    <image style="width: 24rpx;height: 24rpx;" src="http://img.laishida.cn/images/chengzi/chengZiTitle.png"></image>
                 </view>
                 <view class="font-24 font-bold color-ffffff right-list-text1">{{notChargeOrangeAmount}}个杨桃</view>
             </view>
-            <image  wx:for="{{shouHuoList}}" wx:key="index" class="{{item}}" style="width: 50rpx;height: 50rpx;position: absolute;bottom: 500rpx;left: 300rpx;" mode="widthFix" src="http://cz.h5.krjie.com/images/chengzi/icon-1.png"></image>
+            <image  wx:for="{{shouHuoList}}" wx:key="index" class="{{item}}" style="width: 50rpx;height: 50rpx;position: absolute;bottom: 500rpx;left: 300rpx;" mode="widthFix" src="http://img.laishida.cn/images/chengzi/icon-1.png"></image>
         </view>
         <!--杨桃池子-->
         <view style="position: absolute;top:10vh;left:50%;transform:translate(-50%,0);text-align: center;">
             <view style="width: 500rpx;height: 250rpx;position: relative;transform: translate(0 , -30rpx)">
-                <image style="width: 500rpx;height: 250rpx;" mode="widthFix" src="http://cz.h5.krjie.com/images/chengzi/yangtaoguoyuanzhutu.png"></image>
+                <image style="width: 500rpx;height: 250rpx;" mode="widthFix" src="http://img.laishida.cn/images/chengzi/yangtaoguoyuanzhutu.png"></image>
                 <view style="position: absolute;bottom:40rpx;left:0;width: 100%;text-align: center;padding-top: 38rpx;line-height: 46rpx">
                     <view class="font-34 font-bold color-ffffff leyuan-title1">今日杨桃数</view>
                     <view class="font-34 font-bold color-ffffff leyuan-title1">{{todayNumber}}个</view>
@@ -87,46 +87,46 @@
         </view>
         <view wx:if="{{isMyTree}}" class="right-list flex-view" style="bottom: 40rpx;">
             <view class="{{shouHuoBtnClass}}" bind:tap="openShouHuo">
-                <image src="http://cz.h5.krjie.com/images/chengzi/btn-shouhuo.png" mode="widthFix"></image>
+                <image src="http://img.laishida.cn/images/chengzi/btn-shouhuo.png" mode="widthFix"></image>
                 <text class="font-26 right-list-text1">收获</text>
             </view>
             <view bind:tap="openTouFeiLiao">
-                <image class="guang-huan" src="http://cz.h5.krjie.com/images/chengzi/guanghuan.png" mode="widthFix"></image>
-                <image src="http://cz.h5.krjie.com/images/chengzi/btn-zhaofeiliao.png" mode="widthFix"></image>
+                <image class="guang-huan" src="http://img.laishida.cn/images/chengzi/guanghuan.png" mode="widthFix"></image>
+                <image src="http://img.laishida.cn/images/chengzi/btn-zhaofeiliao.png" mode="widthFix"></image>
                 <text class="font-26 right-list-text2">找肥料</text>
-<!--                <view class="font-20 color-ffffff red-tips" style="background: url('../../images/chengzi/redTips.png') 0 0/100%">可偷</view>-->
+<!--                <view class="font-20 color-ffffff red-tips" style="background: url('http://img.laishida.cn/images/chengzi/redTips.png') 0 0/100%">可偷</view>-->
             </view>
             <view bind:tap="getAllPropsList">
-                <image src="http://cz.h5.krjie.com/images/chengzi/btn-daoju.png" mode="widthFix"></image>
+                <image src="http://img.laishida.cn/images/chengzi/btn-daoju.png" mode="widthFix"></image>
                 <text class="font-26 right-list-text3">道具</text>
             </view>
             <view bind:tap="openJiFeiLiao">
-                <image src="http://cz.h5.krjie.com/images/chengzi/btn-jifenliao.png" mode="widthFix"></image>
+                <image src="http://img.laishida.cn/images/chengzi/btn-jifenliao.png" mode="widthFix"></image>
                 <text class="font-26 right-list-text4">集肥料</text>
             </view>
         </view>
         <!--杨桃商城-->
-        <image bind:tap="goToMall" style="width:300rpx;position: absolute;top: 35vh;right: -50rpx;" mode="widthFix" src="http://cz.h5.krjie.com/images/chengzi/shangcheng.png"></image>
+        <image bind:tap="goToMall" style="width:300rpx;position: absolute;top: 35vh;right: -50rpx;" mode="widthFix" src="http://img.laishida.cn/images/chengzi/shangcheng.png"></image>
         <!--    下方滑出弹框-->
         <!--找肥料-->
         <view class="bottom-window-shadow" style="{{touFeiLiaoShow?'top: 0;':'top:100%;'}}">
             <view class="bottom-window" style="{{touFeiLiaoShow?'bottom: 0;':'bottom:-100vh;'}}">
                 <view class="bottom-window-title">
-                    <image class="bottom-window-title-icon" src="http://cz.h5.krjie.com/images/chengzi/zhaofeiliaotitle.png" mode="widthFix"></image>
-                    <image class="bottom-window-title-close" bind:tap="closeTouFeiLiao" src="http://cz.h5.krjie.com/images/chengzi/icon-close.png" mode="widthFix"></image>
+                    <image class="bottom-window-title-icon" src="http://img.laishida.cn/images/chengzi/zhaofeiliaotitle.png" mode="widthFix"></image>
+                    <image class="bottom-window-title-close" bind:tap="closeTouFeiLiao" src="http://img.laishida.cn/images/chengzi/icon-close.png" mode="widthFix"></image>
                 </view>
                 <view class="bottom-window-content">
                     <view class="bottom-window-content-list" style="padding: 25rpx;">
                         <view class="flex-view" style="background: #FFD26440;border-radius: 50rpx;box-shadow: 0px 10px 18px 2px rgba(0, 0, 0, 0.1);padding:25rpx;justify-content: space-between;">
                             <view class="flex-view">
-                                <image style="width: 106rpx;height: 106rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://cz.h5.krjie.com/images/chengzi/zhaoqu.png"></image>
+                                <image style="width: 106rpx;height: 106rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/zhaoqu.png"></image>
                                 <view>
-                                    <view class="font-36 color-FE1943">超级手套</view>
-                                    <view class="font-24 color-C0C0C0">自动找肥料</view>
+                                    <view class="font-36 color-FE1943">防偷道具</view>
+                                    <view class="font-24 color-C0C0C0">防止肥料被偷</view>
                                 </view>
                             </view>
                             <view bind:tap="clickGoBuy" style="width: 173rpx;height: 81rpx;" class="btn-box">
-                                <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                                <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                 <view class="btn-box-text font-34 color-ffffff">去购买</view>
                             </view>
                         </view>
@@ -139,7 +139,7 @@
                                         <view class="font-26 color-C0C0C0">{{item.phone}}</view>
                                     </view>
                                 </view>
-                                <image wx:if="{{item.id}}" bind:tap="goToSteal" data-i="{{index}}" src="http://cz.h5.krjie.com/images/chengzi/btn-zhaofeiliao.png" style="width: 80rpx;height: 84rpx"></image>
+                                <image wx:if="{{item.id}}" bind:tap="goToSteal" data-i="{{index}}" src="http://img.laishida.cn/images/chengzi/btn-zhaofeiliao.png" style="width: 80rpx;height: 84rpx"></image>
                             </view>
                         </scroll-view>
                     </view>
@@ -150,8 +150,8 @@
         <view class="bottom-window-shadow" style="{{daoJuShow?'top: 0%;':'top: 100%;'}}">
             <view class="bottom-window" style="{{daoJuShow?'bottom: 0;':'bottom:-100vh;'}}">
                 <view class="bottom-window-title" style="height: 156rpx">
-                    <image class="bottom-window-title-icon" style="top:-122rpx;" src="http://cz.h5.krjie.com/images/chengzi/daojutitle.png" mode="widthFix"></image>
-                    <image class="bottom-window-title-close" style="top:0" bind:tap="closeDaoJu" src="http://cz.h5.krjie.com/images/chengzi/icon-close.png" mode="widthFix"></image>
+                    <image class="bottom-window-title-icon" style="top:-122rpx;" src="http://img.laishida.cn/images/chengzi/daojutitle.png" mode="widthFix"></image>
+                    <image class="bottom-window-title-close" style="top:0" bind:tap="closeDaoJu" src="http://img.laishida.cn/images/chengzi/icon-close.png" mode="widthFix"></image>
                     <view class="flex-view" style="width: 100%;position: absolute;bottom: 0;background-color: #d5ec96;">
                         <view bind:tap="clickDaoJuTab" data-type="{{item.type}}" wx:for="{{daoJuTab}}" wx:key="index" style="width: 33%">
                             <view class="daoJuTitle-tab font-30 font-bold color-ffffff" style="">{{item.text}}</view>
@@ -162,11 +162,11 @@
                 <scroll-view wx:if="{{daoJuNowType===0}}" style="height: 60vh;padding: 22rpx 16rpx;box-sizing: border-box;background-color: #F5FFEE;" scroll-y="true">
                     <view style="width: 100%;display: flex;flex-wrap: wrap;">
                         <view wx:for="{{allPropsList}}" wx:key="index" bind:tap="openBuyDaoJu" data-index="{{index}}" class="daoJuBox">
-<!--                            <image src="http://cz.h5.krjie.com/images/chengzi/shiyongzhong.png" class="daoJuBox-typeImg"></image>-->
+<!--                            <image src="http://img.laishida.cn/images/chengzi/shiyongzhong.png" class="daoJuBox-typeImg"></image>-->
                             <view class="daoJuBox-title font-28 font-bold color-ffffff">{{item.name}}</view>
                             <image class="daoJuBox-img" src="{{item.img}}"></image>
                             <view bind:tap="clickGoBuy" style="width: 173rpx;height: 60rpx;margin:0 auto;" class="btn-box">
-                                <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                                <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                 <view class="btn-box-text font-28 color-ffffff">{{item.money}}元/天</view>
                             </view>
 
@@ -177,7 +177,7 @@
                 <scroll-view wx:if="{{daoJuNowType===1}}" style="height: 60vh;padding: 22rpx 16rpx;box-sizing: border-box;background-color: #F5FFEE;" scroll-y="true">
                    <view style="width: 100%;display: flex;flex-wrap: wrap;">
                         <view wx:for="{{myPropsList}}" wx:key="index" class="daoJuBox">
-                            <image src="http://cz.h5.krjie.com/images/chengzi/shiyongzhong.png" class="daoJuBox-typeImg"></image>
+                            <image src="http://img.laishida.cn/images/chengzi/shiyongzhong.png" class="daoJuBox-typeImg"></image>
                             <view class="daoJuBox-title font-28 font-bold color-ffffff">{{item.name}}</view>
                             <image class="daoJuBox-img" src="{{item.img}}"></image>
                             <view class="daoJuBox-btn font-28">
@@ -215,42 +215,42 @@
         <view class="bottom-window-shadow" style="{{jiFeiLiaoShow?'top: 0%;':'top: 100%;'}}">
             <view class="bottom-window" style="{{jiFeiLiaoShow?'bottom: 0;':'bottom:-100vh;'}}">
                 <view class="bottom-window-title">
-                    <image class="bottom-window-title-icon" src="http://cz.h5.krjie.com/images/chengzi/jifeiliaotitle.png" mode="widthFix"></image>
-                    <image class="bottom-window-title-close" bind:tap="closeJiFeiLiao" src="http://cz.h5.krjie.com/images/chengzi/icon-close.png" mode="widthFix"></image>
+                    <image class="bottom-window-title-icon" src="http://img.laishida.cn/images/chengzi/jifeiliaotitle.png" mode="widthFix"></image>
+                    <image class="bottom-window-title-close" bind:tap="closeJiFeiLiao" src="http://img.laishida.cn/images/chengzi/icon-close.png" mode="widthFix"></image>
                 </view>
                 <view class="bottom-window-content">
                     <view class="bottom-window-content-list" style="padding: 0">
                         <scroll-view style="height: 60vh;padding:29rpx 33rpx;border-radius: 60rpx 60rpx 0px 0px;box-sizing: border-box;" scroll-y="true">
 <!--                            <view class="flex-view" style="background:#FFD26440;padding:30rpx;box-shadow: 0px 10px 18px 2px rgba(0, 0, 0, 0.1);border-radius: 50rpx;justify-content: space-between;">-->
 <!--                                <view class="flex-view">-->
-<!--                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://cz.h5.krjie.com/images/chengzi/icon-vvip.png"></image>-->
+<!--                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/icon-vvip.png"></image>-->
 <!--                                    <view style="width: 285rpx;">-->
 <!--                                        <view class="font-34 font-bold color-FE1943 mouthVip">开通包月VIP</view>-->
 <!--                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">送保护道具，每日肥料翻倍，商城打折</view>-->
 <!--                                    </view>-->
 <!--                                </view>-->
 <!--                                <view style="width: 160rpx;height: 60rpx;" class="btn-box">-->
-<!--                                    <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>-->
+<!--                                    <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>-->
 <!--                                    <view class="btn-box-text font-28 color-ffffff">去开通</view>-->
 <!--                                </view>-->
 <!--                            </view>-->
 <!--                            <view class="flex-view" style="padding: 20rpx 0;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">-->
 <!--                                <view class="flex-view">-->
-<!--                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://cz.h5.krjie.com/images/chengzi/icon-shipin.png"></image>-->
+<!--                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/icon-shipin.png"></image>-->
 <!--                                    <view style="width: 285rpx;">-->
 <!--                                        <view class="font-30 font-bold color-302424">看视频领肥料({{watchAmount}}/{{maxAmount}})</view>-->
 <!--                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">每看一段视频，可以领取{{seeOneVideoAmount}}g肥料</view>-->
 <!--                                    </view>-->
 <!--                                </view>-->
 <!--                                <view style="width: 160rpx;height: 60rpx;" class="btn-box">-->
-<!--                                    <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>-->
+<!--                                    <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>-->
 <!--                                    <view class="btn-box-text font-28 color-ffffff">去观看</view>-->
 <!--                                </view>-->
 <!--                            </view>-->
                             <!--分享好友-->
                             <view class="flex-view" style="padding: 20rpx 0;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">
                                 <view class="flex-view">
-                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://cz.h5.krjie.com/images/chengzi/icon-fenxiang.png"></image>
+                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/icon-fenxiang.png"></image>
                                     <view style="width: 285rpx;">
                                         <view class="font-30 font-bold color-302424">分享微信好友({{shareFriend}}/{{shareFriendMax}})</view>
                                         <view class="font-24 color-C0C0C0" style="line-height: 25rpx">分享微信好友获得肥料</view>
@@ -259,58 +259,58 @@
                                 <view wx:if="{{shareFriend<shareFriendMax}}"  style="width: 160rpx;height: 60rpx;" class="btn-box">
                                     <button open-type="share" style="width: 160rpx;background-color: #00000000;height: 60rpx;border:0;margin: 0;padding: 0;">
                                         <view style="width: 160rpx;height: 60rpx;" class="btn-box">
-                                            <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                                            <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                             <view class="btn-box-text font-28 color-ffffff">去分享</view>
                                         </view>
                                     </button>
                                 </view>
                                 <view wx:if="{{shareFriend>=shareFriendMax && shareFriendMuck!=0}}">
                                     <view class="flex-view" style="justify-content: center;">
-                                        <image style="width:30rpx;height:40rpx;margin-right:10rpx;display:block;" src="http://cz.h5.krjie.com/images/chengzi/feiliao-icon.png"></image>
+                                        <image style="width:30rpx;height:40rpx;margin-right:10rpx;display:block;" src="http://img.laishida.cn/images/chengzi/feiliao.png"></image>
                                         <text class="font-26 color-FCA02F">x{{shareFriendMuck}}g</text>
                                     </view>
                                     <view bind:tap="lingQuFeiLiao" data-type="4" style="width: 160rpx;height: 60rpx;" class="btn-box">
-                                        <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                                        <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                         <view class="btn-box-text font-28 color-ffffff">领取</view>
                                     </view>
                                 </view>
                                 <view wx:if="{{shareFriend>=shareFriendMax && shareFriendMuck==0}}" style="width: 160rpx;height: 60rpx;" class="btn-box">
-                                    <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                                    <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                     <view class="btn-box-text font-28 color-ffffff">已领取</view>
                                 </view>
                             </view>
                             <!--分享朋友圈-->
 <!--                            <view class="flex-view" style="padding: 20rpx 0;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">-->
 <!--                                <view class="flex-view">-->
-<!--                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://cz.h5.krjie.com/images/chengzi/icon-fenxiang.png"></image>-->
+<!--                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/icon-fenxiang.png"></image>-->
 <!--                                    <view style="width: 285rpx;">-->
 <!--                                        <view class="font-30 font-bold color-302424">分享微信朋友圈({{shareFriendCircle}}/{{shareFriendCircleMax}})</view>-->
 <!--                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">分享微信朋友圈获得肥料</view>-->
 <!--                                    </view>-->
 <!--                                </view>-->
 <!--                                <view wx:if="{{shareFriendCircle<shareFriendCircleMax}}"  style="width: 160rpx;height: 60rpx;" class="btn-box">-->
-<!--                                    <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>-->
+<!--                                    <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>-->
 <!--                                    <view class="btn-box-text font-28 color-ffffff">去分享</view>-->
 <!--                                </view>-->
 <!--                                <view wx:if="{{shareFriendCircle>=shareFriendCircleMax && shareFriendCircleMuck!=0}}">-->
 <!--                                    <view class="flex-view" style="justify-content: center;">-->
-<!--                                        <image style="width:30rpx;height:40rpx;margin-right:10rpx;display:block;" src="http://cz.h5.krjie.com/images/chengzi/feiliao-icon.png"></image>-->
+<!--                                        <image style="width:30rpx;height:40rpx;margin-right:10rpx;display:block;" src="http://img.laishida.cn/images/chengzi/feiliao.png"></image>-->
 <!--                                        <text class="font-26 color-FCA02F">x{{shareFriendCircleMuck}}g</text>-->
 <!--                                    </view>-->
 <!--                                    <view style="width: 160rpx;height: 60rpx;" class="btn-box">-->
-<!--                                        <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>-->
+<!--                                        <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>-->
 <!--                                        <view class="btn-box-text font-28 color-ffffff">领取</view>-->
 <!--                                    </view>-->
 <!--                                </view>-->
 <!--                                <view wx:if="{{shareFriendCircle>=shareFriendCircleMax && shareFriendCircleMuck==0}}" style="width: 160rpx;height: 60rpx;" class="btn-box">-->
-<!--                                    <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>-->
+<!--                                    <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>-->
 <!--                                    <view class="btn-box-text font-28 color-ffffff">已领取</view>-->
 <!--                                </view>-->
 <!--                            </view>-->
                             <!--购买道具-->
                             <view class="flex-view" style="padding: 20rpx 0;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">
                                 <view class="flex-view">
-                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://cz.h5.krjie.com/images/chengzi/icon-goumai.png"></image>
+                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/icon-goumai.png"></image>
                                     <view style="width: 285rpx;">
                                         <view class="font-30 font-bold color-302424">购买道具</view>
                                         <view class="font-24 color-C0C0C0" style="line-height: 25rpx">购买道具获得肥料</view>
@@ -318,54 +318,54 @@
                                 </view>
                                 <view wx:if="{{buyPropsMuckAmount!=0}}">
                                     <view class="flex-view" style="justify-content: center;">
-                                        <image style="width:30rpx;height:40rpx;margin-right:10rpx;display:block;" src="http://cz.h5.krjie.com/images/chengzi/feiliao-icon.png"></image>
+                                        <image style="width:30rpx;height:40rpx;margin-right:10rpx;display:block;" src="http://img.laishida.cn/images/chengzi/feiliao.png"></image>
                                         <text class="font-26 color-FCA02F">x{{buyPropsMuckAmount}}g</text>
                                     </view>
                                     <view bind:tap="lingQuFeiLiao" data-type="2" style="width: 160rpx;height: 60rpx;" class="btn-box">
-                                        <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                                        <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                         <view class="btn-box-text font-28 color-ffffff">领取</view>
                                     </view>
                                 </view>
                                 <view wx:else bind:tap="clickGoBuy" style="width: 160rpx;height: 60rpx;" class="btn-box">
-                                    <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                                    <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                     <view class="btn-box-text font-28 color-ffffff">去购买</view>
                                 </view>
                             </view>
                             <!--抢购商品-->
                             <view class="flex-view" style="padding: 20rpx 0;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">
                                 <view class="flex-view">
-                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://cz.h5.krjie.com/images/chengzi/icon-shangchengqianggou.png"></image>
+                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/icon-shangchengqianggou.png"></image>
                                     <view style="width: 285rpx;">
                                         <view class="font-30 font-bold color-302424">抢购商品</view>
                                         <view class="font-24 color-C0C0C0" style="line-height: 25rpx">抢购商品获得肥料</view>
                                     </view>
                                 </view>
-                                <view wx:if="{{buyPropsMuckAmount!=0}}">
+                                <view wx:if="{{buyGoodsMuckAmount!=0}}">
                                     <view class="flex-view" style="justify-content: center;">
-                                        <image style="width:30rpx;height:40rpx;margin-right:10rpx;display:block;" src="http://cz.h5.krjie.com/images/chengzi/feiliao-icon.png"></image>
-                                        <text class="font-26 color-FCA02F">x{{buyPropsMuckAmount}}g</text>
+                                        <image style="width:30rpx;height:40rpx;margin-right:10rpx;display:block;" src="http://img.laishida.cn/images/chengzi/feiliao.png"></image>
+                                        <text class="font-26 color-FCA02F">x{{buyGoodsMuckAmount}}g</text>
                                     </view>
                                     <view bind:tap="lingQuFeiLiao" data-type="1" style="width: 160rpx;height: 60rpx;" class="btn-box">
-                                        <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                                        <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                         <view class="btn-box-text font-28 color-ffffff">领取</view>
                                     </view>
                                 </view>
                                 <view wx:else bind:tap="goToMall" style="width: 160rpx;height: 60rpx;" class="btn-box">
-                                    <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                                    <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                     <view class="btn-box-text font-28 color-ffffff">去抢购</view>
                                 </view>
                             </view>
                             <!--租赁充电宝-->
                             <view class="flex-view" style="padding: 20rpx 0;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">
                                 <view class="flex-view">
-                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://cz.h5.krjie.com/images/chengzi/icon-chongdianbao.png"></image>
+                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/icon-chongdianbao.png"></image>
                                     <view style="width: 285rpx;">
                                         <view class="font-30 font-bold color-302424">租借充电宝获得肥料</view>
                                         <view class="font-24 color-C0C0C0" style="line-height: 25rpx">每租借1次获得100g肥料</view>
                                     </view>
                                 </view>
                                 <view style="width: 160rpx;height: 60rpx;" class="btn-box">
-                                    <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                                    <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                     <view class="btn-box-text font-28 color-ffffff">去租借</view>
                                 </view>
                             </view>
@@ -378,8 +378,8 @@
         <view class="bottom-window-shadow" style="{{shouhuoShow?'top: 0%;':'top: 100%;'}}">
             <view class="bottom-window" style="{{shouhuoShow?'bottom: 0;':'bottom:-100vh;'}}">
                 <view class="bottom-window-title">
-                    <image class="bottom-window-title-icon" src="http://cz.h5.krjie.com/images/chengzi/shouhuotitle.png" mode="widthFix"></image>
-                    <image class="bottom-window-title-close" bind:tap="closeShouHuo" src="http://cz.h5.krjie.com/images/chengzi/icon-close.png" mode="widthFix"></image>
+                    <image class="bottom-window-title-icon" src="http://img.laishida.cn/images/chengzi/shouhuotitle.png" mode="widthFix"></image>
+                    <image class="bottom-window-title-close" bind:tap="closeShouHuo" src="http://img.laishida.cn/images/chengzi/icon-close.png" mode="widthFix"></image>
                 </view>
                 <view class="bottom-window-content">
                     <view style="width: 100%;padding:30rpx;box-sizing:border-box;background: #FEFDF8;box-shadow: 0px 10px 18px 2px rgba(0, 0, 0, 0.08);border-radius: 30rpx;margin-bottom: 21rpx">
@@ -397,11 +397,11 @@
                         </view>
                         <view class="flex-view" style="justify-content: space-around;">
                             <view bind:tap="openSongChengZi" style="width:245rpx;height:94rpx;" class="btn-box">
-                                <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                                <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                 <view class="btn-box-text font-34 color-ffffff">送杨桃</view>
                             </view>
                             <view bind:tap="goToMall" style="width:245rpx;height:94rpx;" class="btn-box">
-                                <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                                <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                 <view class="btn-box-text font-34 color-ffffff">杨桃商城</view>
                             </view>
                         </view>
@@ -411,7 +411,7 @@
                             <text class="font-30 color-302424 font-bold">杨桃流水</text>
                             <view class="flex-view">
                                 <text bind:tap="pickerRefresh" wx:if="{{timeEnd||timeStart}}" class="font-26 color-302424">重置</text>
-                                <image bind:tap="timePickerShow" style="width: 40rpx;height: 40rpx;display: block;margin-left: 20rpx;" src="http://cz.h5.krjie.com/images/chengzi/icon-rili.png"></image>
+                                <image bind:tap="timePickerShow" style="width: 40rpx;height: 40rpx;display: block;margin-left: 20rpx;" src="http://img.laishida.cn/images/chengzi/icon-rili.png"></image>
                             </view>
                         </view>
                         <scroll-view bindscrolltolower="getChengZiList" class="bottom-window-content-list-box" scroll-y="true">
@@ -435,7 +435,7 @@
                             <view wx:for="{{chengZiList}}" wx:key="index" bind:tap="openChengZiListDetails" data-i="{{index}}" class="flex-view" style="padding: 20rpx 30rpx;box-sizing:border-box;border-bottom: 1rpx solid #EBE7E7;justify-content: space-between;">
                                 <view class="flex-view">
                                     <image wx:if="{{item.useType===2||item.useType===3}}" style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="{{item.avatar}}"></image>
-                                    <image wx:else style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://cz.h5.krjie.com/images/chengzi/houdecengzitouxiang.png"></image>
+                                    <image wx:else style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/btn-shouhuo.png"></image>
                                     <view>
                                         <view class="font-30 color-302424">{{item.orangeTypeText}}</view>
                                         <view class="font-26 color-C0C0C0">{{item.createTimeText}}</view>
@@ -452,23 +452,23 @@
         <view wx:if="{{songChengZiShow}}" class="dialog-style">
             <view class="dialog-window">
                 <view class="dialog-window-close">
-                    <image bind:tap="closeSongChengZi" src="http://cz.h5.krjie.com/images/chengzi/icon-close.png"></image>
+                    <image bind:tap="closeSongChengZi" src="http://img.laishida.cn/images/chengzi/icon-close.png"></image>
                 </view>
                 <view class="dialog-window-box1">
-                    <image class="dialog-window-title" src="http://cz.h5.krjie.com/images/chengzi/icon-1.png"></image>
+                    <image class="dialog-window-title" src="http://img.laishida.cn/images/chengzi/icon-1.png"></image>
                     <view class="dialog-window-title-text font-36 font-bold color-ffffff">送杨桃</view>
                     <view class="dialog-window-content">
                         <view class="flex-view" style="width: 508rpx;height: 80rpx;background: #FFF5D4;border-radius: 40rpx;padding: 0 40rpx;box-sizing: border-box;margin-bottom: 16rpx;">
                             <input class="font-28 color-FFAE1A" name="friendPhone" type="number" bindinput="bindFriendPhoneInput" placeholder="请输入好友杨桃账号" maxlength="{{11}}" value="{{friendPhone}}" />
                         </view>
                         <view class="flex-view" style="width: 508rpx;height: 80rpx;background: #FFF5D4;border-radius: 40rpx;padding: 0 40rpx;box-sizing: border-box;margin-bottom: 16rpx;">
-                            <image style="width: 36rpx;height: 36rpx;margin-right: 11rpx;" src="http://cz.h5.krjie.com/images/chengzi/icon2.png"></image>
+                            <image style="width: 36rpx;height: 36rpx;margin-right: 11rpx;" src="http://img.laishida.cn/images/chengzi/icon2.png"></image>
                             <input class="font-28 color-FFAE1A" name="friendNumber" type="number" bindinput="bindFriendNumberInput" placeholder="请输入杨桃数量" value="{{friendNumber}}" />
                         </view>
                         <view class="font-24 color-FE963A" style="text-align: right;">{{nowOrange}}个杨桃可送</view>
 
                         <view bind:tap="clickNext" style="width:228rpx;height:90rpx;margin:0 auto;" class="btn-box">
-                            <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                            <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                             <view class="btn-box-text font-34 color-ffffff">下一步</view>
                         </view>
                         <scroll-view wx:if="{{friendListShow}}" style="max-height: 30vh;min-height: 15vh;" scroll-y="true">
@@ -481,7 +481,7 @@
                                     </view>
                                 </view>
                                 <view bind:tap="clickFriendList" data-phone="{{item.phone}}" style="width:160rpx;height:70rpx;" class="btn-box">
-                                    <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                                    <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                     <view class="btn-box-text font-26 color-ffffff">送杨桃</view>
                                 </view>
                             </view>
@@ -495,7 +495,7 @@
                                 </view>
                             </view>
                             <view bind:tap="clickFriendList" data-phone="{{friendInfo.phone}}" style="width:160rpx;height:70rpx;" class="btn-box">
-                                <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                                <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                 <view class="btn-box-text font-26 color-ffffff">送杨桃</view>
                             </view>
                         </view>
@@ -507,10 +507,10 @@
         <view wx:if="{{exchangeShow}}" class="dialog-style">
             <view class="dialog-window">
                 <view class="dialog-window-close">
-                    <image bind:tap="closeExchange" src="http://cz.h5.krjie.com/images/chengzi/icon-close.png"></image>
+                    <image bind:tap="closeExchange" src="http://img.laishida.cn/images/chengzi/icon-close.png"></image>
                 </view>
                 <view class="dialog-window-box1">
-                    <image class="dialog-window-title" src="http://cz.h5.krjie.com/images/chengzi/icon-1.png"></image>
+                    <image class="dialog-window-title" src="http://img.laishida.cn/images/chengzi/icon-1.png"></image>
                     <view class="dialog-window-title-text font-36 font-bold color-ffffff">兑换肥料</view>
                     <view class="dialog-window-content">
                         <view class="flex-view" style="width: 508rpx;height: 80rpx;background: #FFF5D4;border-radius: 40rpx;padding: 0 40rpx;box-sizing: border-box;margin-bottom: 16rpx;">
@@ -527,10 +527,10 @@
         <view wx:if="{{setPasswordType}}" class="dialog-style">
             <view class="dialog-window">
                 <view class="dialog-window-close">
-                    <image bind:tap="closeSetPassword" src="http://cz.h5.krjie.com/images/chengzi/icon-close.png"></image>
+                    <image bind:tap="closeSetPassword" src="http://img.laishida.cn/images/chengzi/icon-close.png"></image>
                 </view>
                 <view class="dialog-window-box1">
-                    <image class="dialog-window-title" src="http://cz.h5.krjie.com/images/chengzi/icon-1.png"></image>
+                    <image class="dialog-window-title" src="http://img.laishida.cn/images/chengzi/icon-1.png"></image>
                     <view wx:if="{{setPasswordType === 1}}" class="dialog-window-title-text font-36 font-bold color-ffffff">设置杨桃密码</view>
                     <view wx:if="{{setPasswordType === 2}}"  class="dialog-window-title-text font-36 font-bold color-ffffff">输入杨桃密码</view>
                     <view wx:if="{{setPasswordType === 3}}"  class="dialog-window-title-text font-36 font-bold color-ffffff">忘记杨桃密码</view>
@@ -542,7 +542,7 @@
                                 <view class="font-32 color-302424">+86</view>
                                 <text class="font-28 color-FFAE1A">{{phone}}</text>
                                 <view wx:if="{{second>=60}}" bind:tap="clickSendCode" style="width:90rpx;height:44rpx;margin:0 auto;" class="btn-box">
-                                    <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                                    <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                     <view class="btn-box-text font-24 color-ffffff">发送</view>
                                 </view>
                                 <view wx:else class="font-24 color-ffffff" style="width: 90rpx;height: 50rpx;line-height:50rpx;text-align:center;background:url('http://cz.h5.krjie.com//images/chengzi/icon-btnBg.png') 0 0/100% 100%;">
@@ -585,19 +585,19 @@
                             </six-password>
                         </view>
                         <view bind:tap="clickSetPassword" wx:if="{{setPasswordType === 1}}" style="width:280rpx;height:100rpx;margin:0 auto;" class="btn-box">
-                            <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                            <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                             <view class="btn-box-text font-34 color-ffffff">确定</view>
                         </view>
                         <view bind:tap="giveFriend" wx:if="{{setPasswordType === 2}}" style="width:280rpx;height:100rpx;margin:0 auto;" class="btn-box">
-                            <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                            <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                             <view class="btn-box-text font-34 color-ffffff">确定</view>
                         </view>
                         <view bind:tap="clickCheckCode" wx:if="{{setPasswordType === 3}}" style="width:280rpx;height:100rpx;margin:0 auto;" class="btn-box">
-                            <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                            <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                             <view class="btn-box-text font-34 color-ffffff">下一步</view>
                         </view>
                         <view bind:tap="clickSetPassword" wx:if="{{setPasswordType === 4}}" style="width:280rpx;height:100rpx;margin:0 auto;" class="btn-box">
-                            <image class="btn-box-img" src="http://cz.h5.krjie.com/images/chengzi/btn-bg.png"></image>
+                            <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                             <view class="btn-box-text font-34 color-ffffff">确定</view>
                         </view>
                     </view>
@@ -613,7 +613,7 @@
         <view wx:if="{{tipsPasswordShow}}" class="dialog-style">
             <view class="dialog-window">
                 <view style="position: absolute;top: 47rpx;right: 16rpx;">
-                    <image style="width: 47rpx;height: 47rpx;" bind:tap="closeTipsPassword" src="http://cz.h5.krjie.com/images/chengzi/icon-close.png"></image>
+                    <image style="width: 47rpx;height: 47rpx;" bind:tap="closeTipsPassword" src="http://img.laishida.cn/images/chengzi/icon-close.png"></image>
                 </view>
                 <view class="dialog-window-box" style="background: url('http://cz.h5.krjie.com//images/chengzi/daojuxiangqing-bg.png') 0 0/100%;">
                     <view class="dialog-window-content" style="margin-top: 150rpx;">
@@ -636,7 +636,7 @@
         <view wx:if="{{buyDaoJuShow}}" class="dialog-style">
             <view class="dialog-window">
                 <view style="position: absolute;top: 47rpx;right: 16rpx;">
-                    <image style="width: 47rpx;height: 47rpx;" bind:tap="closeBuyDaoJu" src="http://cz.h5.krjie.com/images/chengzi/icon-close.png"></image>
+                    <image style="width: 47rpx;height: 47rpx;" bind:tap="closeBuyDaoJu" src="http://img.laishida.cn/images/chengzi/icon-close.png"></image>
                 </view>
                 <view class="dialog-window-box" style="background: url('http://cz.h5.krjie.com//images/chengzi/daojuxiangqing-bg.png') 0 0/100% 100%;">
                     <view class="dialog-window-content" style="margin-top: 150rpx;">
@@ -662,7 +662,7 @@
         <view wx:if="{{noCanLingQuShow}}" class="dialog-style">
             <view class="dialog-window">
                 <view style="position: absolute;top: 47rpx;right: 16rpx;">
-                    <image style="width: 47rpx;height: 47rpx;" bind:tap="closeNoCanLingQu" src="http://cz.h5.krjie.com/images/chengzi/icon-close.png"></image>
+                    <image style="width: 47rpx;height: 47rpx;" bind:tap="closeNoCanLingQu" src="http://img.laishida.cn/images/chengzi/icon-close.png"></image>
                 </view>
                 <view class="dialog-window-box">
                     <view class="dialog-window-content" style="margin-top: 150rpx;">
@@ -684,7 +684,7 @@
         <view wx:if="{{noFeiLiaoShow}}" class="dialog-style">
             <view class="dialog-window">
                 <view style="position: absolute;top: 47rpx;right: 16rpx;">
-                    <image style="width: 47rpx;height: 47rpx;" bind:tap="closeNoFeiLiaoShow" src="http://cz.h5.krjie.com/images/chengzi/icon-close.png"></image>
+                    <image style="width: 47rpx;height: 47rpx;" bind:tap="closeNoFeiLiaoShow" src="http://img.laishida.cn/images/chengzi/icon-close.png"></image>
                 </view>
                 <view class="dialog-window-box" style="">
                     <view class="dialog-window-content" style="margin-top: 150rpx;">
@@ -706,13 +706,13 @@
         <view class="dialog-style" wx:if="{{chengZiListDetailsShow}}">
             <view class="dialog-window">
                 <view style="position: absolute;top: -60rpx;right: 16rpx;">
-                    <image style="width: 47rpx;height: 47rpx;" bind:tap="closeChengZiListDetails" src="http://cz.h5.krjie.com/images/chengzi/icon-close.png"></image>
+                    <image style="width: 47rpx;height: 47rpx;" bind:tap="closeChengZiListDetails" src="http://img.laishida.cn/images/chengzi/icon-close.png"></image>
                 </view>
                 <view style="background-color:#ffffff;border: 6rpx solid #FFD189;border-radius: 40rpx;padding: 10rpx 20rpx;padding-bottom: 20rpx;">
                     <view style="padding: 10rpx 0;border-bottom: 1rpx solid #ddba97;">
                         {{chengZiListDetails.createTimeText}}
                     </view>
-<!--                    1获得杨桃，2收到好友赠送，3送给好友杨桃，4商城兑换 5商城取消订单-->
+<!--                    1获得杨桃，2收到好友赠送，3送给好友杨桃，16商城兑换 17商城取消订单-->
                     <view wx:if="{{chengZiListDetailsShow===1}}">
                         <view class="flex-view" style="justify-content: space-between;padding: 10rpx 0;">
                             <text class="font-28 color-302424">总杨桃数量</text>
@@ -753,10 +753,10 @@
                             <text class="font-40 color-ADAAAA">{{chengZiListDetails.orangeAmount}}个</text>
                         </view>
                     </view>
-                    <view wx:if="{{chengZiListDetailsShow===4}}">
+                    <view wx:if="{{chengZiListDetailsShow===16}}">
                         <view class="flex-view" style="justify-content: space-between;padding: 10rpx 0;">
                             <text class="font-40 color-302424">杨桃商城兑换</text>
-                            <text class="font-40 color-FE963A">{{chengZiListDetails.orangeAmount}}个</text>
+<!--                            <text class="font-40 color-FE963A">{{chengZiListDetails.orangeAmount}}个</text>-->
                         </view>
                         <view class="flex-view" style="justify-content: flex-end;padding: 10rpx 0;">
                             <view bind:tap="goToOrderDetails" class="font-26 color-ffffff" style="width: 160rpx;height: 60rpx;line-height: 60rpx;text-align: center;border-radius: 30rpx;background-color: #FE963A">
@@ -764,10 +764,10 @@
                             </view>
                         </view>
                     </view>
-                    <view wx:if="{{chengZiListDetailsShow===5}}">
+                    <view wx:if="{{chengZiListDetailsShow===17}}">
                         <view class="flex-view" style="justify-content: space-between;padding: 10rpx 0;">
                             <text class="font-40 color-302424">商城取消兑换</text>
-                            <text class="font-40 color-FE963A">{{chengZiListDetails.orangeAmount}}个</text>
+<!--                            <text class="font-40 color-FE963A">{{chengZiListDetails.orangeAmount}}个</text>-->
                         </view>
                         <view class="flex-view" style="justify-content: flex-end;padding: 10rpx 0;">
                             <view bind:tap="goToOrderDetails" class="font-26 color-ffffff" style="width: 160rpx;height: 60rpx;line-height: 60rpx;text-align: center;border-radius: 30rpx;background-color: #FE963A">
@@ -782,7 +782,7 @@
         <view wx:if="{{downImgShow}}" class="dialog-style">
             <view class="dialog-window">
                 <view style="position: absolute;top: 47rpx;right: 16rpx;">
-                    <image style="width: 47rpx;height: 47rpx;" bind:tap="closeDownImg" src="http://cz.h5.krjie.com/images/chengzi/icon-close.png"></image>
+                    <image style="width: 47rpx;height: 47rpx;" bind:tap="closeDownImg" src="http://img.laishida.cn/images/chengzi/icon-close.png"></image>
                 </view>
                 <view class="dialog-window-box" style="background: url('http://cz.h5.krjie.com//images/chengzi/daojuxiangqing-bg.png') 0 0/100%;">
                     <view class="dialog-window-content" style="padding:0;margin-top: 150rpx;margin-bottom: 30rpx">
@@ -797,19 +797,19 @@
         <!--红包-->
         <view class="bottom-window-shadow" style="{{showHongbao1?'top: 0%;':'top: 100%;'}}">
             <view style="width:670rpx;height:980rpx;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
-            <image src="../../images/chengzi/hongbao-bg.png" style="width:100%" mode="widthFix"></image>
-            <image src="../../images/chengzi/hongbao-right.png" style="width:346rpx;position:absolute;top:0;right:0" mode="widthFix"></image>
+            <image src="http://img.laishida.cn/images/chengzi/hongbao-bg.png" style="width:100%" mode="widthFix"></image>
+            <image src="http://img.laishida.cn/images/chengzi/hongbao-right.png" style="width:346rpx;position:absolute;top:0;right:0" mode="widthFix"></image>
             <view class="hongbao-text">送你{{hongbaoCount}}元红包</view>
-            <image bind:tap="clickHongbao1" src="../../images/chengzi/hongbao-btn.png" style="position:absolute;width:452rpx;left:109rpx;bottom:10rpx" mode="widthFix"></image>
-            <image bind:tap="closeHongbao1" src="../../images/chengzi/icon-close1.png" style="position:absolute;width:74rpx;left:298rpx;bottom:-90rpx" mode="widthFix"></image>
+            <image bind:tap="clickHongbao1" src="http://img.laishida.cn/images/chengzi/hongbao-btn.png" style="position:absolute;width:452rpx;left:109rpx;bottom:10rpx" mode="widthFix"></image>
+            <image bind:tap="closeHongbao1" src="http://img.laishida.cn/images/chengzi/icon-close1.png" style="position:absolute;width:74rpx;left:298rpx;bottom:-90rpx" mode="widthFix"></image>
             </view>
         </view>
         <!--红包2-->
         <view class="bottom-window-shadow" style="{{showHongbao2?'top: 0%;':'top: 100%;'}}">
             <view style="width:710rpx;height:755rpx;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
-            <image bind:tap="closeHongbao2" src="../../images/chengzi/hongbao.png" style="width:100%" mode="widthFix"></image>
+            <image bind:tap="closeHongbao2" src="http://img.laishida.cn/images/chengzi/hongbao.png" style="width:100%" mode="widthFix"></image>
             <view style="font-size:113rpx;color:#FF4A20;width:100%;text-align:center;position:absolute;top:240rpx">{{hongbaoCount}}元</view>
-            <image bind:tap="openJiChong" src="../../images/chengzi/btn-lijishiyong.png" style="position:absolute;width:355rpx;left:175rpx;bottom:100rpx" mode="widthFix"></image>
+            <image bind:tap="openJiChong" src="http://img.laishida.cn/images/chengzi/btn-lijishiyong.png" style="position:absolute;width:355rpx;left:175rpx;bottom:100rpx" mode="widthFix"></image>
             </view>
         </view>
     </view>

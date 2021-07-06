@@ -372,6 +372,7 @@ Page({
   openChengZiListDetails(e){//打开流水详情
     let index = e.currentTarget.dataset.i;
     let obj = this.data.chengZiList[index];
+    console.log(obj)
     if(obj.useType===1){
       //获得杨桃 类型 发送请求
       let time = obj.createTime.substring(0,8);
@@ -818,8 +819,30 @@ Page({
     }
     HTTP.post('/api/v1/user/pay/minipay',params,(data)=>{
       if(data.code == 200){
-        this.setData({
-          todayNumber:data.data
+        let payData = data.data;
+        payData = JSON.parse(payData);
+        wx.requestPayment({
+          timeStamp: payData.timeStamp,
+          nonceStr: payData.nonceStr,
+          package: payData.package,
+          signType: payData.signType,
+          paySign: payData.paySign,
+          success (res) {
+            console.log('支付成功')
+            wx.showToast({
+              icon:"none",
+              title: "支付成功",
+              duration: 2000
+            })
+          },
+          fail (res) {
+            console.log('支付失败')
+            wx.showToast({
+              icon:"none",
+              title: "支付失败",
+              duration: 2000
+            })
+          }
         })
       } else {
         wx.showToast({
@@ -1218,7 +1241,6 @@ Page({
     })
   },
   getAllPropsListBack(data){//100008
-    console.log(1)
     this.setData({
       allPropsList:data,
     })
@@ -1354,6 +1376,9 @@ Page({
   onShow: function () {
     this.havePhone();
     let that = this;
+    if(wx.getStorageSync("token")){
+      HTTP.initSocket();
+    }
     wx.onSocketMessage(function (res) {//收到消息
       HTTP.onSocketMessage(res,function (result) {
         if (result.type === '100000'){
@@ -1455,7 +1480,7 @@ Page({
     return {
       title: '杨桃乐园，福利多多',
       path: '/pages/index/index?uid='+ 1 ,
-      imageUrl:'http://cz.h5.krjie.com/images/index/big-bg.png',
+      imageUrl:'http://img.laishida.cn/images/index/big-bg.png',
       success: function (res) {
         // 转发成功
         console.log("转发成功:" + JSON.stringify(res));

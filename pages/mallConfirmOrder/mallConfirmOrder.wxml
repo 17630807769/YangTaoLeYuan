@@ -1,7 +1,7 @@
 <!--pages/mallConfirmOrder/mallConfirmOrder.wxml-->
 <view style="padding: 28rpx">
     <view bind:tap="bindAddress" class="flex-view" style="padding: 30rpx;box-sizing: border-box;border-radius: 12rpx;background-color: #ffffff;width: 100%;height: 150rpx;margin-bottom: 18rpx;">
-        <image style="width: 35rpx;height: 50rpx" src="http://cz.h5.krjie.com/images/mall/address.png" mode="widthFix"></image>
+        <image style="width: 35rpx;height: 50rpx" src="http://img.laishida.cn/images/mall/address.png" mode="widthFix"></image>
         <view wx:if="{{address.id==null}}" style="width: 520rpx;padding: 0 30rpx;">
             <view class="font-30 color-333333">
                 请填写收货地址
@@ -17,7 +17,7 @@
                 {{address.pro}}{{address.city}}{{address.area}}{{address.detailAddress}}
             </view>
         </view>
-        <image style="width: 13rpx;height: 25rpx" src="http://cz.h5.krjie.com/images/mall/right.png" mode="widthFix"></image>
+        <image style="width: 13rpx;height: 25rpx" src="http://img.laishida.cn/images/mall/right.png" mode="widthFix"></image>
     </view>
     <view class="flex-view" style="padding: 30rpx;padding-bottom:0;box-sizing: border-box;border-radius: 12rpx;background-color: #ffffff;margin-bottom: 18rpx;">
         <view class="flex-view" style="width: 100%;height: 160rpx;margin-bottom: 20rpx;">
@@ -30,7 +30,7 @@
                     <view class="flex-view" style="width: 200rpx">
                         <text wx:if="{{goodsType==2}}" class="font-24 font-bold color-666666">￥</text>
                         <text class="font-26color-666666">{{orangeValue}}</text>
-                        <image wx:if="{{goodsType==1}}" style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
+                        <image wx:if="{{goodsType==1}}" style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="http://img.laishida.cn/images/mall/icon-orange.png" mode="widthFix"></image>
                     </view>
                     <text class="font-24 color-666666">x{{buyCount}}</text>
                 </view>
@@ -41,26 +41,26 @@
             <view class="flex-view">
                 <text wx:if="{{goodsType==2}}" class="font-24 font-bold color-666666">￥</text>
                 <text class="font-26 color-666666">{{buyCount*orangeValue}}</text>
-                <image wx:if="{{goodsType==1}}" style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
+                <image wx:if="{{goodsType==1}}" style="width: 30rpx;height: 30rpx;display: block;margin: 0 10rpx;" src="http://img.laishida.cn/images/mall/icon-orange.png" mode="widthFix"></image>
             </view>
         </view>
     </view>
 <!--    <view class="flex-view" style="padding: 30rpx;padding-bottom:0;box-sizing: border-box;border-radius: 12rpx;background-color: #ffffff;margin-bottom: 18rpx;">-->
 <!--        <view bind:tap="changePayWay" data-payway="1" class="flex-view" style="width:100%;justify-content: space-between;margin-bottom:18rpx">-->
 <!--            <view class="flex-view">-->
-<!--                <image src="http://cz.h5.krjie.com/images/mall/icon-orange.png" style="width:46rpx;height:44rpx;display: block;margin-right:10rpx"></image>-->
+<!--                <image src="http://img.laishida.cn/images/mall/icon-orange.png" style="width:46rpx;height:44rpx;display: block;margin-right:10rpx"></image>-->
 <!--                <text  class="font-24 color-333333">杨桃支付</text>-->
 <!--            </view>-->
-<!--            <image wx:if="{{payWay==1}}" src="http://cz.h5.krjie.com/images/mall/icon-gou.png" style="width:40rpx;height:40rpx;display: block;"></image>-->
-<!--            <image wx:else src="http://cz.h5.krjie.com/images/mall/icon-gou1.png" style="width:40rpx;height:40rpx;display: block;"></image>-->
+<!--            <image wx:if="{{payWay==1}}" src="http://img.laishida.cn/images/mall/icon-gou.png" style="width:40rpx;height:40rpx;display: block;"></image>-->
+<!--            <image wx:else src="http://img.laishida.cn/images/mall/icon-gou1.png" style="width:40rpx;height:40rpx;display: block;"></image>-->
 <!--        </view>-->
 <!--        <view bind:tap="changePayWay" data-payway="2" class="flex-view" style="width:100%;justify-content: space-between;margin-bottom:18rpx">-->
 <!--            <view class="flex-view">-->
-<!--                <image src="http://cz.h5.krjie.com/images/mall/weixinzhifu.png" style="width:46rpx;height:44rpx;display: block;margin-right:10rpx"></image>-->
+<!--                <image src="http://img.laishida.cn/images/mall/weixinzhifu.png" style="width:46rpx;height:44rpx;display: block;margin-right:10rpx"></image>-->
 <!--                <text  class="font-24 color-333333">微信支付</text>-->
 <!--            </view>-->
-<!--            <image wx:if="{{payWay==2}}" src="http://cz.h5.krjie.com/images/mall/icon-gou.png" style="width:40rpx;height:40rpx;display: block;"></image>-->
-<!--            <image wx:else src="http://cz.h5.krjie.com/images/mall/icon-gou1.png" style="width:40rpx;height:40rpx;display: block;"></image>-->
+<!--            <image wx:if="{{payWay==2}}" src="http://img.laishida.cn/images/mall/icon-gou.png" style="width:40rpx;height:40rpx;display: block;"></image>-->
+<!--            <image wx:else src="http://img.laishida.cn/images/mall/icon-gou1.png" style="width:40rpx;height:40rpx;display: block;"></image>-->
 <!--        </view>-->
 <!--    </view>-->
 </view>
@@ -68,7 +68,7 @@
     <view class="flex-view">
         <text wx:if="{{goodsType==2}}" class="font-24 font-bold color-ff3333">￥</text>
         <text class="font-46 font-bold color-ff3333">{{buyCount*orangeValue}}</text>
-        <image wx:if="{{goodsType==1}}" style="width: 46rpx;height: 46rpx;display: block;margin: 0 10rpx;" src="http://cz.h5.krjie.com/images/mall/icon-orange.png" mode="widthFix"></image>
+        <image wx:if="{{goodsType==1}}" style="width: 46rpx;height: 46rpx;display: block;margin: 0 10rpx;" src="http://img.laishida.cn/images/mall/icon-orange.png" mode="widthFix"></image>
     </view>
     <view bind:tap="openPay" class="font-34 color-ffffff" style="width: 240rpx;height: 78rpx;line-height:78rpx;text-align:center;background: linear-gradient(90deg, #FCA02F 0%, #FFD264 100%);border-radius: 39rpx;">提交订单</view>
 </view>
@@ -76,10 +76,10 @@
 <view wx:if="{{setPasswordType}}" class="dialog-style">
     <view class="dialog-window">
         <view class="dialog-window-close">
-            <image bind:tap="closeSetPassword" src="http://cz.h5.krjie.com/images/chengzi/icon-close.png"></image>
+            <image bind:tap="closeSetPassword" src="http://img.laishida.cn/images/chengzi/icon-close.png"></image>
         </view>
         <view class="dialog-window-box1">
-            <image class="dialog-window-title" src="http://cz.h5.krjie.com/images/chengzi/icon-1.png"></image>
+            <image class="dialog-window-title" src="http://img.laishida.cn/images/chengzi/icon-1.png"></image>
             <view wx:if="{{setPasswordType === 1}}" class="dialog-window-title-text font-36 font-bold color-ffffff">设置杨桃密码</view>
             <view wx:if="{{setPasswordType === 2}}"  class="dialog-window-title-text font-36 font-bold color-ffffff">输入杨桃密码</view>
             <view wx:if="{{setPasswordType === 3}}"  class="dialog-window-title-text font-36 font-bold color-ffffff">忘记杨桃密码</view>
@@ -157,7 +157,7 @@
 <view wx:if="{{tipsPasswordShow}}" class="dialog-style">
     <view class="dialog-window">
         <view style="position: absolute;top: 47rpx;right: 16rpx;">
-            <image style="width: 47rpx;height: 47rpx;" bind:tap="closeTipsPassword" src="http://cz.h5.krjie.com/images/chengzi/icon-close.png"></image>
+            <image style="width: 47rpx;height: 47rpx;" bind:tap="closeTipsPassword" src="http://img.laishida.cn/images/chengzi/icon-close.png"></image>
         </view>
         <view class="dialog-window-box" style="background: url('http://cz.h5.krjie.com//images/chengzi/daojuxiangqing-bg.png') 0 0/100%;">
             <view class="dialog-window-content" style="margin-top: 150rpx;">
