@@ -34,10 +34,10 @@ Page({
     },2200)
   },
   onLoad: function (options) {
-    if(options.uid){
-      getApp().globalData.yaoQingpeople = options.uid;
+    if(options.fphone){
+      getApp().globalData.yaoQingpeople = options.fphone;
     }
-    console.log(options.uid,getApp().globalData.yaoQingpeople)
+    console.log(options.fphone,getApp().globalData.yaoQingpeople)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

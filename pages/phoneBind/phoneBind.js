@@ -1,5 +1,6 @@
 // pages/phoneBind/phoneBind.js
 const HTTP = require('../../utils/httputils');
+const app = getApp();
 Page({
 
   /**
@@ -89,6 +90,11 @@ Page({
           title: "绑定成功",
           duration: 2000
         })
+        wx.setStorage({
+          key:"phone",
+          data:this.data.phone
+        })
+        getApp().globalData.userPhone = this.data.phone;
         setTimeout(()=>{
           wx.navigateBack({
             delta: 1

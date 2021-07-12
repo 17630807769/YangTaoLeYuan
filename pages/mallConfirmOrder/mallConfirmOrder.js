@@ -57,6 +57,7 @@ Page({
     orderKey:null,
     time2:null,
     payWay:1,// 1 杨桃支付  2微信支付
+    userPhone:null,
   },
 
   // 当组件输入数字6位数时的自定义函数
@@ -194,7 +195,7 @@ Page({
       })
       return
     }
-    let data={phone:17638172927,payPassword:this.data.inputValue1};
+    let data={phone:getApp().globalData.userPhone,payPassword:this.data.inputValue1};
     if(this.setPasswordType===4){//此时为重置密码
       data.code = this.data.code;
     }
@@ -216,7 +217,7 @@ Page({
     })
   },
   clickSendCode(){
-    HTTP.post('/api/v1/user/user/info/send/code',{phone:17638172927},(data)=>{
+    HTTP.post('/api/v1/user/user/info/send/code',{phone:getApp().globalData.userPhone},(data)=>{
       if(data.code == 200){
         clearInterval(this.data.time1)
         this.data.time1 = setInterval(()=>{
@@ -262,7 +263,7 @@ Page({
       })
       return
     }
-    HTTP.post('/api/v1/user/user/info/check/code',{phone:17638172927,code:this.data.inputValue},(data)=>{
+    HTTP.post('/api/v1/user/user/info/check/code',{phone:getApp().globalData.userPhone,code:this.data.inputValue},(data)=>{
       if(data.code == 200){
         this.data.code = this.data.inputValue;
         this.openSetPassword4();
@@ -313,6 +314,7 @@ Page({
         orangeValue: res.orangeValue,//价格
         goodsType: res.goodsType,
         buyCount:res.buyCount,//购买数量
+        userPhone:getApp().globalData.userPhone
       })
     }
     this.getAddress();

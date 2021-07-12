@@ -89,7 +89,7 @@
                     <view class="font-30 color-302424">手机号</view>
                     <view class="flex-view" style="justify-content:space-between;width: 402rpx;height: 80rpx;background: #FFF5D4;border-radius: 40rpx;padding: 0 20rpx;box-sizing: border-box">
                         <view class="font-32 color-302424">+86</view>
-                        <text class="font-28 color-FFAE1A">17638172927</text>
+                        <text class="font-28 color-FFAE1A">{{userPhone}}</text>
                         <view wx:if="{{second>=60}}" bind:tap="clickSendCode" class="font-24 color-ffffff" style="width: 90rpx;height: 50rpx;line-height:50rpx;text-align:center;background:url('http://cz.h5.krjie.com//images/chengzi/icon-btnBg.png') 0 0/100% 100%;">
                             发送
                         </view>

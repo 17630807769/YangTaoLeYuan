@@ -62,6 +62,7 @@ Page({
                 params.jsCode = res1.code;
                 params.encryptedData = e.detail.encryptedData;
                 params.iv = e.detail.iv;
+                params.fphone = getApp().globalData.yaoQingpeople;
                 HTTP.post('/api/v1/user/user/info/outer/wx/login',params,(data)=>{
                   if(data.code == 200){
                     //写入token
@@ -73,6 +74,7 @@ Page({
                       key:"phone",
                       data:data.data.phone
                     })
+                    getApp().globalData.userPhone = data.data.phone;
                     wx.setStorage({
                       key:"nickName",
                       data:data.data.nickName

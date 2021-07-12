@@ -247,13 +247,37 @@
 <!--                                    <view class="btn-box-text font-28 color-ffffff">去观看</view>-->
 <!--                                </view>-->
 <!--                            </view>-->
+                            <!--登录领取肥料-->
+                            <view class="flex-view" style="padding: 20rpx 0;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">
+                                <view class="flex-view">
+                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/icon-goumai.png"></image>
+                                    <view style="width: 285rpx;">
+                                        <view class="font-30 font-bold color-302424">登录获得肥料</view>
+                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">登录可获得{{oneDayLoginReceiveMuck}}g肥料</view>
+                                    </view>
+                                </view>
+                                <view wx:if="{{oneDayLogin==1 && oneDayLoginMuckAmount!=0}}">
+                                    <view class="flex-view" style="justify-content: center;">
+                                        <image style="width:30rpx;height:40rpx;margin-right:10rpx;display:block;" src="http://img.laishida.cn/images/chengzi/feiliao.png"></image>
+                                        <text class="font-26 color-FCA02F">x{{oneDayLoginMuckAmount}}g</text>
+                                    </view>
+                                    <view bind:tap="lingQuFeiLiao" data-type="7" style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                        <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
+                                        <view class="btn-box-text font-28 color-ffffff">领取</view>
+                                    </view>
+                                </view>
+                                <view wx:else style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                    <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
+                                    <view class="btn-box-text font-28 color-ffffff">已领取</view>
+                                </view>
+                            </view>
                             <!--分享好友-->
                             <view class="flex-view" style="padding: 20rpx 0;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">
                                 <view class="flex-view">
                                     <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/icon-fenxiang.png"></image>
                                     <view style="width: 285rpx;">
                                         <view class="font-30 font-bold color-302424">分享微信好友({{shareFriend}}/{{shareFriendMax}})</view>
-                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">分享微信好友获得肥料</view>
+                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">分享好友可获得{{shareFriendReceiveMuck}}g肥料</view>
                                     </view>
                                 </view>
                                 <view wx:if="{{shareFriend<shareFriendMax}}"  style="width: 160rpx;height: 60rpx;" class="btn-box">
@@ -284,20 +308,24 @@
 <!--                                <view class="flex-view">-->
 <!--                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/icon-fenxiang.png"></image>-->
 <!--                                    <view style="width: 285rpx;">-->
-<!--                                        <view class="font-30 font-bold color-302424">分享微信朋友圈({{shareFriendCircle}}/{{shareFriendCircleMax}})</view>-->
-<!--                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">分享微信朋友圈获得肥料</view>-->
+<!--                                        <view class="font-30 font-bold color-302424">分享朋友圈({{shareFriendCircle}}/{{shareFriendCircleMax}})</view>-->
+<!--                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">分享朋友圈可获得{{shareFriendCircleReceiveMuck}}g肥料</view>-->
 <!--                                    </view>-->
 <!--                                </view>-->
 <!--                                <view wx:if="{{shareFriendCircle<shareFriendCircleMax}}"  style="width: 160rpx;height: 60rpx;" class="btn-box">-->
-<!--                                    <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>-->
-<!--                                    <view class="btn-box-text font-28 color-ffffff">去分享</view>-->
+<!--                                    <button open-type="share" style="width: 160rpx;background-color: #00000000;height: 60rpx;border:0;margin: 0;padding: 0;">-->
+<!--                                        <view style="width: 160rpx;height: 60rpx;" class="btn-box">-->
+<!--                                            <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>-->
+<!--                                            <view class="btn-box-text font-28 color-ffffff">去分享</view>-->
+<!--                                        </view>-->
+<!--                                    </button>-->
 <!--                                </view>-->
 <!--                                <view wx:if="{{shareFriendCircle>=shareFriendCircleMax && shareFriendCircleMuck!=0}}">-->
 <!--                                    <view class="flex-view" style="justify-content: center;">-->
 <!--                                        <image style="width:30rpx;height:40rpx;margin-right:10rpx;display:block;" src="http://img.laishida.cn/images/chengzi/feiliao.png"></image>-->
 <!--                                        <text class="font-26 color-FCA02F">x{{shareFriendCircleMuck}}g</text>-->
 <!--                                    </view>-->
-<!--                                    <view style="width: 160rpx;height: 60rpx;" class="btn-box">-->
+<!--                                    <view bind:tap="lingQuFeiLiao" data-type="4" style="width: 160rpx;height: 60rpx;" class="btn-box">-->
 <!--                                        <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>-->
 <!--                                        <view class="btn-box-text font-28 color-ffffff">领取</view>-->
 <!--                                    </view>-->
@@ -307,13 +335,45 @@
 <!--                                    <view class="btn-box-text font-28 color-ffffff">已领取</view>-->
 <!--                                </view>-->
 <!--                            </view>-->
+                            <!--好友注册-->
+                            <view class="flex-view" style="padding: 20rpx 0;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">
+                                <view class="flex-view">
+                                    <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/icon-fenxiang.png"></image>
+                                    <view style="width: 285rpx;">
+                                        <view class="font-30 font-bold color-302424">好友成功注册({{inviteRegister}}/{{inviteRegisterMax}})</view>
+                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">好友成功注册可获得{{inviteRegisterReceiveMuck}}g肥料</view>
+                                    </view>
+                                </view>
+                                <view wx:if="{{inviteRegister<inviteRegisterMax}}"  style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                    <button open-type="share" style="width: 160rpx;background-color: #00000000;height: 60rpx;border:0;margin: 0;padding: 0;">
+                                        <view style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                            <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
+                                            <view class="btn-box-text font-28 color-ffffff">去分享</view>
+                                        </view>
+                                    </button>
+                                </view>
+                                <view wx:if="{{inviteRegister>=inviteRegisterMax && inviteRegisterMuck!=0}}">
+                                    <view class="flex-view" style="justify-content: center;">
+                                        <image style="width:30rpx;height:40rpx;margin-right:10rpx;display:block;" src="http://img.laishida.cn/images/chengzi/feiliao.png"></image>
+                                        <text class="font-26 color-FCA02F">x{{inviteRegisterMuck}}g</text>
+                                    </view>
+                                    <view bind:tap="lingQuFeiLiao" data-type="5" style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                        <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
+                                        <view class="btn-box-text font-28 color-ffffff">领取</view>
+                                    </view>
+                                </view>
+                                <view wx:if="{{inviteRegister>=inviteRegisterMax && inviteRegisterMuck==0}}" style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                    <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
+                                    <view class="btn-box-text font-28 color-ffffff">已领取</view>
+                                </view>
+                            </view>
                             <!--购买道具-->
                             <view class="flex-view" style="padding: 20rpx 0;border-radius: 30rpx 30rpx 0px 0px;justify-content: space-between;">
                                 <view class="flex-view">
                                     <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/icon-goumai.png"></image>
                                     <view style="width: 285rpx;">
                                         <view class="font-30 font-bold color-302424">购买道具</view>
-                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">购买道具获得肥料</view>
+                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">购买道具可获得{{buyPropsReceiveMuck}}g肥料</view>
                                     </view>
                                 </view>
                                 <view wx:if="{{buyPropsMuckAmount!=0}}">
@@ -337,7 +397,7 @@
                                     <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/icon-shangchengqianggou.png"></image>
                                     <view style="width: 285rpx;">
                                         <view class="font-30 font-bold color-302424">抢购商品</view>
-                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">抢购商品获得肥料</view>
+                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">抢购商品可获得{{buyGoodsReceiveMuck}}g肥料</view>
                                     </view>
                                 </view>
                                 <view wx:if="{{buyGoodsMuckAmount!=0}}">
@@ -361,10 +421,20 @@
                                     <image style="width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;overflow: hidden" src="http://img.laishida.cn/images/chengzi/icon-chongdianbao.png"></image>
                                     <view style="width: 285rpx;">
                                         <view class="font-30 font-bold color-302424">租借充电宝获得肥料</view>
-                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">每租借1次获得100g肥料</view>
+                                        <view class="font-24 color-C0C0C0" style="line-height: 25rpx">每租借1次获得{{chongdianReceiveMuck}}g肥料</view>
                                     </view>
                                 </view>
-                                <view style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                <view wx:if="{{chongdianMuckAmount!=0}}">
+                                    <view class="flex-view" style="justify-content: center;">
+                                        <image style="width:30rpx;height:40rpx;margin-right:10rpx;display:block;" src="http://img.laishida.cn/images/chengzi/feiliao.png"></image>
+                                        <text class="font-26 color-FCA02F">x{{chongdianMuckAmount}}g</text>
+                                    </view>
+                                    <view bind:tap="lingQuFeiLiao" data-type="6" style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                        <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
+                                        <view class="btn-box-text font-28 color-ffffff">领取</view>
+                                    </view>
+                                </view>
+                                <view wx:else bind:tap="goToMall" style="width: 160rpx;height: 60rpx;" class="btn-box">
                                     <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                     <view class="btn-box-text font-28 color-ffffff">去租借</view>
                                 </view>
@@ -688,7 +758,7 @@
                 </view>
                 <view class="dialog-window-box" style="">
                     <view class="dialog-window-content" style="margin-top: 150rpx;">
-                        <view class="font-40 font-bold color-FE963A" style="padding: 20rpx 0;text-align: center">没有可领取的肥料啦！</view>
+                        <view class="font-40 font-bold color-FE963A" style="padding: 20rpx 0;text-align: center">肥料不足{{lastFertilizeAmount}}g！</view>
                         <view class="font-32 font-bold color-302424" style="margin-bottom: 50rpx;text-align: center">快去集肥料吧~~</view>
                         <view class="flex-view" style="justify-content: space-between">
                             <view bind:tap="clickShiFeiList" class="dialog-btn" style="width: 240rpx;height: 80rpx;line-height:62rpx;">

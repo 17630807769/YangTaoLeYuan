@@ -131,32 +131,42 @@ Page({
     myPropsOrderList:[],//我的道具订单
     nowShowPropsIndex:0,//当前弹筐里展示的道具下标
     //集肥料
-    watchAmount:0,
-    maxAmount:0,
-    // 看视频领取的肥料数
-    seeOneVideoAmount:0,
-    // 微信今日分享朋友圈次数
-    shareFriendCircle:0,
-    // 微信今日分享朋友圈最大次数
-    shareFriendCircleMax:0,
-    // 分享到朋友圈今日可领取的肥料
-    shareFriendCircleMuck:0,
-    // 微信今日分享朋友次数
-    shareFriend:0,
-    // 微信今日分享朋友最大次数
-    shareFriendMax:0,
-    // 微信今日分享朋友可领取肥料
-    shareFriendMuck:0,
-    // 微信邀请有效好友注册次数
-    inviteRegister:0,
-    // 微信邀请有效好友注册最大次数
-    inviteRegisterMax:0,
-    // 微信邀请有效好友注册可领取肥料
-    inviteRegisterMuck:0,
-    // 购买道具获得的肥料数量
-    buyPropsMuckAmount:0,
-    // 抢购商品获得的肥料数量
-    buyGoodsMuckAmount:0,
+    /*登录领取肥料*/
+    oneDayLoginReceiveMuck: "101",//展示奖励数量
+    oneDayLogin: "1",//任务有无完成 1为完成
+    oneDayLoginMuckAmount: "101",//可领取数量 0为已领取
+    /*分享好友*/
+    shareFriend: "1",
+    shareFriendMax: "3",
+    shareFriendMuck: 0,
+    shareFriendReceiveMuck: "50",
+    /*分享朋友圈*/
+    shareFriendCircle: "0",
+    shareFriendCircleMax: "1",
+    shareFriendCircleMuck: 0,
+    shareFriendCircleReceiveMuck: "50",
+    /*好友注册*/
+    inviteRegister: "0",
+    inviteRegisterMax: "3",
+    inviteRegisterMuck: 0,
+    inviteRegisterReceiveMuck: "100",
+    /*购买道具*/
+    buyPropsIsReceive: "0",
+    buyPropsMuckAmount: "0",
+    buyPropsReceiveMuck: "100",
+    /*抢购商品*/
+    buyGoodsIsReceive: "0",
+    buyGoodsMuckAmount: "0",
+    buyGoodsReceiveMuck: "100",
+    /*租赁充电宝*/
+    chongdianMuckAmount: "0",
+    chongdianReceive: "0",
+    chongdianReceiveMuck: "100",
+
+
+
+
+
 
     downImgShow:false,
     downImgUrl:'',
@@ -612,7 +622,7 @@ Page({
       })
       return
     }
-    let data={phone:17638172927,payPassword:this.data.inputValue1};
+    let data={phone:getApp().globalData.userPhone,payPassword:this.data.inputValue1};
     if(this.setPasswordType===4){//此时为重置密码
       data.code = this.data.code;
     }
@@ -634,7 +644,7 @@ Page({
     })
   },
   clickSendCode(){
-    HTTP.post('/api/v1/user/user/info/send/code',{phone:17638172927},(data)=>{
+    HTTP.post('/api/v1/user/user/info/send/code',{phone:getApp().globalData.userPhone},(data)=>{
       if(data.code == 200){
         clearInterval(this.data.time1)
         this.data.time1 = setInterval(()=>{
@@ -680,7 +690,7 @@ Page({
       })
       return
     }
-    HTTP.post('/api/v1/user/user/info/check/code',{phone:17638172927,code:this.data.inputValue},(data)=>{
+    HTTP.post('/api/v1/user/user/info/check/code',{phone:getApp().globalData.userPhone,code:this.data.inputValue},(data)=>{
       if(data.code == 200){
         this.data.code = this.data.inputValue;
         this.openSetPassword4();
@@ -1145,7 +1155,7 @@ Page({
     HTTP.sendMessage('100058',param);
   },
   //领取集肥料地方的肥料
-  lingQuFeiLiao(e){//1领取抢购商品肥料，2领取购买保护道具肥料 3领取分享朋友圈肥料 4领取分享好友肥料 5领取邀请有效好友注册肥料
+  lingQuFeiLiao(e){//1领取抢购商品肥料，2领取购买保护道具肥料 3领取分享朋友圈肥料 4领取分享好友肥料 5领取邀请有效好友注册肥料 6领取急冲冲 7领取登录
     let param={type:e.currentTarget.dataset.type}
     HTTP.sendMessage('100059',param);
   },
@@ -1224,20 +1234,32 @@ Page({
   },
   getVideoAmountBack(data){
     this.setData({
-      maxAmount:data.maxAmount,
-      watchAmount:data.watchAmount,
-      seeOneVideoAmount:data.seeOneVideoAmount,
-      shareFriendCircle:data.shareFriendCircle,
-      shareFriendCircleMax:data.shareFriendCircleMax,
-      shareFriendCircleMuck:data.shareFriendCircleMuck,
-      shareFriend:data.shareFriend,
-      shareFriendMax:data.shareFriendMax,
-      shareFriendMuck:data.shareFriendMuck,
-      inviteRegister:data.inviteRegister,
-      inviteRegisterMax:data.inviteRegisterMax,
-      inviteRegisterMuck:data.inviteRegisterMuck,
-      buyPropsMuckAmount:data.buyPropsMuckAmount,
-      buyGoodsMuckAmount:data.buyGoodsMuckAmount,
+      buyGoodsIsReceive: data.buyGoodsIsReceive,
+      buyGoodsMuckAmount: data.buyGoodsMuckAmount,
+      buyGoodsReceiveMuck:  data.buyGoodsReceiveMuck,
+      buyPropsIsReceive: data.buyPropsIsReceive,
+      buyPropsMuckAmount: data.buyPropsMuckAmount,
+      buyPropsReceiveMuck: data.buyPropsReceiveMuck,
+      chongdianMuckAmount: data.chongdianMuckAmount,
+      chongdianReceive: data.chongdianReceive,
+      chongdianReceiveMuck: data.chongdianReceiveMuck,
+      inviteRegister: data.inviteRegister,
+      inviteRegisterMax: data.inviteRegisterMax,
+      inviteRegisterMuck: data.inviteRegisterMuck,
+      inviteRegisterReceiveMuck:  data.inviteRegisterReceiveMuck,
+      maxAmount:  data.maxAmount,
+      oneDayLogin:  data.oneDayLogin,
+      oneDayLoginMuckAmount: data.oneDayLoginMuckAmount,
+      oneDayLoginReceiveMuck: data.oneDayLoginReceiveMuck,
+      seeOneVideoAmount: data.seeOneVideoAmount,
+      shareFriend: data.shareFriend,
+      shareFriendCircle: data.shareFriendCircle,
+      shareFriendCircleMax: data.shareFriendCircleMax,
+      shareFriendCircleMuck: data.shareFriendCircleMuck,
+      shareFriendCircleReceiveMuck: data.shareFriendCircleReceiveMuck,
+      shareFriendMax:  data.shareFriendMax,
+      shareFriendMuck: data.shareFriendMuck,
+      shareFriendReceiveMuck: data.shareFriendReceiveMuck,
     })
   },
   getAllPropsListBack(data){//100008
@@ -1369,16 +1391,48 @@ Page({
   onReady: function () {
 
   },
-
+//检查Socket重连
+  checkOpenSocket () {
+    let that = this;
+    let msg = {
+      info: '000000',
+      param: {},
+      type: '000000'
+    };
+    msg = JSON.stringify(msg);
+    wx.sendSocketMessage({
+      data: msg,
+      success: (res) => {
+        return;
+      },
+      fail: (err) => { // 未连接打开websocket连接
+        console.log(err)
+        if(wx.getStorageSync("token")){
+          // HTTP.initSocket();
+          // 重连
+          wx.closeSocket();
+          HTTP.initSocket();
+          this.getChengZiNumber();
+          this.getChengZiInfo();
+          //获取可以偷列表,判断可偷按钮是否展示
+          this.getCanStealList();
+        }
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.getStorage({
+      key:'phone',
+      success(res) {
+        getApp().globalData.userPhone = res.data;
+      }
+    })
     this.havePhone();
     let that = this;
-    if(wx.getStorageSync("token")){
-      HTTP.initSocket();
-    }
+    this.checkOpenSocket();
     wx.onSocketMessage(function (res) {//收到消息
       HTTP.onSocketMessage(res,function (result) {
         if (result.type === '100000'){
@@ -1471,15 +1525,17 @@ Page({
 
   /* 转发*/
   onShareAppMessage: function (ops) {
-    console.log(ops)
+    let phone =  getApp().globalData.userPhone
     if (ops.from === 'button') {
       // 来自页面内转发按钮
       // console.log(ops.target)
     }
+    console.log(getApp().globalData.userPhone)
+    console.log(phone)
     this.shareFinish(2)
     return {
       title: '杨桃乐园，福利多多',
-      path: '/pages/index/index?uid='+ 1 ,
+      path: '/pages/index/index?fphone=' +  phone,
       imageUrl:'http://img.laishida.cn/images/index/big-bg.png',
       success: function (res) {
         // 转发成功
