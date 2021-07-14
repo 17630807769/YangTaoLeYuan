@@ -56,9 +56,10 @@ function delete1(url, params, onSuccess, onFailed) {
  */
 
 function request(url, params, method, onSuccess, onFailed) {
-    if(header.Authorization === 'Bearer '||header.Authorization === 'Bearer undefined'){
-        header['Authorization'] = "Bearer " + wx.getStorageSync("token");
-    }
+    // if(header.Authorization === 'Bearer '||header.Authorization === 'Bearer undefined'){
+    //     header['Authorization'] = "Bearer " + wx.getStorageSync("token");
+    // }
+    header['Authorization'] = "Bearer " + wx.getStorageSync("token");
     // header['userId'] = 1;
     // console.log('请求url：'+ BASE_URL + url);
     wx.showLoading({
@@ -82,7 +83,7 @@ function request(url, params, method, onSuccess, onFailed) {
                     // } else {
                     //     if(res.data.code === 411){//跳到登陆去
                     //         wx.removeStorage("token");
-                    //         wx.redirectTo({url:'/pages/login/login'});
+                    //         wx.navigateTo({url:'/pages/login/login'});
                     //     }
                     //     wx.showToast({
                     //         icon:"none",
@@ -91,9 +92,7 @@ function request(url, params, method, onSuccess, onFailed) {
                     //     })
                     // }
                     if(res.data.code === 411){//跳到登陆去
-                        wx.removeStorage("token");
-                        wx.redirectTo({url:'/pages/login/login'});
-                        return
+                        goToLogin()
                     }
                     onSuccess(res.data); //request success
                 } else {
@@ -195,8 +194,19 @@ function sendMessage(info,param,type) {
             socketMsgQueue.push(msg)
         }
     } else {
+        goToLogin()
+    }
+}
+//跳转login
+function goToLogin(){
+    var pages = getCurrentPages() //获取加载的页面
+    var currentPage = pages[pages.length-1] //获取当前页面的对象
+    var url = currentPage.route //当前页面url
+    console.log(url)
+    if (url!='pages/login/login') {
         wx.removeStorage("token");
-        wx.redirectTo({url:'/pages/login/login'});
+        wx.navigateTo({url: '/pages/login/login'});
+        return
     }
 }
 //返回的方法封装
@@ -210,7 +220,8 @@ function onSocketMessage(res,callback) {
     } else if(result.code === 411) {
         //重新登录
         wx.removeStorage("token");
-        wx.redirectTo({url:'/pages/login/login'});
+        wx.navigateTo({url:'/pages/login/login'});
+        return
     } else {
         //message
         wx.showToast({

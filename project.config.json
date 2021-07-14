@@ -71,6 +71,11 @@
           "pathName": "pages/index/index",
           "query": "fphone=1111",
           "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "scene": null
         }
       ]
     }

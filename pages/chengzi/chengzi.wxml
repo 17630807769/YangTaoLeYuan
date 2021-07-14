@@ -282,7 +282,7 @@
                                 </view>
                                 <view wx:if="{{shareFriend<shareFriendMax}}"  style="width: 160rpx;height: 60rpx;" class="btn-box">
                                     <button open-type="share" style="width: 160rpx;background-color: #00000000;height: 60rpx;border:0;margin: 0;padding: 0;">
-                                        <view style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                        <view bind:tap="clickShareBtn" data-type="1" style="width: 160rpx;height: 60rpx;" class="btn-box">
                                             <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                             <view class="btn-box-text font-28 color-ffffff">去分享</view>
                                         </view>
@@ -346,7 +346,7 @@
                                 </view>
                                 <view wx:if="{{inviteRegister<inviteRegisterMax}}"  style="width: 160rpx;height: 60rpx;" class="btn-box">
                                     <button open-type="share" style="width: 160rpx;background-color: #00000000;height: 60rpx;border:0;margin: 0;padding: 0;">
-                                        <view style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                        <view bind:tap="clickShareBtn" data-type="2" style="width: 160rpx;height: 60rpx;" class="btn-box">
                                             <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                             <view class="btn-box-text font-28 color-ffffff">去分享</view>
                                         </view>
@@ -434,7 +434,7 @@
                                         <view class="btn-box-text font-28 color-ffffff">领取</view>
                                     </view>
                                 </view>
-                                <view wx:else bind:tap="goToMall" style="width: 160rpx;height: 60rpx;" class="btn-box">
+                                <view wx:else bind:tap="goToJiChongChong" style="width: 160rpx;height: 60rpx;" class="btn-box">
                                     <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                     <view class="btn-box-text font-28 color-ffffff">去租借</view>
                                 </view>
@@ -798,7 +798,7 @@
                         </view>
                         <view class="flex-view" style="justify-content: space-between;padding: 10rpx 0;">
                             <text class="font-28 color-302424">占比</text>
-                            <text class="font-28 color-302424">{{chengZiListDetails.userOrangeAmount}}%</text>
+                            <text class="font-28 color-302424">{{chengZiListDetails.userFertilizeRatio}}%</text>
                         </view>
                         <view class="flex-view" style="justify-content: space-between;padding: 10rpx 0;">
                             <text class="font-40 color-302424">获得杨桃</text>
@@ -816,11 +816,11 @@
                     </view>
                     <view wx:if="{{chengZiListDetailsShow===3}}">
                         <view class="font-28 color-302424" style="padding: 10rpx 0;">
-                            送出好友{{chengZiListDetails.nickName}}的杨桃
+                            送给好友{{chengZiListDetails.nickName}}的杨桃
                         </view>
                         <view class="flex-view" style="justify-content: space-between;padding: 10rpx 0;">
                             <text class="font-40 color-302424">送出杨桃</text>
-                            <text class="font-40 color-ADAAAA">{{chengZiListDetails.orangeAmount}}个</text>
+                            <text class="font-40 color-ADAAAA">{{chengZiListDetails.amount}}个</text>
                         </view>
                     </view>
                     <view wx:if="{{chengZiListDetailsShow===16}}">
@@ -880,6 +880,24 @@
             <image bind:tap="closeHongbao2" src="http://img.laishida.cn/images/chengzi/hongbao.png" style="width:100%" mode="widthFix"></image>
             <view style="font-size:113rpx;color:#FF4A20;width:100%;text-align:center;position:absolute;top:240rpx">{{hongbaoCount}}元</view>
             <image bind:tap="openJiChong" src="http://img.laishida.cn/images/chengzi/btn-lijishiyong.png" style="position:absolute;width:355rpx;left:175rpx;bottom:100rpx" mode="widthFix"></image>
+            </view>
+        </view>
+        <!--施肥时 肥料不足 弹框-->
+        <view wx:if="{{showPropsBuySuccess}}" class="dialog-style">
+            <view class="dialog-window">
+                <view style="position: absolute;top: 47rpx;right: 16rpx;">
+                    <image style="width: 47rpx;height: 47rpx;" bind:tap="closePropsBuySuccess" src="http://img.laishida.cn/images/chengzi/icon-close.png"></image>
+                </view>
+                <view class="dialog-window-box" style="">
+                    <view class="dialog-window-content" style="margin-top: 150rpx;">
+                        <view class="font-40 font-bold color-FE963A" style="padding: 20rpx 0;text-align: center">道具购买成功!</view>
+                        <view class="flex-view" style="justify-content: space-between">
+                            <view bind:tap="closePropsBuySuccess" class="dialog-btn" style="width: 240rpx;height: 80rpx;line-height:62rpx;">
+                                我知道了
+                            </view>
+                        </view>
+                    </view>
+                </view>
             </view>
         </view>
     </view>

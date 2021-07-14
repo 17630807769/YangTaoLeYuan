@@ -4,7 +4,7 @@
     <view class="tehui">
         <view style="width: 48%">
             <view class="flex-view" style=";border-bottom:4rpx solid #FFD264;">
-                <view class="font-30 color-333333" style="margin-right:10rpx;">周五特惠</view>
+                <view class="font-30 color-333333" style="margin-right:10rpx;">正在抢购</view>
                 <view class="tehui-time font-24 color-ffffff">
                     11
                 </view>
@@ -15,10 +15,13 @@
             </view>
             <view bind:tap="goToDetails" data-id="{{item.id}}" wx:for="{{thisWeekShopList}}" wx:key="index" style="width:100%;padding-top:10rpx;">
                 <image src="{{item.firstImg}}" style="width:100%;height:148rpx;background: #D9D9D9;border-radius: 14rpx;display:block"></image>
-                <view>
-                    <text class="font-22 color-EB451E">￥</text>
-                    <text class="font-28 color-EB451E">{{item.money}} </text>
-<!--                    <text class="font-20 color-999999" style="text-decoration: line-through;">￥599</text>-->
+                <view class="flex-view" style="justify-content: space-between">
+                    <view>
+                        <text class="font-22 color-EB451E">￥</text>
+                        <text class="font-28 color-EB451E">{{item.money}} </text>
+                        <!--<text class="font-20 color-999999" style="text-decoration: line-through;">￥599</text>-->
+                    </view>
+                    <text class="font-24 color-B3B3B3">{{item.stock}}库存</text>
                 </view>
             </view>
         </view>
@@ -28,10 +31,13 @@
             </view>
             <view bind:tap="goToDetails" data-id="{{item.id}}" wx:for="{{nextWeekShopList}}" wx:key="index" style="width:100%;padding-top:10rpx;">
                 <image src="{{item.firstImg}}" style="width:100%;height:148rpx;background: #D9D9D9;border-radius: 14rpx;display:block"></image>
-                <view>
-                    <text class="font-22 color-EB451E">￥</text>
-                    <text class="font-28 color-EB451E">{{item.money}} </text>
-                    <!--                    <text class="font-20 color-999999" style="text-decoration: line-through;">￥599</text>-->
+                <view class="flex-view" style="justify-content: space-between">
+                    <view>
+                        <text class="font-22 color-EB451E">￥</text>
+                        <text class="font-28 color-EB451E">{{item.money}} </text>
+                        <!--<text class="font-20 color-999999" style="text-decoration: line-through;">￥599</text>-->
+                    </view>
+                    <text class="font-24 color-B3B3B3">{{item.stock}}库存</text>
                 </view>
             </view>
         </view>

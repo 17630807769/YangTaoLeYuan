@@ -164,10 +164,6 @@ Page({
     chongdianReceiveMuck: "100",
 
 
-
-
-
-
     downImgShow:false,
     downImgUrl:'',
     exchangeShow:false,
@@ -175,6 +171,34 @@ Page({
     showHongbao1:false,
     showHongbao2:false,
     hongbaoCount:0,
+    //控制道具购买成功弹框
+    showPropsBuySuccess:false,
+    //分享类型,1是分享微信好友需要调用请求 2是好友注册成功分享不用调用
+    shareType:1,
+  },
+  clickShareBtn(e){
+    console.log(e)
+    this.setData({
+      shareType:e.currentTarget.dataset.type
+    })
+  },
+  closePropsBuySuccess(){
+    this.setData({
+      showPropsBuySuccess:false,
+    })
+  },
+  goToJiChongChong(){
+    wx.navigateToMiniProgram({
+      appId: 'wx54e1af9976662192',
+      path: '/pages/indexWX/indexWX',
+      extraData: {
+        foo: 'bar'
+      },
+      envVersion: 'release',
+      success(res) {
+        // 打开成功
+      }
+    })
   },
   //红包部分
   havePhone(){
@@ -821,6 +845,7 @@ Page({
     })
   },
   wxPay(){
+    let that = this;
     let params = {
       type:1,
       buyAmount:this.data.buyCount,
@@ -839,6 +864,9 @@ Page({
           paySign: payData.paySign,
           success (res) {
             console.log('支付成功')
+            that.setData({
+              showPropsBuySuccess:true
+            })
             wx.showToast({
               icon:"none",
               title: "支付成功",
@@ -865,10 +893,21 @@ Page({
   },
   /*** 集肥料 ***/
   openJiFeiLiao(){
-    this.setData({
-      jiFeiLiaoShow: true
+    HTTP.get('/api/v1/user/user/info/get/user/have/phone',{},(data)=>{
+      if(data.code == 200){
+        if(data.data){
+          this.setData({
+            jiFeiLiaoShow: true
+          })
+          this.getVideoAmount();
+        } else {
+          wx.navigateTo({
+            url: "/pages/phoneBind/phoneBind"
+          })
+        }
+      }
     })
-    this.getVideoAmount();
+
   },
   closeJiFeiLiao(){
     this.setData({
@@ -1424,14 +1463,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let that = this;
     wx.getStorage({
       key:'phone',
       success(res) {
         getApp().globalData.userPhone = res.data;
+        that.havePhone();
       }
     })
-    this.havePhone();
-    let that = this;
     this.checkOpenSocket();
     wx.onSocketMessage(function (res) {//收到消息
       HTTP.onSocketMessage(res,function (result) {
@@ -1531,12 +1570,13 @@ Page({
       // console.log(ops.target)
     }
     console.log(getApp().globalData.userPhone)
-    console.log(phone)
-    this.shareFinish(2)
+    if (this.data.shareType == 1){
+      this.shareFinish(2)
+    }
     return {
       title: '杨桃乐园，福利多多',
       path: '/pages/index/index?fphone=' +  phone,
-      imageUrl:'http://img.laishida.cn/images/index/big-bg.png',
+      imageUrl:'http://img.laishida.cn/images/index/share.png',
       success: function (res) {
         // 转发成功
         console.log("转发成功:" + JSON.stringify(res));
