@@ -183,7 +183,7 @@
 }
 .daoJuBox{
     position:relative;width: 239rpx;height: 320rpx;
-    background:url('http://cz.h5.krjie.com//images/chengzi/ban.png') 0 0/100% 100%
+    background:url('http://img.laishida.cn/images/chengzi/ban.png') 0 0/100% 100%
 }
 .daoJuBox-typeImg{
     width: 105rpx;height: 99rpx;position: absolute;right: 0;
@@ -196,7 +196,7 @@
 }
 .daoJuBox-btn{
     margin:0 auto;color: #FFFFFF;text-align:center;text-shadow: 0px 3px 2px rgba(157, 96, 0, 0.4);width: 173rpx;height: 60rpx;line-height:50rpx;
-    background:url('http://cz.h5.krjie.com//images/chengzi/btn-quxiazai.png') 0 0/100% 100%;
+    background:url('http://img.laishida.cn/images/chengzi/btn-quxiazai.png') 0 0/100% 100%;
 }
 /*设置密码的一系列弹框*/
 .dialog-style{
@@ -212,12 +212,12 @@
     width: 47rpx;height: 47rpx;
 }
 .dialog-window-box1{
-    background: url('http://cz.h5.krjie.com//images/chengzi/green.png') 0 0/100%;
+    background: url('http://img.laishida.cn/images/chengzi/green.png') 0 0/100%;
     box-sizing: border-box;width: 100%;border-radius:50rpx;
     padding: 24rpx;
 }
 .dialog-window-box{
-    background: url('http://cz.h5.krjie.com//images/chengzi/daojuxiangqing-bg.png') 0 0/100%;
+    background: url('http://img.laishida.cn/images/chengzi/daojuxiangqing-bg.png') 0 0/100%;
     box-sizing: border-box;width: 100%;border-radius:50rpx;
     padding: 24rpx;
 }
@@ -232,7 +232,7 @@
 }
 
 .dialog-btn{
-    background:url('http://cz.h5.krjie.com//images/chengzi/icon-btnBg.png') 0 0/100% 100%;
+    background:url('http://img.laishida.cn/images/chengzi/icon-btnBg.png') 0 0/100% 100%;
     text-align: center;
     font-weight: bold;
     color: #FFFFFF;
@@ -240,7 +240,7 @@
     margin: 0 auto;
 }
 .dialog-btn1{
-    background:url('http://cz.h5.krjie.com//images/chengzi/btn-quguangkan.png') 0 0/100% 100%;
+    background:url('http://img.laishida.cn/images/chengzi/btn-quguangkan.png') 0 0/100% 100%;
     text-align: center;
     font-weight: bold;
     color: #FFFFFF;
@@ -417,7 +417,7 @@
     }
 }
 .can-zhai-qu{
-    background: url('http://cz.h5.krjie.com//images/chengzi/kezhaichengziqipao.png') 0 0/100%;
+    background: url('http://img.laishida.cn/images/chengzi/kezhaichengziqipao.png') 0 0/100%;
     width: 242rpx;position: absolute;left: 175rpx;top: -500rpx;
     text-align: center;
     padding: 9rpx 0;

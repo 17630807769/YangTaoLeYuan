@@ -615,7 +615,7 @@
                                     <image class="btn-box-img" src="http://img.laishida.cn/images/chengzi/btn-bg.png"></image>
                                     <view class="btn-box-text font-24 color-ffffff">发送</view>
                                 </view>
-                                <view wx:else class="font-24 color-ffffff" style="width: 90rpx;height: 50rpx;line-height:50rpx;text-align:center;background:url('http://cz.h5.krjie.com//images/chengzi/icon-btnBg.png') 0 0/100% 100%;">
+                                <view wx:else class="font-24 color-ffffff" style="width: 90rpx;height: 50rpx;line-height:50rpx;text-align:center;background:url('http://img.laishida.cn/images/chengzi/icon-btnBg.png') 0 0/100% 100%;">
                                     {{second}}s
                                 </view>
                             </view>
@@ -685,7 +685,7 @@
                 <view style="position: absolute;top: 47rpx;right: 16rpx;">
                     <image style="width: 47rpx;height: 47rpx;" bind:tap="closeTipsPassword" src="http://img.laishida.cn/images/chengzi/icon-close.png"></image>
                 </view>
-                <view class="dialog-window-box" style="background: url('http://cz.h5.krjie.com//images/chengzi/daojuxiangqing-bg.png') 0 0/100%;">
+                <view class="dialog-window-box" style="background: url('http://img.laishida.cn/images/chengzi/daojuxiangqing-bg.png') 0 0/100%;">
                     <view class="dialog-window-content" style="margin-top: 150rpx;">
                         <view class="font-40 font-bold color-FE963A" style="padding: 20rpx 0;text-align: center">你还未设置杨桃密码~</view>
                         <view class="font-32 font-bold color-302424" style="margin-bottom: 50rpx;text-align: center">快去设置吧~</view>
@@ -708,7 +708,7 @@
                 <view style="position: absolute;top: 47rpx;right: 16rpx;">
                     <image style="width: 47rpx;height: 47rpx;" bind:tap="closeBuyDaoJu" src="http://img.laishida.cn/images/chengzi/icon-close.png"></image>
                 </view>
-                <view class="dialog-window-box" style="background: url('http://cz.h5.krjie.com//images/chengzi/daojuxiangqing-bg.png') 0 0/100% 100%;">
+                <view class="dialog-window-box" style="background: url('http://img.laishida.cn/images/chengzi/daojuxiangqing-bg.png') 0 0/100% 100%;">
                     <view class="dialog-window-content" style="margin-top: 150rpx;">
                         <image style="width: 216rpx;height: 216rpx;display: block;margin:0 auto;" src="{{allPropsList[nowShowPropsIndex].img}}"></image>
                         <view class="font-36 font-bold color-302424" style="padding: 30rpx 0;text-align: center">{{allPropsList[nowShowPropsIndex].name}}</view>
@@ -854,7 +854,7 @@
                 <view style="position: absolute;top: 47rpx;right: 16rpx;">
                     <image style="width: 47rpx;height: 47rpx;" bind:tap="closeDownImg" src="http://img.laishida.cn/images/chengzi/icon-close.png"></image>
                 </view>
-                <view class="dialog-window-box" style="background: url('http://cz.h5.krjie.com//images/chengzi/daojuxiangqing-bg.png') 0 0/100%;">
+                <view class="dialog-window-box" style="background: url('http://img.laishida.cn/images/chengzi/daojuxiangqing-bg.png') 0 0/100%;">
                     <view class="dialog-window-content" style="padding:0;margin-top: 150rpx;margin-bottom: 30rpx">
                         <image style="width: 100%;border-radius:30rpx;display: block" src="{{downImgUrl}}" mode="widthFix"></image>
                     </view>

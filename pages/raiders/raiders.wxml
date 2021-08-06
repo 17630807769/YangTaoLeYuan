@@ -1,4 +1,4 @@
 <!--pages/raiders/raiders.wxml-->
-<scroll-view scroll-y="true" style="width: 100vw;height: 98vh;box-sizing:border-box;padding:60rpx;background: url('http://cz.h5.krjie.com//images/chengzi/beiban.png') 0 0/100% 100%;;margin-bottom: 2vh;">
+<scroll-view scroll-y="true" style="width: 100vw;height: 98vh;box-sizing:border-box;padding:60rpx;background: url('http://img.laishida.cn/images/chengzi/beiban.png') 0 0/100% 100%;;margin-bottom: 2vh;">
     <image src="{{imgUrl}}" style="width: 100%" mode="widthFix"></image>
 </scroll-view>

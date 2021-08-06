@@ -16,7 +16,7 @@
 }
 .progres-box{
     width: 389rpx;height: 42rpx;position:absolute;left:180rpx;bottom:14vh;
-    background: url('http://cz.h5.krjie.com//images/index/bg.png') 0 0/100% 100%;
+    background: url('http://img.laishida.cn/images/index/bg.png') 0 0/100% 100%;
 }
 .progres-box1{
     height: 42rpx;overflow: hidden;
