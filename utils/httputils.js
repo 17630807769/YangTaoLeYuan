@@ -82,7 +82,7 @@ function request(url, params, method, onSuccess, onFailed) {
                     //     onSuccess(res.data); //request success
                     // } else {
                     //     if(res.data.code === 411){//跳到登陆去
-                    //         wx.removeStorage("token");
+                    //         wx.clearStorage();
                     //         wx.navigateTo({url:'/pages/login/login'});
                     //     }
                     //     wx.showToast({
@@ -204,7 +204,7 @@ function goToLogin(){
     var url = currentPage.route //当前页面url
     console.log(url)
     if (url!='pages/login/login') {
-        wx.removeStorage("token");
+        wx.clearStorage();
         wx.navigateTo({url: '/pages/login/login'});
         return
     }
@@ -219,7 +219,7 @@ function onSocketMessage(res,callback) {
         // console.log('心跳包，不处理')
     } else if(result.code === 411) {
         //重新登录
-        wx.removeStorage("token");
+        wx.clearStorage();
         wx.navigateTo({url:'/pages/login/login'});
         return
     } else {

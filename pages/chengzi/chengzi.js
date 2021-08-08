@@ -171,10 +171,14 @@ Page({
     showHongbao1:false,
     showHongbao2:false,
     hongbaoCount:0,
+    //红包领完的提示
+    hongbaoTips:null,
     //控制道具购买成功弹框
     showPropsBuySuccess:false,
     //分享类型,1是分享微信好友需要调用请求 2是好友注册成功分享不用调用
     shareType:1,
+    //是否由Jcc拉起
+    isJcc:false,
   },
   clickShareBtn(e){
     console.log(e)
@@ -230,10 +234,33 @@ Page({
     })
   },
   clickHongbao1(){
-    this.setData({
-      showHongbao1:false,
-      showHongbao2:true,
-    })
+    if (wx.getStorageSync("token")){
+      // 点击立即领取是老用户应当再次调用 /api/v1/user/coupon/query/have/receive 查询此时红包状态
+      HTTP.get('/api/v1/user/coupon/query/have/receive',{},(data)=>{
+        if(data.code == 200){//已领取的话code=402001    没有的话 code=402002
+          this.setData({
+            hongbaoCount:data.data,
+            showHongbao1:false,
+            showHongbao2:true,
+          })
+        } else if(data.code==402001){
+          this.setData({
+            hongbaoTips:data.message,
+            showHongbao1:false,
+            showHongbao2:true,
+          })
+        } else if(data.code==402002){
+          this.setData({
+            hongbaoTips:data.message,
+            showHongbao1:false,
+            showHongbao2:true,
+          })
+        }
+      })
+    } else {
+      wx.clearStorage();
+      wx.navigateTo({url: '/pages/login/login'});
+    }
   },
   openJiChong(){
 
@@ -1046,7 +1073,20 @@ Page({
       })
     }
     this.getChengzi();
-    
+    if(options.isJcc){
+      this.setData({
+        hongbaoCount:0,
+        showHongbao1:true
+      })
+    } else {
+      wx.getStorage({
+        key:'phone',
+        success(res) {
+          getApp().globalData.userPhone = res.data;
+          that.havePhone();
+        }
+      })
+    }
   },
   getChengzi(){//http获取杨桃数量 没登陆就进入首页；
     HTTP.get('/api/v1/user/user/info/outer/get/today/amount',{},(data)=>{
@@ -1464,13 +1504,13 @@ Page({
    */
   onShow: function () {
     let that = this;
-    wx.getStorage({
-      key:'phone',
-      success(res) {
-        getApp().globalData.userPhone = res.data;
-        that.havePhone();
-      }
-    })
+    // wx.getStorage({
+    //   key:'phone',
+    //   success(res) {
+    //     getApp().globalData.userPhone = res.data;
+    //     that.havePhone();
+    //   }
+    // })
     this.checkOpenSocket();
     wx.onSocketMessage(function (res) {//收到消息
       HTTP.onSocketMessage(res,function (result) {

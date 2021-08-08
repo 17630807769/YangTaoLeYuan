@@ -21,6 +21,13 @@
         {
           "name": "pages/mallConfirmOrder/mallConfirmOrder",
           "pathName": "pages/mallConfirmOrder/mallConfirmOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "index",
+          "pathName": "pages/index/index",
+          "query": "fphone=111&miniProgram=jcc",
           "scene": null
         }
       ]

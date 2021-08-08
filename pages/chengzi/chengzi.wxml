@@ -869,7 +869,9 @@
             <view style="width:670rpx;height:980rpx;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
             <image src="http://img.laishida.cn/images/chengzi/hongbao-bg.png" style="width:100%" mode="widthFix"></image>
             <image src="http://img.laishida.cn/images/chengzi/hongbao-right.png" style="width:346rpx;position:absolute;top:0;right:0" mode="widthFix"></image>
-            <view class="hongbao-text">送你{{hongbaoCount}}元红包</view>
+            <view wx:if="{{hongbaoCount==0}}" class="hongbao-text">急冲冲充电红包</view>
+            <view wx:else class="hongbao-text">送你{{hongbaoCount}}元红包</view>
+            <view class="tips-text">提醒:认证手机号与充电手机号不一致时无法使用红包</view>
             <image bind:tap="clickHongbao1" src="http://img.laishida.cn/images/chengzi/hongbao-btn.png" style="position:absolute;width:452rpx;left:109rpx;bottom:10rpx" mode="widthFix"></image>
             <image bind:tap="closeHongbao1" src="http://img.laishida.cn/images/chengzi/icon-close1.png" style="position:absolute;width:74rpx;left:298rpx;bottom:-90rpx" mode="widthFix"></image>
             </view>
@@ -877,9 +879,18 @@
         <!--红包2-->
         <view class="bottom-window-shadow" style="{{showHongbao2?'top: 0%;':'top: 100%;'}}">
             <view style="width:710rpx;height:755rpx;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
-            <image bind:tap="closeHongbao2" src="http://img.laishida.cn/images/chengzi/hongbao.png" style="width:100%" mode="widthFix"></image>
-            <view style="font-size:113rpx;color:#FF4A20;width:100%;text-align:center;position:absolute;top:240rpx">{{hongbaoCount}}元</view>
-            <image bind:tap="openJiChong" src="http://img.laishida.cn/images/chengzi/btn-lijishiyong.png" style="position:absolute;width:355rpx;left:175rpx;bottom:100rpx" mode="widthFix"></image>
+                <image bind:tap="closeHongbao2" src="http://img.laishida.cn/images/chengzi/hongbao.png" style="width:100%" mode="widthFix"></image>
+                <view wx:if="{{hongbaoCount!=0}}" style="font-size:113rpx;color:#FF4A20;width:100%;text-align:center;position:absolute;top:240rpx">{{hongbaoCount}}元</view>
+                <view wx:else style="font-size:28rpx;color:#FF4A20;width:100%;text-align:center;position:absolute;top:240rpx">{{hongbaoTips}}</view>
+    <!--            <image bind:tap="openJiChong" src="http://img.laishida.cn/images/chengzi/btn-lijishiyong.png" style="position:absolute;width:355rpx;left:175rpx;bottom:100rpx" mode="widthFix"></image>-->
+                <view class="flex-view" style="position:absolute;bottom:150rpx;justify-content: space-around;width: 64%;left: 18%;">
+                    <view bind:tap="openJiChong" class="backJcc font-28" style="width: 210rpx;height: 70rpx;line-height:62rpx;">
+                        返回急冲冲
+                    </view>
+                    <view bind:tap="closeHongbao2" class="goYtly font-28" style="width: 210rpx;height: 70rpx;line-height:62rpx;">
+                        进入杨桃乐园
+                    </view>
+                </view>
             </view>
         </view>
         <!--施肥时 肥料不足 弹框-->

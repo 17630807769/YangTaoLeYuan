@@ -557,4 +557,27 @@
     position: absolute;
     top: 20%;
 }
-
+.tips-text{
+    font-size: 26rpx;
+    width: 100%;
+    text-align: center;
+    color: #FFE5B3;
+    position: absolute;
+    bottom: 200rpx;
+}
+.backJcc{
+    background:url('http://img.laishida.cn/images/chengzi/btnshifei-bg.png') 0 0/100% 100%;
+    text-align: center;
+    color: #BEBEBE;
+    /*font-weight: bold;*/
+    /*text-shadow: 0px 3px 2px rgba(157, 96, 0, 0.4);*/
+    margin: 0 auto;
+}
+.goYtly{
+    background:url('http://img.laishida.cn/images/chengzi/btn-quxiazai.png') 0 0/100% 100%;
+    text-align: center;
+    color: #ff3333;
+    /*font-weight: bold;*/
+    /*text-shadow: 0px 3px 2px rgba(157, 96, 0, 0.4);*/
+    margin: 0 auto;
+}

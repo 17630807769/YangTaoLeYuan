@@ -7,7 +7,8 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    isJcc:false,
   },
 
   onShow(){
@@ -38,6 +39,12 @@ Page({
       getApp().globalData.yaoQingpeople = options.fphone;
     }
     console.log(options.fphone,getApp().globalData.yaoQingpeople)
+    console.log(options.miniProgram)
+    if (options.miniProgram){
+      this.setData({
+        isJcc: true
+      })
+    }
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -74,9 +81,17 @@ Page({
     })
   },
   goToYouzi: function (e) {
-    wx.redirectTo({
-      url: '/pages/chengzi/chengzi',
-    });
+    let that = this;
+    if(this.data.isJcc){
+      wx.redirectTo({
+        url: `/pages/chengzi/chengzi?isJcc=${that.data.isJcc}`,
+      });
+    } else {
+      wx.redirectTo({
+        url: '/pages/chengzi/chengzi',
+      });
+    }
+
   },
   onHide: function () {
     setTimeout(()=>{
