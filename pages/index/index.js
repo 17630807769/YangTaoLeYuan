@@ -38,8 +38,6 @@ Page({
     if(options.fphone){
       getApp().globalData.yaoQingpeople = options.fphone;
     }
-    console.log(options.fphone,getApp().globalData.yaoQingpeople)
-    console.log(options.miniProgram)
     if (options.miniProgram){
       this.setData({
         isJcc: true

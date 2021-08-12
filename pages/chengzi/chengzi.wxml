@@ -882,9 +882,9 @@
                 <image bind:tap="closeHongbao2" src="http://img.laishida.cn/images/chengzi/hongbao.png" style="width:100%" mode="widthFix"></image>
                 <view wx:if="{{hongbaoCount!=0}}" style="font-size:113rpx;color:#FF4A20;width:100%;text-align:center;position:absolute;top:240rpx">{{hongbaoCount}}元</view>
                 <view wx:else style="font-size:28rpx;color:#FF4A20;width:100%;text-align:center;position:absolute;top:240rpx">{{hongbaoTips}}</view>
-    <!--            <image bind:tap="openJiChong" src="http://img.laishida.cn/images/chengzi/btn-lijishiyong.png" style="position:absolute;width:355rpx;left:175rpx;bottom:100rpx" mode="widthFix"></image>-->
+    <!--            <image bind:tap="goToJiChongChong" src="http://img.laishida.cn/images/chengzi/btn-lijishiyong.png" style="position:absolute;width:355rpx;left:175rpx;bottom:100rpx" mode="widthFix"></image>-->
                 <view class="flex-view" style="position:absolute;bottom:150rpx;justify-content: space-around;width: 64%;left: 18%;">
-                    <view bind:tap="openJiChong" class="backJcc font-28" style="width: 210rpx;height: 70rpx;line-height:62rpx;">
+                    <view bind:tap="goToJiChongChong" class="backJcc font-28" style="width: 210rpx;height: 70rpx;line-height:62rpx;">
                         返回急冲冲
                     </view>
                     <view bind:tap="closeHongbao2" class="goYtly font-28" style="width: 210rpx;height: 70rpx;line-height:62rpx;">
